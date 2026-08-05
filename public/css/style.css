@@ -35,7 +35,10 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--paper);color:var(--ink);
+  margin:0;color:var(--ink);
+  /* 紙のグレイン。単色ベタ塗りの素っ気なさを消す（feTurbulenceをタイル） */
+  background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
   font-family:var(--jp);font-size:16px;line-height:1.8;
   font-feature-settings:"palt" 1;               /* 和文プロポーショナル詰め */
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
@@ -141,6 +144,8 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
 .section-head--light h2{color:#fff}
 
 /* ---------- ABOUT ---------- */
+/* 方眼のドットで「手帖」の紙面感を出す */
+.about{background-image:radial-gradient(var(--line) 1.7px,transparent 1.7px);background-size:24px 24px}
 .pillars{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .pillar{background:var(--paper-2);border:var(--bd);border-radius:var(--r-card);padding:30px 26px;box-shadow:var(--pop)}
 .pillar__num{
@@ -185,11 +190,8 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   display:grid;place-items:center;background:var(--c);   /* 写真なし: 強い面で見せる */
   background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.12) 0 11px,transparent 11px 22px);
 }
-.card__initial{
-  font-family:var(--latin);font-weight:700;font-size:clamp(40px,6vw,56px);color:#fff;line-height:1;
-  width:1.7em;height:1.7em;display:grid;place-items:center;
-  border:3px solid rgba(255,255,255,.92);border-radius:50%;
-}
+.card__motif{width:clamp(104px,40%,164px);height:auto;filter:drop-shadow(4px 5px 0 rgba(23,19,14,.20))}
+.card--feature .card__motif{width:clamp(110px,46%,180px)}
 .card__no{
   position:absolute;top:8px;right:8px;z-index:2;
   font-family:var(--latin);font-weight:700;font-size:12px;
@@ -197,10 +199,16 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
 }
 .card__body{padding:16px 8px 14px;display:flex;flex-direction:column;flex:1}
+.card__meta{display:flex;align-items:center;gap:6px;margin-bottom:10px}
 .card__cat{
-  align-self:flex-start;font-family:var(--round);font-weight:700;font-size:11.5px;
+  font-family:var(--round);font-weight:700;font-size:11.5px;
   background:var(--c-soft);color:var(--c-deep);border:1.5px solid currentColor;
-  padding:3px 10px;border-radius:999px;margin-bottom:10px;
+  padding:3px 10px;border-radius:999px;
+}
+.card__band{
+  font-family:var(--latin);font-weight:700;font-size:11px;letter-spacing:.04em;
+  background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);
+  padding:3px 8px;border-radius:999px;
 }
 .card__brand{font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--c-deep)}
 .card__name{font-size:17px;margin:3px 0 8px}
@@ -236,8 +244,22 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
 .read-card p{margin:0 0 18px;color:var(--ink-2);font-size:14.5px}
 .read-card__status{font-family:var(--latin);font-weight:700;font-size:12px;color:var(--muted);border:2px solid var(--line);padding:4px 12px;border-radius:999px}
 
+/* ---------- READ ---------- 図案 */
+.read-card{position:relative;overflow:hidden}
+.read-card__motif{
+  position:absolute;right:-14px;bottom:-16px;width:118px;height:118px;
+  opacity:.16;transform:rotate(-10deg);pointer-events:none;
+}
+.read-card>*{position:relative}
+
 /* ---------- CHANNELS ---------- */
-.channels{background:var(--ink);color:#fff;border-block:2.5px solid var(--ink)}
+.channels{background:var(--ink);color:#fff;border-block:2.5px solid var(--ink);position:relative}
+/* 上辺を墨のスカラップ（半円の連なり）で飾る */
+.channels::before{
+  content:"";position:absolute;left:0;right:0;top:-13px;height:26px;pointer-events:none;
+  background-image:radial-gradient(circle 13px at 13px 13px,var(--ink) 13px,transparent 13.5px);
+  background-size:26px 26px;background-repeat:repeat-x;
+}
 .channel-cards{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .channel{
   background:var(--paper-2);color:var(--ink);border:2.5px solid var(--paper-2);border-radius:var(--r-card);
