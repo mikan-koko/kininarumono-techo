@@ -1,5 +1,10 @@
 # 気になるモノ手帖 — 独自サイト（ベース）
 
+**公開URL: https://kininarumono-techo.web.app**
+
+- リポジトリ: https://github.com/mikan-koko/kininarumono-techo
+- Firebase コンソール: https://console.firebase.google.com/project/kininarumono-techo/overview
+
 デザインでアガる雑貨・インテリア・ガジェットのキュレーションサイト。
 静的サイト（ビルド不要）。**GitHub → Firebase Hosting** で公開する前提のベース一式です。
 このあと Claude Code で編集・拡張していきます。
