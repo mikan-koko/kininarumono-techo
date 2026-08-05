@@ -1,4 +1,4 @@
-# 気になるモノ手帖 — 独自サイト（ベース）
+# 気になるモノ手帖
 
 **公開URL: https://kininarumono-techo.web.app**
 
@@ -6,8 +6,11 @@
 - Firebase コンソール: https://console.firebase.google.com/project/kininarumono-techo/overview
 
 デザインでアガる雑貨・インテリア・ガジェットのキュレーションサイト。
-静的サイト（ビルド不要）。**GitHub → Firebase Hosting** で公開する前提のベース一式です。
-このあと Claude Code で編集・拡張していきます。
+静的サイト（ビルド不要）。**GitHub → Firebase Hosting** で公開済み・稼働中。
+
+> **AIエージェントで作業する場合は [AGENTS.md](AGENTS.md) を必ず先に読むこと。**
+> UIを触るなら [DESIGN.md](DESIGN.md) も必読。アフィリンクの扱いなど、
+> 壊すと収益に直結するルールが書いてあります。
 
 ## 構成
 ```
@@ -16,30 +19,43 @@ kininarumono-site/
 │  ├─ index.html           ← トップページ（1枚もの）
 │  ├─ 404.html
 │  ├─ robots.txt
-│  ├─ css/style.css        ← ポップなデザインシステム
-│  ├─ js/main.js           ← セレクト描画・カテゴリ絞り込み・リビール
-│  └─ images/              ← 商品写真（Native Union / Marimekko / HHKB）
+│  ├─ css/style.css        ← 全スタイル
+│  ├─ js/main.js           ← 商品データ(PICKS)・描画・絞り込み・演出
+│  └─ images/              ← 商品写真3点 + ogp.png
 ├─ firebase.json           ← Hosting 設定（public を配信）
-├─ .firebaserc             ← ★ Firebase プロジェクトIDを入れる
+├─ .firebaserc             ← Firebase プロジェクトID（kininarumono-techo）
+├─ AGENTS.md               ← ★ AIエージェント向け引き継ぎ資料
+├─ DESIGN.md               ← ★ デザイン規約
 ├─ .gitignore
 └─ README.md
+
+※ SVGモチーフ29種は index.html 冒頭にインラインしたスプライト。
 ```
 
-## デザイン方針（ポップ）
-- 参考テイスト: ポップ系Webデザイン（高彩度の多色・丸みのある書体・色面と弾むアニメ）。※原則のみ参考、他社サイトの模倣はしない。
-- カラー: 紙白 `#FBF7EF` ／ 墨 `#17130E` ／ ポップ4色＝ガジェット=パープル `#5B2BEB`・インテリア=ティール `#10B6A8`・雑貨=コーラル `#FF4B3E`・ファッション=アンバー `#FF9E1B`（＋アクセントのピンク/イエロー）。
-- フォント: 和文 `M PLUS Rounded 1c` / `Noto Sans JP`、欧文 `Quicksand`（Google Fonts）。
-- カテゴリを色で分ける「色タブ」がシグネチャ。`prefers-reduced-motion` 対応・WCAG AA 意識。
+## デザイン方針
+詳細は **[DESIGN.md](DESIGN.md)**。要点だけ:
+- 紙色の上に「墨の輪郭＋ぼかさないハード影」を通したステッカーの言語。影にblurを入れない。
+- カラー: 紙白 `#FBF7EF` ／ 墨 `#17130E` ／ カテゴリ4色（ガジェット=パープル・インテリア=ティール・雑貨=コーラル・ファッション=アンバー）。
+  カテゴリ色は面・文字・淡面で**3つ1組**。文字に面用の色を使うとWCAG AAを割る。
+- フォント: 見出し `Dela Gothic One` ／ 本文UI `Zen Maru Gothic` ／ 欧文 `Outfit` ／ 約物 `YakuHanJP`。
+- `prefers-reduced-motion` 対応。WCAG AA は実測で全項目通過（最低4.58）。
 
 ## セレクト商品の編集
-`public/js/main.js` の `PICKS` 配列を編集すれば商品を追加・変更できます。
-各要素: `cat`(gadget/interior/goods/fashion) / `brand` / `name` / `price` / `url`(アフィリンク) / `img`(画像パス or null) / `blurb`。
+`public/js/main.js` の `PICKS` 配列を編集します。現在32件。
+各要素: `cat`(gadget/interior/goods/fashion) / `motif`(図案のid) / `brand` / `name` / `price` / `url`(アフィリンク) / `img`(画像パス or null) / `blurb`。
 - アフィリンクは `rel="sponsored noopener nofollow"` を付与済み。
-- 画像がない商品は、頭文字＋カテゴリ色のカードで表示されます。
+- **`url` は絶対に推測で書かないこと。** 楽天ROOMの個別ページから取得する（AGENTS.md 3-1）。
+- `price` は通常価格。セール価格は期間終了で嘘になるので書かない。
+- 画像がない商品は、`motif` のSVG図案＋カテゴリ色の面で表示されます。
+- 価格帯バッジ（¥/¥¥/¥¥¥）は `price` から自動算出。手で書きません。
+- **css/js を変更したら `index.html` の `?v=` を必ず上げること**（AGENTS.md 3-4）。
 
 ---
 
-## 公開手順（GitHub みかんココ → Firebase Hosting）
+## 公開手順（実施済み・再構築時の参考）
+
+現在は下記が完了済みです。日常のデプロイは `firebase deploy --only hosting` だけ。
+検証は `firebase hosting:channel:deploy design --expires 1d` で一時URLに出してから。
 
 ### 1. GitHub に置く
 ```bash
