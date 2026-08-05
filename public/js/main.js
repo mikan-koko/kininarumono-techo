@@ -3,11 +3,12 @@
   "use strict";
 
   // ---- category meta ----
+  // cvar=面 / deep=文字色(白地でWCAG AA) / soft=淡い面
   const CAT = {
-    gadget:   { label: "ガジェット",       cvar: "var(--purple)" },
-    interior: { label: "インテリア",       cvar: "var(--teal)" },
-    goods:    { label: "雑貨",             cvar: "var(--coral)" },
-    fashion:  { label: "ファッション",     cvar: "var(--amber)" }
+    gadget:   { label: "ガジェット",   cvar: "var(--purple)", deep: "var(--purple-deep)", soft: "var(--purple-soft)" },
+    interior: { label: "インテリア",   cvar: "var(--teal)",   deep: "var(--teal-deep)",   soft: "var(--teal-soft)" },
+    goods:    { label: "雑貨",         cvar: "var(--coral)",  deep: "var(--coral-deep)",  soft: "var(--coral-soft)" },
+    fashion:  { label: "ファッション", cvar: "var(--amber)",  deep: "var(--amber-deep)",  soft: "var(--amber-soft)" }
   };
 
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
@@ -91,32 +92,47 @@
   const esc = (s) => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   const frag = document.createDocumentFragment();
 
-  PICKS.forEach((p) => {
+  PICKS.forEach((p, i) => {
     const meta = CAT[p.cat];
     const el = document.createElement("article");
-    el.className = "card reveal";
+    // 写真ありは2カラム占有して誌面にリズムを出す
+    el.className = "card reveal" + (p.img ? " card--feature" : "");
     el.dataset.cat = p.cat;
     el.style.setProperty("--c", meta.cvar);
-    el.style.setProperty("--mediabg", meta.cvar);
+    el.style.setProperty("--c-deep", meta.deep);
+    el.style.setProperty("--c-soft", meta.soft);
 
+    const no = String(i + 1).padStart(2, "0");
     const media = p.img
-      ? `<div class="card__media"><span class="card__cat">${meta.label}</span><img src="${p.img}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy"></div>`
-      : `<div class="card__media card__media--blank"><span class="card__cat">${meta.label}</span><span class="glyph" aria-hidden="true">${esc(p.brand.charAt(0))}</span></div>`;
+      ? `<div class="card__media"><img src="${p.img}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy"></div>`
+      : `<div class="card__media card__media--blank"><span class="card__initial" aria-hidden="true">${esc(p.brand.charAt(0))}</span></div>`;
 
     el.innerHTML = `
       ${media}
+      <span class="card__no" aria-hidden="true">${no}</span>
       <div class="card__body">
+        <span class="card__cat">${meta.label}</span>
         <span class="card__brand">${esc(p.brand)}</span>
         <h3 class="card__name">${esc(p.name)}</h3>
         <p class="card__blurb">${esc(p.blurb)}</p>
         <div class="card__foot">
           <span class="card__price">${esc(p.price)}</span>
-          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天で見る →</a>
+          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天で見る</a>
         </div>
       </div>`;
     frag.appendChild(el);
   });
   grid.appendChild(frag);
+
+  // ---- brand marquee（掲載ブランドを流す帯・PICKSと自動同期） ----
+  const track = document.getElementById("marqueeTrack");
+  if (track) {
+    const brands = [...new Set(PICKS.map((p) => p.brand))];
+    const group = `<div class="marquee__group">${brands
+      .map((b) => `<span class="marquee__item">${esc(b)}</span>`)
+      .join("")}</div>`;
+    track.innerHTML = group + group; // 2周分で継ぎ目なくループ
+  }
 
   // ---- category filter ----
   const chips = document.querySelectorAll(".chip");
