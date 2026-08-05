@@ -20,11 +20,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B2BEB'/%3E%3Ccircle cx='11' cy='12' r='4' fill='%23FFC61A'/%3E%3Ccircle cx='21' cy='13' r='4' fill='%23FF4B3E'/%3E%3Crect x='8' y='19' width='16' height='5' rx='2.5' fill='%2310B6A8'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <!-- 和文約物（「」・、。）の詰めを最適化 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
 <!-- ?v= はキャッシュ破棄用。css/js を変更したら必ず数字を上げること（firebase.json で max-age=86400） -->
-<link rel="stylesheet" href="css/style.css?v=5" />
+<link rel="stylesheet" href="css/style.css?v=9" />
 </head>
 <body>
 
@@ -34,10 +34,14 @@
      アンバーのどれでも成立する配色にしてある。追加時もこの規約を守ること。 -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 <defs><style>
-  .mo{fill:none;stroke:#17130E;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-  .mo-b{fill:#FBF7EF;stroke:#17130E;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-  .mo-a{fill:#FFC61A;stroke:#17130E;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-  .mo-i{fill:#17130E;stroke:none}
+  /* 色は CSS 変数経由。use 要素の複製を外から一色に潰して「版ズレ」を作るため。
+     カスタムプロパティは use のシャドウツリーに継承されるが、クラスセレクタは届かない。
+     注意: インラインSVG内の style は raw text ではないので、この中に不等号を書くと
+     HTMLパーサーがタグとして解釈し、CSS全体が壊れる。記号を書かないこと。 */
+  .mo{fill:none;stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .mo-b{fill:var(--mo-body,#FBF7EF);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+  .mo-a{fill:var(--mo-acc,#FFC61A);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+  .mo-i{fill:var(--mo-ink,#17130E);stroke:none}
 </style></defs>
 
 <symbol id="m-cable" viewBox="0 0 64 64">
@@ -255,14 +259,15 @@
     <span class="blob blob--pink"></span>
   </div>
   <div class="hero__inner">
-    <p class="hero__kicker reveal">KININARU MONO TECHO</p>
-    <h1 class="hero__title reveal">デザインで、<br />毎日を<span class="pop">アガる</span>。</h1>
-    <p class="hero__lead reveal">デザインで気分がアガる“良いモノ”を集める手帖。<br /><b>ファッション・インテリア・ガジェット</b>を、見た目重視で気ままにご紹介します。</p>
-    <div class="hero__cta reveal">
+    <p class="hero__kicker">KININARU MONO TECHO</p>
+    <!-- 句点はステッカー内に入れる。外に出すと約物が半角化して宙に浮いた丸に見えるため -->
+    <h1 class="hero__title">デザインで、<br />毎日を<span class="pop">アガる。</span></h1>
+    <p class="hero__lead">デザインで気分がアガる“良いモノ”を集める手帖。<br /><b>ファッション・インテリア・ガジェット</b>を、見た目重視で気ままにご紹介します。</p>
+    <div class="hero__cta">
       <a class="btn btn--primary" href="#select">セレクトを見る</a>
       <a class="btn btn--ghost" href="#channels">SNSをフォロー</a>
     </div>
-    <p class="hero__note reveal">※当サイトは一部アフィリエイト広告（楽天・Amazon等）を含みます。</p>
+    <p class="hero__note">※当サイトは一部アフィリエイト広告（楽天・Amazon等）を含みます。</p>
   </div>
 </section>
 
@@ -378,6 +383,6 @@
   <p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
 </footer>
 
-<script src="js/main.js?v=5" defer></script>
+<script src="js/main.js?v=9" defer></script>
 </body>
 </html>

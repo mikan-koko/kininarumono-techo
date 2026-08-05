@@ -112,11 +112,12 @@
     const no = String(i + 1).padStart(2, "0");
     const media = p.img
       ? `<div class="card__media"><img src="${p.img}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy"></div>`
-      : `<div class="card__media card__media--blank"><svg class="card__motif" viewBox="0 0 64 64" aria-hidden="true"><use href="#${p.motif}"></use></svg></div>`;
+      : `<div class="card__media card__media--blank"><svg class="card__motif" viewBox="0 0 64 64" aria-hidden="true">` +
+        `<use class="card__motif-ghost" href="#${p.motif}"></use><use href="#${p.motif}"></use></svg></div>`;
 
     el.innerHTML = `
       ${media}
-      <span class="card__no" aria-hidden="true">${no}</span>
+      <span class="card__no" aria-hidden="true">No.${no}</span>
       <div class="card__body">
         <div class="card__meta">
           <span class="card__cat">${meta.label}</span>
@@ -144,18 +145,36 @@
     track.innerHTML = group + group; // 2周分で継ぎ目なくループ
   }
 
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // ---- category filter ----
+  let vtBusy = false;
   const chips = document.querySelectorAll(".chip");
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      chips.forEach((c) => { c.classList.remove("is-active"); c.setAttribute("aria-selected","false"); });
-      chip.classList.add("is-active");
-      chip.setAttribute("aria-selected","true");
-      const cat = chip.dataset.cat;
-      document.querySelectorAll(".card").forEach((card) => {
-        const show = cat === "all" || card.dataset.cat === cat;
-        card.classList.toggle("is-hidden", !show);
-      });
+      const apply = () => {
+        chips.forEach((c) => { c.classList.remove("is-active"); c.setAttribute("aria-selected","false"); });
+        chip.classList.add("is-active");
+        chip.setAttribute("aria-selected","true");
+        const cat = chip.dataset.cat;
+        document.querySelectorAll(".card").forEach((card) => {
+          const show = cat === "all" || card.dataset.cat === cat;
+          card.classList.toggle("is-hidden", !show);
+        });
+      };
+      // 対応ブラウザでは絞り込みをクロスフェードさせる（未対応なら即時切替）。
+      // 実行中に次のクリックが来ると中断されて Promise が reject するため、
+      // 多重起動を防いだうえで拒否も握りつぶす。
+      if (document.startViewTransition && !reduce && !vtBusy) {
+        vtBusy = true;
+        const t = document.startViewTransition(apply);
+        const release = () => { vtBusy = false; };
+        t.finished.then(release, release);
+        t.ready.catch(() => {});
+        t.updateCallbackDone.catch(() => {});
+      } else {
+        apply();
+      }
     });
   });
 
@@ -175,9 +194,39 @@
     }));
   }
 
-  // ---- scroll reveal ----
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!reduce && "IntersectionObserver" in window) {
+  // ---- motion ----
+  // スクロール連動アニメが使えるブラウザではそちらに任せる（CSS側 html.sda）
+  const sda = !reduce && window.CSS && CSS.supports && CSS.supports("animation-timeline", "view()");
+  if (sda) document.documentElement.classList.add("sda");
+
+  if (!reduce) {
+    // マグネットボタン: ポインタに少し吸い寄せる
+    document.querySelectorAll(".btn").forEach((b) => {
+      b.addEventListener("pointermove", (e) => {
+        const r = b.getBoundingClientRect();
+        b.style.transform =
+          "translate(" + (e.clientX - r.left - r.width / 2) * 0.2 + "px," +
+          (e.clientY - r.top - r.height / 2) * 0.28 + "px)";
+      });
+      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+    });
+
+    // カードの傾き: --rx/--ry を渡すだけにして、CSS側の hover 移動と合成させる
+    document.querySelectorAll(".card").forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--ry", ((e.clientX - r.left) / r.width - 0.5) * 7 + "deg");
+        card.style.setProperty("--rx", (0.5 - (e.clientY - r.top) / r.height) * 7 + "deg");
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--rx");
+        card.style.removeProperty("--ry");
+      });
+    });
+  }
+
+  // ---- scroll reveal（スクロール連動が無いブラウザ向けのフォールバック） ----
+  if (!reduce && !sda && "IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
