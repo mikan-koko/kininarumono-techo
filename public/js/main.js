@@ -135,7 +135,8 @@
       </div>`;
     frag.appendChild(el);
   });
-  grid.appendChild(frag);
+  // 読みもの等の商品グリッドが無いページでも同じmain.jsを読むため、存在確認する
+  if (grid) grid.appendChild(frag);
 
   let expanded = false;
   const togglePicks = document.getElementById("togglePicks");

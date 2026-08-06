@@ -207,6 +207,32 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
 .card:hover{transform:translate(-4px,-4px);box-shadow:var(--pop-lg)}
 .card.is-hidden{display:none}
 .more-row{max-width:var(--maxw);margin:32px auto 0;display:flex;justify-content:center}
+/* ---------- ARTICLE（読みもの個別ページ） ---------- */
+.article{max-width:760px;margin:0 auto;padding:clamp(28px,5vw,56px) 0 clamp(40px,6vw,72px)}
+.article__crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--ink);border-radius:999px;padding:6px 15px;box-shadow:3px 4px 0 rgba(255,198,26,.7);transition:transform .16s var(--ease),box-shadow .16s var(--ease)}
+.article__crumb:hover{transform:translate(-2px,-2px);box-shadow:5px 6px 0 rgba(255,198,26,.7)}
+.article__topline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:26px 0 14px}
+.article__date{font-family:var(--latin);font-weight:700;font-size:11.5px;letter-spacing:.04em;color:var(--muted);background:var(--paper);border:1.5px solid var(--line);padding:3px 10px;border-radius:999px}
+.article h1{font-family:var(--jp);font-weight:900;font-size:clamp(26px,4.2vw,42px);line-height:1.32;letter-spacing:0;margin:0 0 20px}
+.article__lead{font-size:clamp(15.5px,1.7vw,17.5px);font-weight:700;line-height:1.95;color:var(--ink-2);margin:0 0 8px;padding:20px 22px;background:var(--paper-2);border:1.5px solid var(--ink);border-radius:16px;box-shadow:5px 6px 0 rgba(16,182,168,.5)}
+.article__body{margin-top:38px}
+.article__body h2{
+  font-family:var(--jp);font-weight:900;font-size:clamp(19px,2.4vw,25px);line-height:1.5;
+  margin:44px 0 16px;padding-left:16px;border-left:7px solid var(--ink);
+}
+.article__body h2:first-child{margin-top:0}
+.article__body p{margin:0 0 18px;font-size:16px;line-height:2.05;color:var(--ink-2)}
+.article__body strong{font-weight:900;color:var(--ink);background:linear-gradient(transparent 62%,rgba(255,198,26,.72) 62%)}
+.article__body ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:10px}
+.article__body li{position:relative;padding:12px 16px 12px 42px;font-size:15px;line-height:1.85;font-weight:700;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--ink);border-radius:12px}
+.article__body li::before{content:"";position:absolute;left:16px;top:19px;width:12px;height:12px;border-radius:3px;background:var(--yellow);border:1.5px solid var(--ink);transform:rotate(-8deg)}
+.article__note{margin-top:40px;padding:18px 20px;font-size:13px;line-height:1.9;color:var(--muted);background:var(--paper);border:1.5px dashed var(--line);border-radius:14px}
+.article__foot{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:560px){
+  .article__body li{padding:11px 14px 11px 38px}
+  .article__lead{padding:16px 17px}
+}
+
 /* ---------- TOPIC RAIL ---------- */
 /* ベース定義が無く、タグが区切りなし・素のリンクで連結表示されていたため追加。
    860px以下に .topic-rail{grid-template-columns:1fr} の上書きだけが残っていたので、
@@ -309,6 +335,17 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
 .read-card__points li{position:relative;padding-left:22px;color:var(--ink-2);font-weight:700;font-size:13.5px;line-height:1.65}
 .read-card__points li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:10px;border:2px solid var(--ink);border-radius:2px;background:var(--yellow);box-shadow:1px 2px 0 var(--ink);transform:rotate(-8deg)}
 .read-card__status{font-family:var(--latin);font-weight:700;font-size:12px;color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:4px 12px;border-radius:999px}
+/* 記事個別ページへの導線。見出し自体もリンクにしてタップ領域を広げている */
+.read-card h3 a{display:inline-block;text-decoration:none;background:linear-gradient(transparent 88%,var(--yellow) 88%);transition:background-size .2s ease}
+.read-card h3 a:hover{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+.read-card__more{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--jp);font-weight:900;font-size:13.5px;color:var(--ink);
+  background:var(--paper-2);border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;
+  box-shadow:4px 5px 0 rgba(255,198,26,.8);
+  transition:transform .16s var(--ease),box-shadow .16s var(--ease);
+}
+.read-card__more:hover{transform:translate(-2px,-2px);box-shadow:6px 7px 0 rgba(255,61,154,.55)}
 
 /* ---------- READ ---------- 図案 */
 .read-card{position:relative;overflow:hidden}
@@ -413,10 +450,12 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   .card--feature{grid-column:span 1}
   :root{--r-arch:52px}
   .hero__title .pop{box-shadow:4px 5px 0 var(--coral)}
-  /* 1カラムではカード右下のアフィリエイトCTA「楽天ROOMで見る」と固定ボタンが重なる。
-     実測でスクロール7地点中3地点、うち1地点が当該CTA上だった。左下へ逃がす。
-     カード左下は価格テキストで、操作要素は無い。 */
-  .back-top{right:auto;left:clamp(14px,4vw,20px);width:44px;height:44px;font-size:17px}
+  /* 固定ボタンは必ず何かに重なる。判断は「重なるか」ではなく「相手の何%を塞ぐか」で行うこと。
+     実測(スマホ・スクロール15地点の最大被覆率):
+       右下 = 15%（楽天ROOMで見る）… 85%は押せるので実害なし
+       左下 = 71%（スライダーのドット）… 小さい的をほぼ塞ぐため不可
+     よって右下のまま。サイズだけ44pxに詰めて被覆を減らしている。 */
+  .back-top{width:44px;height:44px;font-size:17px}
 }/* ---------- MOTION SAFETY ---------- */
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important}
