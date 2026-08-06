@@ -87,7 +87,25 @@ firebase.json      … Hosting設定（publicを配信、css/jsに max-age=86400
 
 ---
 
-## 4. デプロイ手順
+## 4. ローカル確認は Firebase エミュレータを使う
+
+```bash
+firebase emulators:start --only hosting     # http://127.0.0.1:5000
+```
+
+**`python -m http.server` を使わないこと。** `firebase.json` の `cleanUrls: true` を再現しないため、
+本番と正規URLが逆になる。実際にこれで記事ページのURL設計を間違えた。
+
+| | 拡張子なし `/read/xxx` | `.html` 付き |
+|---|---|---|
+| 本番 / エミュレータ | **200（正規）** | 301 |
+| `python -m http.server` | 404 | 200 |
+
+内部リンク・`og:url`・`canonical` はすべて**拡張子なし**で書く。
+
+---
+
+## 5. デプロイ手順
 
 ```bash
 # 検証用（本番に影響しない一時URL・自動失効）
@@ -106,7 +124,7 @@ firebase hosting:channel:delete design --force
 
 ---
 
-## 5. データモデル
+## 6. データモデル
 
 商品は `public/js/main.js` の `PICKS` 配列。現在32件（ガジェット4 / インテリア8 / 雑貨12 / ファッション8）。うち写真ありは3件のみ。
 
@@ -127,7 +145,7 @@ firebase hosting:channel:delete design --force
 
 ---
 
-## 6. 過去に踏んだ罠
+## 7. 過去に踏んだ罠
 
 同じ穴に落ちないこと。
 
@@ -166,7 +184,7 @@ node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf
 
 ---
 
-## 7. 現状と残タスク
+## 8. 現状と残タスク
 
 ### 完了
 - 商品32件、全リンク実在確認済み（商品ページに直接アクセスして200/301を確認）
@@ -187,7 +205,7 @@ node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf
 
 ---
 
-## 8. 作業の進め方
+## 9. 作業の進め方
 
 1. UIを触るなら **DESIGN.md を先に読む**
 2. セクション単位で進める。一度に全部作り変えない
@@ -200,7 +218,7 @@ node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf
 
 ---
 
-## 9. 2026-08-06 Codex作業後の引き継ぎメモ
+## 10. 2026-08-06 Codex作業後の引き継ぎメモ
 
 最新ローカル確認URL: `http://127.0.0.1:5178/?verify=21-final`。未デプロイ、未コミット。
 
