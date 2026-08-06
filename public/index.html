@@ -24,7 +24,7 @@
 <!-- 和文約物（「」・、。）の詰めを最適化 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
 <!-- ?v= はキャッシュ破棄用。css/js を変更したら必ず数字を上げること（firebase.json で max-age=86400） -->
-<link rel="stylesheet" href="css/style.css?v=31" />
+<link rel="stylesheet" href="css/style.css?v=33" />
 </head>
 <body>
 
@@ -221,6 +221,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
   <a href="#top" class="wordmark" aria-label="気になるモノ手帖 トップへ">
+    <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" decoding="async" />
     <span class="wordmark__name">気になるモノ手帖</span>
     <span class="wordmark__sub">MONO NOTE</span>
   </a>
@@ -331,8 +332,8 @@
 <section class="select" id="select">
   <div class="section-head">
     <span class="eyebrow">SELECT</span>
-    <h2>アイテムを、まずは6件から。</h2>
-    <p class="section-sub">新着順にまず6件だけ表示します。もっと見たいときは一覧を開いてください。価格・在庫は購入前にリンク先で確認を。</p>
+    <h2>最近、気になったもの。</h2>
+    <p class="section-sub">暮らしの景色を少し上げてくれるアイテムを、気ままに集めています。価格・在庫は変動するので、購入前にリンク先でご確認ください。</p>
   </div>
 
   <div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
@@ -386,6 +387,20 @@
   </div>
 </section>
 
+<section aria-label="このサイトをシェア">
+  <div style="max-width:var(--maxw);margin:0 auto">
+    <div class="share" data-share>
+      <span class="share__label">SHARE</span>
+      <button class="share__btn" type="button" data-share-native hidden>シェアする</button>
+      <a class="share__btn" data-share-x target="_blank" rel="noopener">X</a>
+      <a class="share__btn" data-share-line target="_blank" rel="noopener">LINE</a>
+      <a class="share__btn" data-share-fb target="_blank" rel="noopener">Facebook</a>
+      <a class="share__btn" data-share-pin target="_blank" rel="noopener">Pinterest</a>
+      <button class="share__btn" type="button" data-share-copy>リンクをコピー</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CHANNELS ============ -->
 <section class="channels" id="channels">
   <div class="section-head section-head--light">
@@ -398,12 +413,17 @@
       <span class="channel__desc">気になるモノを日々コレクション</span>
       <span class="channel__go">開く →</span>
     </a>
-    <a class="channel" href="https://jp.pinterest.com/chahanset/" target="_blank" rel="noopener" style="--c:#E60023">
+    <a class="channel" href="https://www.instagram.com/kininarumonote/" target="_blank" rel="noopener" style="--c:#C13584">
+      <span class="channel__name">Instagram</span>
+      <span class="channel__desc">写真で見る、気になるモノ</span>
+      <span class="channel__go">開く →</span>
+    </a>
+    <a class="channel" href="https://pin.it/3uk3gKZUp" target="_blank" rel="noopener" style="--c:#E60023">
       <span class="channel__name">Pinterest</span>
       <span class="channel__desc">クリーンな画像でボード別に保存</span>
       <span class="channel__go">開く →</span>
     </a>
-    <a class="channel" href="https://x.com/odenthecurry" target="_blank" rel="noopener" style="--c:#111111">
+    <a class="channel" href="https://x.com/kininarumonote" target="_blank" rel="noopener" style="--c:#111111">
       <span class="channel__name">X</span>
       <span class="channel__desc">ひとことと画像で、ゆるく</span>
       <span class="channel__go">開く →</span>
@@ -416,6 +436,7 @@
 <footer class="site-footer" id="footer">
   <div class="footer__brand">
     <span class="wordmark wordmark--footer">
+      <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" loading="lazy" decoding="async" />
       <span class="wordmark__name">気になるモノ手帖</span>
       <span class="wordmark__sub">MONO NOTE</span>
     </span>
@@ -431,6 +452,6 @@
 
 <button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
 
-<script src="js/main.js?v=31" defer></script>
+<script src="js/main.js?v=33" defer></script>
 </body>
 </html>

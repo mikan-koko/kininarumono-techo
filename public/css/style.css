@@ -68,12 +68,23 @@ h3{font-family:var(--jp);font-weight:700;line-height:1.35;margin:0}
   display:flex;align-items:center;gap:20px;
   padding:12px clamp(16px,4vw,40px);
   background:rgba(255,253,247,.86);backdrop-filter:blur(14px) saturate(1.2);
-  border-bottom:1.5px solid rgba(18,18,18,.72);
+}
+/* 黒い1本線をやめ、カテゴリ4色のバーで仕切る。線ではなくブランドの帯として見せる。
+   グラデーションではなく色面の分割にしているのは DESIGN.md の禁止事項に合わせるため。 */
+.site-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;pointer-events:none;
+  background:linear-gradient(90deg,
+    var(--purple) 0 25%,var(--teal) 25% 50%,var(--coral) 50% 75%,var(--amber) 75% 100%);
 }
 .wordmark{
-  display:grid;grid-template-columns:auto auto;align-items:end;column-gap:10px;row-gap:0;
+  display:grid;grid-template-columns:auto auto auto;align-items:end;column-gap:10px;row-gap:0;
   color:var(--ink);line-height:1;text-decoration:none;
 }
+.wordmark__mark{width:clamp(30px,3.4vw,38px);height:auto;align-self:center;border-radius:23%;flex:none}
+/* フッターは幅いっぱいのブロック内に置かれるため、auto列が引き伸ばされて
+   マーク・名前・サブが左右に散らばる。内容幅に収める。 */
+.wordmark--footer{width:fit-content;max-width:100%}
+.wordmark--footer .wordmark__mark{width:34px}
 .wordmark__name{
   font-family:var(--jp);font-weight:900;font-size:clamp(18px,2vw,23px);letter-spacing:.035em;
   padding:0;background:none;border:0;text-shadow:.035em .035em 0 rgba(255,61,154,.18);
@@ -252,6 +263,36 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   .article__lead{padding:16px 17px}
 }
 
+/* 最新掲載分にだけ付く。全件が同じ日付のときは付かない（main.js の isNew 参照） */
+.card__new{
+  font-family:var(--latin);font-weight:700;font-size:10.5px;letter-spacing:.08em;
+  color:#fff;background:var(--coral-deep);border:1.5px solid var(--ink);
+  padding:3px 9px;border-radius:999px;
+}
+
+/* ---------- SHARE（シェアボタン） ----------
+   Instagram は Web から投稿文を渡す仕組みが無いためボタンを作れない。
+   代わりに、対応端末では OS の共有シート(navigator.share)を出す「シェア」を先頭に置き、
+   そこから Instagram を選べるようにしている。 */
+.share{
+  display:flex;align-items:center;flex-wrap:wrap;gap:9px;
+  margin-top:36px;padding:16px 18px;
+  background:var(--paper-2);border:1.5px solid var(--ink);border-radius:18px;
+  box-shadow:5px 6px 0 rgba(255,61,154,.42);
+}
+.share__label{font-family:var(--latin);font-weight:700;font-size:11.5px;letter-spacing:.14em;margin-right:4px}
+.share__btn{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--jp);font-weight:900;font-size:12.5px;color:var(--ink);
+  background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;
+  padding:7px 14px;cursor:pointer;white-space:nowrap;
+  transition:transform .16s var(--ease),box-shadow .16s var(--ease),background .16s ease;
+}
+.share__btn:hover{transform:translate(-2px,-2px);box-shadow:3px 4px 0 var(--ink);background:var(--yellow)}
+.share__btn[hidden]{display:none}
+.share__btn.is-done{background:var(--teal);color:#fff}
+@media(max-width:560px){ .share{padding:14px} .share__btn{font-size:12px;padding:7px 12px} }
+
 /* ---------- TOPIC RAIL ---------- */
 /* ベース定義が無く、タグが区切りなし・素のリンクで連結表示されていたため追加。
    860px以下に .topic-rail{grid-template-columns:1fr} の上書きだけが残っていたので、
@@ -381,7 +422,7 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   background-image:radial-gradient(circle 13px at 13px 13px,var(--ink) 13px,transparent 13.5px);
   background-size:26px 26px;background-repeat:repeat-x;
 }
-.channel-cards{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.channel-cards{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .channel{
   background:var(--paper-2);color:var(--ink);border:2.5px solid var(--paper-2);border-radius:var(--r-card);
   padding:26px;display:flex;flex-direction:column;gap:6px;
@@ -449,7 +490,9 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
 }
 @media(max-width:560px){
   .site-header{gap:12px}
-  .wordmark{grid-template-columns:1fr;row-gap:2px}
+  .wordmark{grid-template-columns:auto 1fr;row-gap:2px;align-items:center}
+  .wordmark__mark{grid-row:1/3}
+  .wordmark__name,.wordmark__sub{grid-column:2}
   .wordmark__sub{font-size:9px;transform:none}
   .hero{min-height:620px;align-items:end;padding-top:28px;padding-bottom:34px}
   .hero::before{width:70vw;height:220px;left:auto;right:-24vw;top:88px;opacity:.64}

@@ -23,12 +23,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
 <!-- ?v= はキャッシュ破棄用。css/js を変更したら全ページで数字を上げること -->
-<link rel="stylesheet" href="/css/style.css?v=31" />
+<link rel="stylesheet" href="/css/style.css?v=33" />
 </head>
 <body>
 
 <header class="site-header" id="top">
   <a href="/" class="wordmark" aria-label="気になるモノ手帖 トップへ">
+    <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" decoding="async" />
     <span class="wordmark__name">気になるモノ手帖</span>
     <span class="wordmark__sub">MONO NOTE</span>
   </a>
@@ -90,6 +91,17 @@
       <p>3つとも「はい」なら、たぶん長く付き合えます。ひとつでも詰まるなら、それは値段の問題ではなく、まだ自分の暮らしと結びついていないというサインです。</p>
     </div>
 
+
+    <div class="share" data-share>
+      <span class="share__label">SHARE</span>
+      <button class="share__btn" type="button" data-share-native hidden>シェアする</button>
+      <a class="share__btn" data-share-x target="_blank" rel="noopener">X</a>
+      <a class="share__btn" data-share-line target="_blank" rel="noopener">LINE</a>
+      <a class="share__btn" data-share-fb target="_blank" rel="noopener">Facebook</a>
+      <a class="share__btn" data-share-pin target="_blank" rel="noopener">Pinterest</a>
+      <button class="share__btn" type="button" data-share-copy>リンクをコピー</button>
+    </div>
+
     <p class="article__note">この記事は編集メモであり、商品へのアフィリエイトリンクは含んでいません。実際のアイテムは<a href="/#select">ピック一覧</a>からご覧ください。価格・在庫は変動するため、購入前にリンク先でご確認ください。</p>
 
     <div class="article__foot">
@@ -103,6 +115,7 @@
 <footer class="site-footer" id="footer">
   <div class="footer__brand">
     <span class="wordmark wordmark--footer">
+      <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" loading="lazy" decoding="async" />
       <span class="wordmark__name">気になるモノ手帖</span>
       <span class="wordmark__sub">MONO NOTE</span>
     </span>
@@ -118,6 +131,6 @@
 
 <button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
 
-<script src="/js/main.js?v=31" defer></script>
+<script src="/js/main.js?v=33" defer></script>
 </body>
 </html>
