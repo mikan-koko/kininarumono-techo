@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>気になるモノ手帖｜デザインでアガる雑貨・インテリア・ガジェット</title>
-<meta name="description" content="デザインで気分がアガる良いモノを集める手帖。ファッション・インテリア・ガジェットを、見た目重視で気ままにご紹介。" />
+<meta name="description" content="定番からエッジのあるものまで。日常に馴染むデザインで、生活を少しアゲるアイテムキュレーション。" />
 <meta property="og:title" content="気になるモノ手帖｜デザインでアガる雑貨・インテリア・ガジェット" />
-<meta property="og:description" content="デザインで気分がアガる良いモノを集める手帖。見た目重視で気ままにご紹介。" />
+<meta property="og:description" content="日常に馴染むデザインで、生活を少しアゲるアイテムキュレーション。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kininarumono-techo.web.app/" />
 <meta property="og:site_name" content="気になるモノ手帖" />
@@ -16,15 +16,15 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="気になるモノ手帖｜デザインで、毎日をアガる。" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#5B2BEB" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B2BEB'/%3E%3Ccircle cx='11' cy='12' r='4' fill='%23FFC61A'/%3E%3Ccircle cx='21' cy='13' r='4' fill='%23FF4B3E'/%3E%3Crect x='8' y='19' width='16' height='5' rx='2.5' fill='%2310B6A8'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#0A57FF" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A57FF'/%3E%3Cpath d='M6 8h20v4H6zM6 15h14v4H6zM6 22h20v3H6z' fill='%23FFFDF7'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <!-- 和文約物（「」・、。）の詰めを最適化 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
 <!-- ?v= はキャッシュ破棄用。css/js を変更したら必ず数字を上げること（firebase.json で max-age=86400） -->
-<link rel="stylesheet" href="css/style.css?v=9" />
+<link rel="stylesheet" href="css/style.css?v=25" />
 </head>
 <body>
 
@@ -221,14 +221,12 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
   <a href="#top" class="wordmark" aria-label="気になるモノ手帖 トップへ">
-    <span class="wordmark__mark" aria-hidden="true">
-      <span class="dot dot--y"></span><span class="dot dot--r"></span><span class="dot dot--t"></span>
-    </span>
-    気になるモノ手帖
+    <span class="wordmark__name">気になるモノ手帖</span>
+    <span class="wordmark__sub">MONO NOTE</span>
   </a>
   <nav class="site-nav" aria-label="メインナビ">
-    <a href="#about">コンセプト</a>
-    <a href="#select">セレクト</a>
+    <a href="#about">ムード</a>
+    <a href="#select">ピック</a>
     <a href="#read">読みもの</a>
     <a href="#channels">チャンネル</a>
   </nav>
@@ -236,63 +234,96 @@
   <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 <div class="mobile-menu" id="mobileMenu" hidden>
-  <a href="#about">コンセプト</a>
-  <a href="#select">セレクト</a>
+  <a href="#about">ムード</a>
+  <a href="#select">ピック</a>
   <a href="#read">読みもの</a>
   <a href="#channels">チャンネル</a>
   <a href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener">楽天ROOM →</a>
 </div>
 
-<!-- ============ BRAND MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track" id="marqueeTrack"><!-- injected by js --></div>
-</div>
 
 <main>
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero__blobs" aria-hidden="true">
-    <span class="blob blob--purple"></span>
-    <span class="blob blob--teal"></span>
-    <span class="blob blob--coral"></span>
-    <span class="blob blob--amber"></span>
-    <span class="blob blob--pink"></span>
-  </div>
+  <img class="hero__bg" src="images/hero-pop-props.webp" alt="カラフルな雑貨、インテリア小物、ファブリック、日用品を並べたプロップスタイリング" fetchpriority="high" />
+  <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="hero__kicker">KININARU MONO TECHO</p>
-    <!-- 句点はステッカー内に入れる。外に出すと約物が半角化して宙に浮いた丸に見えるため -->
-    <h1 class="hero__title">デザインで、<br />毎日を<span class="pop">アガる。</span></h1>
-    <p class="hero__lead">デザインで気分がアガる“良いモノ”を集める手帖。<br /><b>ファッション・インテリア・ガジェット</b>を、見た目重視で気ままにご紹介します。</p>
-    <div class="hero__cta">
-      <a class="btn btn--primary" href="#select">セレクトを見る</a>
-      <a class="btn btn--ghost" href="#channels">SNSをフォロー</a>
+    <div class="hero__copy">
+      <p class="hero__kicker">ITEM CURATION / DAILY DESIGN</p>
+      <h1 class="hero__title">日常に馴染んで、<br />デザインで<span class="pop">アガる。</span></h1>
+      <p class="hero__lead">定番からエッジのあるものまで、時にラグジュアリーに。<br /><b>暮らしの景色を少し上げてくれるアイテム</b>を横断して集めます。</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#select">ピックを見る</a>
+        <a class="btn btn--ghost" href="#about">ムードで探す</a>
+      </div>
+      <div class="hero__tags" aria-label="扱うジャンル"><span>STANDARD</span><span>EDGE</span><span>LUXURY</span><span>ROOM</span><span>DAILY</span></div>
     </div>
-    <p class="hero__note">※当サイトは一部アフィリエイト広告（楽天・Amazon等）を含みます。</p>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="section-head">
-    <span class="eyebrow">CONCEPT</span>
-    <h2>「気になる」を、集めておく手帖。</h2>
+<!-- ============ MOOD / DISCOVER ============ -->
+<section class="about mood" id="about">
+  <div class="mood-showcase reveal" data-mood-slider>
+    <div class="mood-story">
+      <article class="mood-slide is-active" data-slide="0">
+        <div class="mood-slide__text">
+          <span class="eyebrow">MOOD BOARD</span>
+          <h2>気分に合う、ちょうどいい良品を。</h2>
+          <p>定番、遊び、ラグジュアリー、実用性。いまの気分と生活の景色に合うものを、ムードからも探せるようにしました。</p>
+        </div>
+        <img class="mood-slide__art" src="images/slide-mood-board.webp" alt="ランプ、バッグ、植物、カップなどを抽象的に並べたムードボードの線画" loading="lazy" />
+      </article>
+      <article class="mood-slide" data-slide="1" aria-hidden="true">
+        <div class="mood-slide__text">
+          <span class="eyebrow">EDITOR'S FILTER</span>
+          <h2>ちょうどよく馴染んで、ちゃんと気分が上がる。</h2>
+          <p>長く使える定番、少しだけ攻めた形、特別感のある質感。日常に置いたときの景色まで想像して、雑貨・インテリア・ガジェットを横断します。</p>
+        </div>
+        <img class="mood-slide__art" src="images/slide-editors-filter.webp" alt="複数のアイテムカードを選ぶ抽象的な編集フィルターの線画" loading="lazy" />
+      </article>
+      <article class="mood-slide" data-slide="2" aria-hidden="true">
+        <div class="mood-slide__text">
+          <span class="eyebrow">HOW TO PICK</span>
+          <h2>色、素材、置き場所から選ぶ。</h2>
+          <p>写真に映えるだけでなく、毎日触ったときに気分が続くか。ファッション、雑貨、インテリア、ガジェットを同じ目線で見ます。</p>
+        </div>
+        <img class="mood-slide__art" src="images/slide-how-to-pick.webp" alt="色、素材、置き場所を整理する抽象的な選び方の線画" loading="lazy" />
+      </article>
+      <div class="mood-controls" aria-label="説明スライド">
+        <button type="button" class="is-active" data-mood-dot="0" aria-label="MOOD BOARDを表示"></button>
+        <button type="button" data-mood-dot="1" aria-label="EDITOR'S FILTERを表示"></button>
+        <button type="button" data-mood-dot="2" aria-label="HOW TO PICKを表示"></button>
+      </div>
+    </div>
   </div>
-  <div class="pillars">
-    <article class="pillar reveal">
-      <span class="pillar__num" style="--c:var(--purple-deep)">01</span>
-      <h3>見た目重視で選ぶ</h3>
-      <p>スペックより、まず“デザインでアガるか”。眺めていて気分が上がる佇まいのモノだけを拾います。</p>
-    </article>
-    <article class="pillar reveal">
-      <span class="pillar__num" style="--c:var(--teal-deep)">02</span>
-      <h3>気ままに集める</h3>
-      <p>雑貨・インテリア・ガジェット・ファッションまでジャンルを横断。カテゴリの垣根なく、いいと思ったものを。</p>
-    </article>
-    <article class="pillar reveal">
-      <span class="pillar__num" style="--c:var(--coral-deep)">03</span>
-      <h3>正直にご紹介</h3>
-      <p>良いところも、ちょっと気になるところも素直に。押し売りはしません。気になったらのぞいてみてください。</p>
-    </article>
+  <div class="mood-tiles" aria-label="ムード別の探し方">
+    <a class="mood-tile reveal" href="#select" style="--c:var(--coral)">
+      <img src="images/mood-standard.webp" alt="定番を選び直すための明るいデザイン小物とデスクまわり" loading="lazy" />
+      <span># STANDARD</span><b>定番を選び直す</b>
+    </a>
+    <a class="mood-tile reveal" href="#select" style="--c:var(--teal)">
+      <img src="images/mood-room.webp" alt="部屋に馴染むランプ、花器、テキスタイルの明るいスタイリング" loading="lazy" />
+      <span># ROOM</span><b>部屋に馴染ませる</b>
+    </a>
+    <a class="mood-tile reveal" href="#select" style="--c:var(--purple)">
+      <img src="images/mood-edge.webp" alt="少しエッジのあるカラフルなデスクアクセサリーとガジェット" loading="lazy" />
+      <span># EDGE</span><b>少しだけ攻める</b>
+    </a>
+    <a class="mood-tile reveal" href="#read" style="--c:var(--amber)">
+      <img src="images/mood-luxury.webp" alt="質感で気分を上げる明るいファブリック、陶器、金属トレイ" loading="lazy" />
+      <span># LUXURY</span><b>質感で上げる</b>
+    </a>
+  </div>
+</section>
+
+<!-- ============ TOPIC RAIL ============ -->
+<section class="topic-rail" aria-label="キーワードで探す">
+  <div class="topic-rail__head">
+    <span>CURATION TAGS</span>
+    <b>タグで拾う</b>
+  </div>
+  <div class="topic-rail__track">
+    <a href="#select">#STANDARD</a><a href="#select">#EDGE</a><a href="#select">#LUXURY</a><a href="#select">#ROOM</a><a href="#select">#GADGET</a><a href="#read">#HOW TO PICK</a>
   </div>
 </section>
 
@@ -300,8 +331,8 @@
 <section class="select" id="select">
   <div class="section-head">
     <span class="eyebrow">SELECT</span>
-    <h2>気になるモノ、セレクト。</h2>
-    <p class="section-sub">SNS（楽天ROOM・Pinterest・X）でも紹介しているピックを集めました。価格・在庫は変動します。</p>
+    <h2>アイテムを、まずは6件から。</h2>
+    <p class="section-sub">新着順にまず6件だけ表示します。もっと見たいときは一覧を開いてください。価格・在庫は購入前にリンク先で確認を。</p>
   </div>
 
   <div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
@@ -313,6 +344,7 @@
   </div>
 
   <div class="grid" id="pickGrid"><!-- cards injected by js --></div>
+  <div class="more-row"><button class="more-btn" id="togglePicks" type="button" aria-expanded="false">もっと見る</button></div>
 </section>
 
 <!-- ============ READ ============ -->
@@ -320,22 +352,36 @@
   <div class="section-head">
     <span class="eyebrow">READ</span>
     <h2>読みもの</h2>
-    <p class="section-sub">実際に良かったモノや選び方を、じっくり。準備中のものもあります。</p>
+    <p class="section-sub">買う前に少し立ち止まって、見た目・使い心地・置き場所を整理するメモ。アフィリエイトリンクなしの独自コンテンツです。</p>
   </div>
   <div class="read-list">
-    <article class="read-card reveal">
-      <svg class="read-card__motif" viewBox="0 0 64 64" aria-hidden="true"><use href="#m-book"></use></svg>
-      <span class="tag" style="--c:var(--pink-deep)">比較</span>
-      <h3>ニトリ・HAY・ART OF BLACK 徹底比較</h3>
-      <p>北欧モダンに「どこまでお金をかける？」で選ぶ3ブランド。デザイン性・価格・実用性で整理します。</p>
-      <span class="read-card__status">準備中</span>
+    <article class="read-card read-card--essay reveal">
+      <div class="read-card__topline">
+        <span class="tag" style="--c:var(--pink-deep)">選び方</span>
+        <span class="read-card__date">2026.08.05</span>
+      </div>
+      <h3>部屋と服のあいだで選ぶ、デザイン雑貨の見方</h3>
+      <p>雑貨はインテリアでもあり、持ち歩けばファッションにもなります。かわいいだけ、便利なだけで終わらせず、部屋・服・写真にどう映るかまで見て選びます。</p>
+      <ul class="read-card__points">
+        <li>部屋に置いたとき、背景まで込みで気分が上がるか</li>
+        <li>服やバッグと並べたとき、ちゃんと自分のノリになるか</li>
+        <li>流行っている理由と、自分が使う理由が両方あるか</li>
+      </ul>
+      <span class="read-card__status">公開中</span>
     </article>
-    <article class="read-card read-card--ghost reveal">
-      <svg class="read-card__motif" viewBox="0 0 64 64" aria-hidden="true"><use href="#m-book"></use></svg>
-      <span class="tag" style="--c:var(--muted)">近日</span>
-      <h3>デスクがアガる、デザインガジェット選び</h3>
-      <p>充電まわり・キーボード・スタンド。机の上を主役にする小さな投資。</p>
-      <span class="read-card__status">近日公開</span>
+    <article class="read-card read-card--essay reveal">
+      <div class="read-card__topline">
+        <span class="tag" style="--c:var(--teal-deep)">デスク</span>
+        <span class="read-card__date">2026.08.05</span>
+      </div>
+      <h3>トレンド小物を子どもっぽく見せないルール</h3>
+      <p>ビビッドな色、変わった形、強い柄。楽しい小物ほど、合わせ方で印象が変わります。ポップだけど雑に見えない、日常に置けるエッジの作り方を整理します。</p>
+      <ul class="read-card__points">
+        <li>強い色は1点だけ主役にして、ほかは黒・白・生成りで受ける</li>
+        <li>ロゴ感より、形・素材・配色で遊ぶ</li>
+        <li>SNS映えだけでなく、毎日触るテンションまで見る</li>
+      </ul>
+      <span class="read-card__status">公開中</span>
     </article>
   </div>
 </section>
@@ -370,8 +416,8 @@
 <footer class="site-footer" id="footer">
   <div class="footer__brand">
     <span class="wordmark wordmark--footer">
-      <span class="wordmark__mark" aria-hidden="true"><span class="dot dot--y"></span><span class="dot dot--r"></span><span class="dot dot--t"></span></span>
-      気になるモノ手帖
+      <span class="wordmark__name">気になるモノ手帖</span>
+      <span class="wordmark__sub">MONO NOTE</span>
     </span>
     <p>デザインでアガる雑貨・インテリア・ガジェット。</p>
   </div>
@@ -383,6 +429,8 @@
   <p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
 </footer>
 
-<script src="js/main.js?v=9" defer></script>
+<button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
+
+<script src="js/main.js?v=25" defer></script>
 </body>
 </html>

@@ -87,64 +87,92 @@
       blurb:"雲の上のようと言われるクラウドソール。すっきりした見た目で、街履きにも軽い運動にも。" }
   ];
 
+  const POSTED_ON = "2026.08.05";
+  const INITIAL_VISIBLE = 6;
+
   // ---- render cards ----
   const grid = document.getElementById("pickGrid");
   const esc = (s) => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
-  // 価格帯のめやす。price文字列の先頭の数値から機械的に決める（¥3千未満/2万未満/それ以上）
   const band = (price) => {
-    const n = parseInt(String(price).replace(/[^0-9]/g, ""), 10);
-    if (!n) return null;
-    return n < 3000 ? "¥" : n < 20000 ? "¥¥" : "¥¥¥";
+    if (!price) return "";
+    const n = Number(price.replace(/[^0-9]/g, ""));
+    if (!n) return "";
+    if (n < 2500) return "UNDER 2.5K";
+    if (n < 7000) return "2.5K-7K";
+    return "7K+";
   };
-  const frag = document.createDocumentFragment();
 
-  PICKS.forEach((p, i) => {
+  const frag = document.createDocumentFragment();
+  PICKS.forEach((p) => {
     const meta = CAT[p.cat];
     const el = document.createElement("article");
-    // 写真ありは2カラム占有して誌面にリズムを出す
     el.className = "card reveal" + (p.img ? " card--feature" : "");
     el.dataset.cat = p.cat;
     el.style.setProperty("--c", meta.cvar);
     el.style.setProperty("--c-deep", meta.deep);
     el.style.setProperty("--c-soft", meta.soft);
 
-    const no = String(i + 1).padStart(2, "0");
     const media = p.img
       ? `<div class="card__media"><img src="${p.img}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy"></div>`
-      : `<div class="card__media card__media--blank"><svg class="card__motif" viewBox="0 0 64 64" aria-hidden="true">` +
-        `<use class="card__motif-ghost" href="#${p.motif}"></use><use href="#${p.motif}"></use></svg></div>`;
+      : `<div class="card__media card__media--blank" aria-hidden="true"><span class="card__visual-word">${meta.label}</span><span class="card__visual-shape card__visual-shape--a"></span><span class="card__visual-shape card__visual-shape--b"></span></div>`;
 
     el.innerHTML = `
       ${media}
-      <span class="card__no" aria-hidden="true">No.${no}</span>
       <div class="card__body">
         <div class="card__meta">
           <span class="card__cat">${meta.label}</span>
+          <span class="card__date">${POSTED_ON}</span>
           ${band(p.price) ? `<span class="card__band" title="価格帯のめやす">${band(p.price)}</span>` : ""}
         </div>
         <span class="card__brand">${esc(p.brand)}</span>
         <h3 class="card__name">${esc(p.name)}</h3>
-        <p class="card__blurb">${esc(p.blurb)}</p>
+        <p class="card__blurb">${esc(p.blurb || p.desc || "")}</p>
         <div class="card__foot">
           <span class="card__price">${esc(p.price)}</span>
-          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天で見る</a>
+          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天ROOMで見る</a>
         </div>
       </div>`;
     frag.appendChild(el);
   });
   grid.appendChild(frag);
 
-  // ---- brand marquee（掲載ブランドを流す帯・PICKSと自動同期） ----
-  const track = document.getElementById("marqueeTrack");
-  if (track) {
-    const brands = [...new Set(PICKS.map((p) => p.brand))];
-    const group = `<div class="marquee__group">${brands
-      .map((b) => `<span class="marquee__item">${esc(b)}</span>`)
-      .join("")}</div>`;
-    track.innerHTML = group + group; // 2周分で継ぎ目なくループ
-  }
+  let expanded = false;
+  const togglePicks = document.getElementById("togglePicks");
+  const applyLimit = () => {
+    const activeChip = document.querySelector(".chip.is-active");
+    const cat = activeChip?.dataset.cat || "all";
+    let visibleIndex = 0;
 
+    document.querySelectorAll(".card").forEach((card) => {
+      const matches = cat === "all" || card.dataset.cat === cat;
+      if (!matches) {
+        card.classList.add("is-hidden");
+        return;
+      }
+      const collapse = !expanded && visibleIndex >= INITIAL_VISIBLE;
+      card.classList.toggle("is-hidden", collapse);
+      visibleIndex += 1;
+    });
+
+    if (togglePicks) {
+      const canExpand = visibleIndex > INITIAL_VISIBLE;
+      togglePicks.hidden = !canExpand;
+      togglePicks.textContent = expanded ? "閉じる" : "もっと見る";
+      togglePicks.setAttribute("aria-expanded", String(expanded));
+    }
+  };
+
+  if (togglePicks) {
+    togglePicks.addEventListener("click", () => {
+      expanded = !expanded;
+      applyLimit();
+      if (!expanded) {
+        document.getElementById("select")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+  applyLimit();
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---- category filter ----
@@ -156,11 +184,8 @@
         chips.forEach((c) => { c.classList.remove("is-active"); c.setAttribute("aria-selected","false"); });
         chip.classList.add("is-active");
         chip.setAttribute("aria-selected","true");
-        const cat = chip.dataset.cat;
-        document.querySelectorAll(".card").forEach((card) => {
-          const show = cat === "all" || card.dataset.cat === cat;
-          card.classList.toggle("is-hidden", !show);
-        });
+        expanded = false;
+        applyLimit();
       };
       // 対応ブラウザでは絞り込みをクロスフェードさせる（未対応なら即時切替）。
       // 実行中に次のクリックが来ると中断されて Promise が reject するため、
@@ -178,6 +203,50 @@
     });
   });
 
+
+  // ---- mood story slideshow ----
+  const moodSlider = document.querySelector("[data-mood-slider]");
+  if (moodSlider) {
+    const slides = [...moodSlider.querySelectorAll(".mood-slide")];
+    const dots = [...moodSlider.querySelectorAll("[data-mood-dot]")];
+    let currentSlide = 0;
+    let moodTimer = null;
+
+    const showMood = (index) => {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === currentSlide;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === currentSlide);
+      });
+    };
+
+    const startMood = () => {
+      if (reduce || slides.length < 2 || moodTimer) return;
+      moodTimer = window.setInterval(() => showMood(currentSlide + 1), 4600);
+    };
+
+    const stopMood = () => {
+      if (!moodTimer) return;
+      window.clearInterval(moodTimer);
+      moodTimer = null;
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        stopMood();
+        showMood(Number(dot.dataset.moodDot || 0));
+        startMood();
+      });
+    });
+    moodSlider.addEventListener("pointerenter", stopMood);
+    moodSlider.addEventListener("pointerleave", startMood);
+    showMood(0);
+    startMood();
+  }
   // ---- mobile menu ----
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.getElementById("mobileMenu");
@@ -225,6 +294,22 @@
     });
   }
 
+  // ---- editorial float: ムード面の大きいカードを軽く追従させる ----
+  if (!reduce) {
+    document.querySelectorAll("[data-float]").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--fx", ((e.clientX - r.left) / r.width - 0.5) * 10 + "px");
+        el.style.setProperty("--fy", ((e.clientY - r.top) / r.height - 0.5) * 10 + "px");
+        el.style.transform = "translate(var(--fx), var(--fy))";
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.transform = "";
+        el.style.removeProperty("--fx");
+        el.style.removeProperty("--fy");
+      });
+    });
+  }
   // ---- scroll reveal（スクロール連動が無いブラウザ向けのフォールバック） ----
   if (!reduce && !sda && "IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
@@ -235,6 +320,19 @@
     document.querySelectorAll(".reveal").forEach((n) => n.classList.add("in"));
   }
 
+
+  // ---- back to top ----
+  const backTop = document.getElementById("backTop");
+  if (backTop) {
+    const toggleBackTop = () => {
+      backTop.classList.toggle("is-visible", window.scrollY > 520);
+    };
+    backTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+    window.addEventListener("scroll", toggleBackTop, { passive: true });
+    toggleBackTop();
+  }
   // ---- year ----
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

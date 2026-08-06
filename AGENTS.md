@@ -146,6 +146,24 @@ firebase hosting:channel:delete design --force
 **削除は検証の後**
 スクリプトの挿入が失敗しているのに気づかず元ファイルを消して復旧に手間をかけた。`grep -c` などで結果を確認してから消す。
 
+**HTMLのclassだけ残ってCSS定義が消える**
+大きなCSS書き換えのあと、`.btn` `.btn--primary` `.btn--ghost` と `.topic-rail__track` の定義が失われ、
+ヒーローの主要CTAとタグ群が「素のテキスト」で表示されていた。メディアクエリ内の上書きだけが
+残っていたため気づきにくい。CSSを大きく触ったら次を必ず実行して照合すること。
+
+```bash
+node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf8'),c=fs.readFileSync('public/css/style.css','utf8');const u=new Set();[...h.matchAll(/class=\"([^\"]+)\"/g)].forEach(m=>m[1].trim().split(/\s+/).forEach(x=>x&&u.add(x)));const e=s=>s.replace(/[-\/\\^\$*+?.()|[\]{}]/g,'\\\$&');console.log([...u].filter(x=>!(new RegExp('\\\\.'+e(x)+'(?![\\\\w-])')).test(c)))"
+```
+※ `mo-b` `mo-a` `mo-i` はスプライト内 `style` で定義、`select` `read` `mood` はid/別名で当てているため、この4+3件は正常。
+
+**`body{overflow-x:hidden}` は「はみ出し」を隠す**
+`documentElement.scrollWidth === innerWidth` を見ても、要素が画面外にはみ出して切れている状態は検出できない。
+各要素の `getBoundingClientRect().right > innerWidth` を個別に見ること。
+
+**固定ボタンはアフィリエイトCTAに重なる**
+`.back-top` はスマホでカード右下の「楽天ROOMで見る」と重なっていた。収益リンクが押せなくなるので、
+固定要素を足したら複数のスクロール位置で `a,button` との矩形交差を実測する。現在はスマホのみ左下に逃がしている。
+
 ---
 
 ## 7. 現状と残タスク
@@ -179,3 +197,41 @@ firebase hosting:channel:delete design --force
 6. 本番デプロイ → 実URLを叩いて反映確認 → コミット＆push → プレビューチャンネル削除
 
 コミットメッセージは日本語。何を直したかだけでなく**なぜそうしたか**を書く（既存のログを参照）。
+
+---
+
+## 9. 2026-08-06 Codex作業後の引き継ぎメモ
+
+最新ローカル確認URL: `http://127.0.0.1:5178/?verify=21-final`。未デプロイ、未コミット。
+
+この作業で大きく変わったこと:
+- トップを `ITEM CURATION / DAILY DESIGN` の大きな背景ヒーローに再構築。
+- `MOOD BOARD` / `EDITOR'S FILTER` / `HOW TO PICK` をスライドショー化。各スライドの生成イラストは背景として組み込み済み。
+- 商品カードはカード番号を廃止し、投稿日 `2026.08.05` を表示。
+- 商品一覧は初期6件表示、`.more-btn` で展開/折りたたみ。
+- ブランドの横スクロール帯は削除。
+- 右下にページトップへ戻る `.back-top` ボタンを追加。
+- `?v=` は `21` まで更新済み。
+
+新規/差し替え画像:
+- `public/images/hero-pop-props.webp`
+- `public/images/mood-standard.webp`
+- `public/images/mood-room.webp`
+- `public/images/mood-edge.webp`
+- `public/images/mood-luxury.webp`
+- `public/images/slide-mood-board.webp`
+- `public/images/slide-editors-filter.webp`
+- `public/images/slide-how-to-pick.webp`
+- `public/images/editor-illustration.webp`（現在未参照。削除候補）
+
+確認済み:
+- `node --check public/js/main.js` OK
+- CSS `{}` 数: open=218 / close=218 / balanced=True
+- ローカルHTTPで `style.css?v=21` / `main.js?v=21` を確認
+- `v=20` 残りなし
+
+次にClaude Codeでやるなら:
+1. ブラウザで `?verify=21-final` を見て、スライド上部余白・スマホ表示・トップ戻りボタンの重なりを目視/実測する。
+2. 問題なければこの一連のデザイン変更をコミットする。
+3. その後、最優先タスクはREAD記事の拡充。アフィリエイト審査向けに、リンクなしの独自記事を増やす。
+4. 独自ドメインは、会社サブドメインより `kininarumono-techo.com` や `monotecho.jp` のような独立ドメインが推奨。ただし仮公開や会社企画として見せるなら `kininarumono.kokokikaku.com` も可。
