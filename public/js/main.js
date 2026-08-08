@@ -14,6 +14,8 @@
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
   // price/在庫は変動。将来Amazon切替後は該当リンクをAmazon(タグ curryoden22-22)へ差し替え可。
   const PICKS = [
+    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"カームナイトリペア ボディソープ", price:"¥946", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol018%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002671%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/kobe-beauty-labo/cabinet/imgrc0108984420.jpg?_ex=500x500",
+      blurb:"夜の香りに包まれるバスタイム。とろみのあるテクスチャーで優しく洗い上げる。" },
     { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ボディスクラブ", price:"¥1,738", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol035%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002831%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/kobe-beauty-labo/cabinet/1st_thum/yol035.jpg?_ex=500x500",
       blurb:"ジェラートみたいな質感でするする伸びるマイルドピーリング。優しい香りでご褒美のお手入れ時間に。" },
     { cat:"fashion", date:"2026.08.08", motif:"m-chair", brand:"Swatch", name:"BESIDE THE SEA", price:"¥33,550", url:"https://hb.afl.rakuten.co.jp/hgc/g00slxtn.z7k31a9e.g00slxtn.z7k325f0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswatchofficial%2Fss07s148%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswatchofficial%2Fi%2F10003280%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/swatchofficial/cabinet/product/2025-05/ss07s148-s-01.jpg?_ex=500x500",
