@@ -44,4 +44,14 @@ if (has('insert')) {
   src = src.slice(0, at) + '\n' + lit + src.slice(at);
   fs.writeFileSync(mainPath, src);
   console.log('\n[OK] main.js に追加しました。');
-} else { console.log('\n（--insert で main.js に追加）'); }
+  const readDir = path.join(repoRoot, 'public', 'read');
+  const htmlFiles = [path.join(repoRoot, 'public', 'index.html')];
+  if (fs.existsSync(readDir)) for (const f of fs.readdirSync(readDir)) if (f.endsWith('.html')) htmlFiles.push(path.join(readDir, f));
+  const vm = fs.readFileSync(htmlFiles[0], 'utf8').match(/\?v=(\d+)/);
+  if (vm) {
+    const cur = parseInt(vm[1], 10), next = cur + 1;
+    for (const f of htmlFiles) { const t = fs.readFileSync(f, 'utf8').split('?v=' + cur).join('?v=' + next); fs.writeFileSync(f, t); }
+    console.log('[OK] キャッシュ版 ?v= を ' + cur + ' → ' + next + ' に更新しました。');
+  }
+  console.log('  → git add -A && git commit -m "商品追加" && git push で反映。');
+} else { console.log('\n（--insert で main.js 追加＋?v=自動バンプ）'); }

@@ -117,7 +117,7 @@
   PICKS.forEach((p) => {
     const meta = CAT[p.cat];
     const el = document.createElement("article");
-    el.className = "card reveal" + (p.img ? " card--feature" : "");
+    el.className = "card reveal" + (p.feature ? " card--feature" : "");
     el.dataset.cat = p.cat;
     el.style.setProperty("--c", meta.cvar);
     el.style.setProperty("--c-deep", meta.deep);

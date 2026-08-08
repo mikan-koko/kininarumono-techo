@@ -331,7 +331,7 @@ section{padding:clamp(52px,7.5vw,100px) clamp(16px,4vw,40px)}
   border-radius:var(--r-arch) var(--r-arch) 10px 10px;
   border:2px solid var(--ink);background:var(--c-soft);  /* 写真: 淡い同系色の台紙 */
 }
-.card__media img{width:100%;height:100%;object-fit:cover}
+.card__media img{width:100%;height:100%;object-fit:contain;background:#fff;padding:6px}
 .card__visual-word{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3vw,34px);color:var(--c-deep);position:relative;z-index:2;background:var(--paper-2);border:2px solid var(--ink);border-radius:10px;padding:5px 14px;box-shadow:3px 4px 0 var(--ink);transform:rotate(-2deg)}
 .card__visual-shape{position:absolute;border:2.5px solid var(--ink);display:block;pointer-events:none}
 .card__visual-shape--a{width:92px;height:74px;border-radius:10px;background:var(--c);left:10%;top:15%;transform:rotate(-8deg);clip-path:polygon(0 0,100% 8%,84% 100%,8% 86%)}
