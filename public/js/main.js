@@ -161,7 +161,7 @@
         <h3 class="card__name">${esc(p.name)}</h3>
         <p class="card__blurb">${esc(p.blurb || p.desc || "")}</p>
         <div class="card__foot">
-          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天で見る</a>
+          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">商品を見る</a>
         </div>
       </div>`;
     frag.appendChild(el);
