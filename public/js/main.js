@@ -14,9 +14,11 @@
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
   // price/在庫は変動。将来Amazon切替後は該当リンクをAmazon(タグ curryoden22-22)へ差し替え可。
   const PICKS = [
-    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"カームナイトリペア ボディソープ", price:"¥946", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol018%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002671%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/kobe-beauty-labo/cabinet/imgrc0108984420.jpg?_ex=500x500",
+    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ナイトケア ボディソープ", price:"¥1,029", url:"https://hb.afl.rakuten.co.jp/hgc/g00r9icn.z7k3182b.g00r9icn.z7k3295f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbloomgreen%2F10327354%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbloomgreen%2Fi%2F10536822%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/bloomgreen/cabinet/bg10755064/4582521689002.jpg?_ex=500x500",
       blurb:"夜の香りに包まれるバスタイム。とろみのあるテクスチャーで優しく洗い上げる。" },
-    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ボディスクラブ", price:"¥1,738", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol035%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002831%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/kobe-beauty-labo/cabinet/1st_thum/yol035.jpg?_ex=500x500",
+    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"カームナイトリペア ボディソープ", price:"¥946", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol018%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002671%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:null,
+      blurb:"夜の香りに包まれるバスタイム。とろみのあるテクスチャーで優しく洗い上げる。" },
+    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ボディスクラブ", price:"¥1,738", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol035%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002831%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:null,
       blurb:"ジェラートみたいな質感でするする伸びるマイルドピーリング。優しい香りでご褒美のお手入れ時間に。" },
     { cat:"fashion", date:"2026.08.08", motif:"m-chair", brand:"Swatch", name:"BESIDE THE SEA", price:"¥33,550", url:"https://hb.afl.rakuten.co.jp/hgc/g00slxtn.z7k31a9e.g00slxtn.z7k325f0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswatchofficial%2Fss07s148%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswatchofficial%2Fi%2F10003280%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/swatchofficial/cabinet/product/2025-05/ss07s148-s-01.jpg?_ex=500x500",
       blurb:"ネイビー文字盤に赤い針が効いた海辺の一本。スイス製クオーツ、3気圧防水で夏のお出かけにも。" },
@@ -26,7 +28,7 @@
       blurb:"アルミ削り出しの丸いフォルムと革ストラップ。手のひらサイズで本格的な音、IP67防水。" },
     { cat:"gadget", date:"2026.08.08", motif:"m-chair", brand:"Marshall", name:"EMBERTON III", price:"¥28,980", url:"https://hb.afl.rakuten.co.jp/hgc/g00u54tn.z7k31cb2.g00u54tn.z7k322ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmarshall-official%2F7340055399449%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmarshall-official%2Fi%2F10000035%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/marshall-official/cabinet/portable_speakers/emberton3/imgrc0121215094.jpg?_ex=500x500",
       blurb:"アンプそのままの佇まいに真鍮ロゴ。手のひらサイズでIP67防水、外にも連れ出せるスピーカー。" },
-    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"LAMY", name:"LAMY 2000 ボールペン", price:"¥11,300", url:"https://hb.afl.rakuten.co.jp/hgc/g00qm7tn.z7k31d04.g00qm7tn.z7k32047/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-youstyle%2Fl401%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-youstyle%2Fi%2F10012653%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/auc-youstyle/cabinet/lamy/08809040/l401-naire-x-zt.jpg?_ex=500x500",
+    { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"LAMY", name:"LAMY 2000 ボールペン", price:"¥11,300", url:"https://hb.afl.rakuten.co.jp/hgc/g00qm7tn.z7k31d04.g00qm7tn.z7k32047/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-youstyle%2Fl401%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-youstyle%2Fi%2F10012653%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:null,
       blurb:"1966年生まれのバウハウス由来デザイン。ヘアライン加工のボディは指なじみよく、置くだけで気分が上がる。" },
     { cat:"gadget", date:"2026.08.08", motif:"m-chair", brand:"Vermicular", name:"ライスポットミニ", price:"¥77,440", url:"https://hb.afl.rakuten.co.jp/hgc/g00ufh8n.z7k31c0f.g00ufh8n.z7k32caf/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fvermicular-rshop%2Frp19a-gy%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fvermicular-rshop%2Fi%2F10000004%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/vermicular-rshop/cabinet/11432399/rp19ry_01.jpg?_ex=500x500",
       blurb:"鋳物ホーロー鍋がそのまま内鍋に。一粒ずつ立つ炊きあがりで、無水・低温調理までこなす一台。" },
@@ -159,7 +161,7 @@
         <h3 class="card__name">${esc(p.name)}</h3>
         <p class="card__blurb">${esc(p.blurb || p.desc || "")}</p>
         <div class="card__foot">
-          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天ROOMで見る</a>
+          <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天で見る</a>
         </div>
       </div>`;
     frag.appendChild(el);

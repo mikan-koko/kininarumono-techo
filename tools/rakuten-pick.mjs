@@ -27,20 +27,24 @@ try { data = JSON.parse(out); } catch (e) { console.error('[JSON解析エラー]
 if (data.errors) { console.error('[APIエラー]', JSON.stringify(data.errors)); process.exit(1); }
 const item = data.Items && data.Items[0] && data.Items[0].Item;
 if (!item) { console.error('商品が見つかりません'); console.error(JSON.stringify(data).slice(0, 500)); process.exit(1); }
-let img = (item.mediumImageUrls && item.mediumImageUrls[0] && item.mediumImageUrls[0].imageUrl) || null;
-if (img) img = img.replace(/\?_ex=\d+x\d+$/, '?_ex=500x500');
+const imgs = (item.mediumImageUrls || []).map(o => o.imageUrl.replace(/\?_ex=\d+x\d+$/, '?_ex=500x500'));
+console.log('\n=== 取得 ==='); console.log(' 名称:', item.itemName); console.log(' 価格: ¥' + Number(item.itemPrice).toLocaleString('ja-JP')); console.log(' 料率:', (item.affiliateRate != null ? item.affiliateRate + '%' : '-'));
+console.log(' 画像候補:'); imgs.forEach((u, i) => console.log('   [' + i + '] ' + u));
+const idx = parseInt(arg('imgidx', '0'), 10) || 0;
+const img = arg('img', null) || imgs[idx] || imgs[0] || null;
+console.log(' 採用画像:', img || '(なし)', arg('img', null) ? '(--img指定)' : ('[' + idx + ']'));
+if (has('preview')) { console.log('\n（--preview のみ：追加していません）'); process.exit(0); }
 const entry = { cat, date: arg('date', '2026.08.08'), motif: arg('motif', 'm-chair'), brand: arg('brand', item.shopName || ''), name: arg('name', item.itemName), price: '¥' + Number(item.itemPrice).toLocaleString('ja-JP'), url: item.affiliateUrl, img, blurb: arg('blurb', '') };
 const esc = (s) => String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 const lit = '    { cat:"' + esc(entry.cat) + '", date:"' + esc(entry.date) + '", motif:"' + esc(entry.motif) + '", brand:"' + esc(entry.brand) + '", name:"' + esc(entry.name) + '", price:"' + esc(entry.price) + '", url:"' + entry.url + '", img:' + (entry.img ? '"' + entry.img + '"' : 'null') + ',\n      blurb:"' + esc(entry.blurb) + '" },';
-console.log('\n=== 取得 ==='); console.log(' 名称:', item.itemName); console.log(' 価格:', entry.price); console.log(' 料率:', (item.affiliateRate != null ? item.affiliateRate + '%' : '-')); console.log(' 画像:', img || '(なし)');
 console.log('\n=== 生成PICKS ==='); console.log(lit);
 if (has('insert')) {
   const mainPath = path.join(repoRoot, 'public', 'js', 'main.js');
   let src = fs.readFileSync(mainPath, 'utf8');
   const anchor = 'const PICKS = [';
-  const idx = src.indexOf(anchor);
-  if (idx < 0) { console.error('main.js に const PICKS = [ が無い'); process.exit(1); }
-  const at = idx + anchor.length;
+  const i2 = src.indexOf(anchor);
+  if (i2 < 0) { console.error('main.js に const PICKS = [ が無い'); process.exit(1); }
+  const at = i2 + anchor.length;
   src = src.slice(0, at) + '\n' + lit + src.slice(at);
   fs.writeFileSync(mainPath, src);
   console.log('\n[OK] main.js に追加しました。');
@@ -48,10 +52,6 @@ if (has('insert')) {
   const htmlFiles = [path.join(repoRoot, 'public', 'index.html')];
   if (fs.existsSync(readDir)) for (const f of fs.readdirSync(readDir)) if (f.endsWith('.html')) htmlFiles.push(path.join(readDir, f));
   const vm = fs.readFileSync(htmlFiles[0], 'utf8').match(/\?v=(\d+)/);
-  if (vm) {
-    const cur = parseInt(vm[1], 10), next = cur + 1;
-    for (const f of htmlFiles) { const t = fs.readFileSync(f, 'utf8').split('?v=' + cur).join('?v=' + next); fs.writeFileSync(f, t); }
-    console.log('[OK] キャッシュ版 ?v= を ' + cur + ' → ' + next + ' に更新しました。');
-  }
-  console.log('  → git add -A && git commit -m "商品追加" && git push で反映。');
-} else { console.log('\n（--insert で main.js 追加＋?v=自動バンプ）'); }
+  if (vm) { const cur = parseInt(vm[1], 10), next = cur + 1; for (const f of htmlFiles) { const t = fs.readFileSync(f, 'utf8').split('?v=' + cur).join('?v=' + next); fs.writeFileSync(f, t); } console.log('[OK] ?v= を ' + cur + ' → ' + next + ' に更新。'); }
+  console.log('  → git add -A && git commit -m "商品追加" && git push');
+} else { console.log('\n（--insert で追加＋?v自動バンプ）'); }
