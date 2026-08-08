@@ -154,13 +154,11 @@
           <span class="card__cat">${meta.label}</span>
           ${isNew(p) ? `<span class="card__new">NEW</span>` : ""}
           <span class="card__date">${esc(p.date)}</span>
-          ${band(p.price) ? `<span class="card__band" title="価格帯のめやす">${band(p.price)}</span>` : ""}
         </div>
         <span class="card__brand">${esc(p.brand)}</span>
         <h3 class="card__name">${esc(p.name)}</h3>
         <p class="card__blurb">${esc(p.blurb || p.desc || "")}</p>
         <div class="card__foot">
-          <span class="card__price">${esc(p.price)}</span>
           <a class="card__btn" href="${p.url}" target="_blank" rel="sponsored noopener nofollow">楽天ROOMで見る</a>
         </div>
       </div>`;
