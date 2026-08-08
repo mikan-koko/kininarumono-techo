@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 const argv = process.argv.slice(2);
@@ -18,9 +19,12 @@ const params = new URLSearchParams({ applicationId: cfg.applicationId, accessKey
 if (itemCode) params.set('itemCode', itemCode);
 if (keyword) params.set('keyword', keyword);
 const endpoint = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?' + params.toString();
-const res = await fetch(endpoint, { headers: { 'Referer': 'https://kininarumono.jp/', 'Origin': 'https://kininarumono.jp', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36' } });
-if (!res.ok) { console.error('APIエラー', res.status); console.error((await res.text()).slice(0, 800)); process.exit(1); }
-const data = await res.json();
+let out;
+try { out = execFileSync('curl.exe', ['-sS','-H','Referer: https://kininarumono.jp/','-H','Origin: https://kininarumono.jp','-H','User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36', endpoint], { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }); }
+catch (e) { console.error('[curl実行エラー]', e.message); process.exit(1); }
+let data;
+try { data = JSON.parse(out); } catch (e) { console.error('[JSON解析エラー] 応答:', out.slice(0, 800)); process.exit(1); }
+if (data.errors) { console.error('[APIエラー]', JSON.stringify(data.errors)); process.exit(1); }
 const item = data.Items && data.Items[0] && data.Items[0].Item;
 if (!item) { console.error('商品が見つかりません'); console.error(JSON.stringify(data).slice(0, 500)); process.exit(1); }
 let img = (item.mediumImageUrls && item.mediumImageUrls[0] && item.mediumImageUrls[0].imageUrl) || null;
@@ -39,5 +43,5 @@ if (has('insert')) {
   const at = idx + anchor.length;
   src = src.slice(0, at) + '\n' + lit + src.slice(at);
   fs.writeFileSync(mainPath, src);
-  console.log('\n[OK] main.js に追加しました。git add/commit/push で反映。');
+  console.log('\n[OK] main.js に追加しました。');
 } else { console.log('\n（--insert で main.js に追加）'); }
