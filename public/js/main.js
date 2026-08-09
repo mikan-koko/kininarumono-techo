@@ -14,6 +14,14 @@
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
   // price/在庫は変動。将来Amazon切替後は該当リンクをAmazon(タグ curryoden22-22)へ差し替え可。
   const PICKS = [
+    { cat:"fashion", date:"2026.08.09", motif:"m-socks", brand:"STANCE", name:"クルーソックス「currents」", code:"candymitt:10000828", price:"¥2,750", url:"https://a.r10.to/hPxxXb", img:"https://image.rakuten.co.jp/candymitt/cabinet/stance/st308y-curren-st.jpg",
+      blurb:"足元にひとさじの色を。メキシカンブランケットみたいな多色ボーダーが主役級のクルーソックス。" },
+    { cat:"interior", date:"2026.08.09", motif:"m-bottle", brand:"BALMUDA", name:"The Lantern（ブラック）", code:"sokutei:10001894", price:"¥15,899", url:"https://a.r10.to/h5Q7Oh", img:"https://tshop.r10s.jp/sokutei/cabinet/05716971/4560330119378_2.jpg",
+      blurb:"キャンドルのように揺らめく暖色を無段階で調光。持ち運べる充電式のランタン。" },
+    { cat:"interior", date:"2026.08.09", motif:"m-chair", brand:"天童木工", name:"バタフライスツール（ローズウッド）", code:"auc-designshop:10001011", price:"¥82,500", url:"https://a.r10.to/hg9pVY", img:"https://image.rakuten.co.jp/auc-designshop/cabinet/2101/2101000001702_0.jpg",
+      blurb:"柳宗理の名作。2枚の成形合板が蝶の羽のように交わる、憧れの一脚。" },
+    { cat:"interior", date:"2026.08.09", motif:"m-chair", brand:"Vitra", name:"イームズエレファント（スモール）", code:"shinwashop:10005703", price:"¥15,400", url:"https://a.r10.to/hYTaAq", img:"https://image.rakuten.co.jp/shinwashop/cabinet/kes6/vitra-215112-main.jpg",
+      blurb:"イームズ夫妻が1945年に生んだ、ゾウをかたどった愛らしいプロダクト。" },
     { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ナイトケア ボディソープ", price:"¥1,029", url:"https://hb.afl.rakuten.co.jp/hgc/g00r9icn.z7k3182b.g00r9icn.z7k3295f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbloomgreen%2F10327354%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbloomgreen%2Fi%2F10536822%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://thumbnail.image.rakuten.co.jp/@0_mall/bloomgreen/cabinet/bg10755064/4582521689002.jpg?_ex=500x500",
       blurb:"夜の香りに包まれるバスタイム。とろみのあるテクスチャーで優しく洗い上げる。" },
     { cat:"goods", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"カームナイトリペア ボディソープ", price:"¥946", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol018%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002671%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:null,
