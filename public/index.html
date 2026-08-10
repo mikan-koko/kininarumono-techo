@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>    <!-- Google tag (gtag.js) -->    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4LRS2KCRZ"></script>    <script>      window.dataLayer = window.dataLayer || [];      function gtag(){dataLayer.push(arguments);}      gtag('js', new Date());      gtag('config', 'G-S4LRS2KCRZ');    </script>
+<head> <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4LRS2KCRZ"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S4LRS2KCRZ'); </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>気になるモノ手帖｜デザインでアガる雑貨・インテリア・ガジェット</title>
@@ -30,425 +30,466 @@
 <body>
 
 <!-- ============ MOTIF SPRITE ============
-     アイテム図案。描画規約: viewBox 0 0 64 64 / 本体=紙白 / 輪郭=墨 stroke-width 3 /
-     差し色=イエロー。カテゴリ色のベタ面に載せる前提で、紫・ティール・コーラル・
-     アンバーのどれでも成立する配色にしてある。追加時もこの規約を守ること。 -->
+アイテム図案。描画規約: viewBox 0 0 64 64 / 本体=紙白 / 輪郭=墨 stroke-width 3 /
+差し色=イエロー。カテゴリ色のベタ面に載せる前提で、紫・ティール・コーラル・
+アンバーのどれでも成立する配色にしてある。追加時もこの規約を守ること。 -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 <defs><style>
-  /* 色は CSS 変数経由。use 要素の複製を外から一色に潰して「版ズレ」を作るため。
-     カスタムプロパティは use のシャドウツリーに継承されるが、クラスセレクタは届かない。
-     注意: インラインSVG内の style は raw text ではないので、この中に不等号を書くと
-     HTMLパーサーがタグとして解釈し、CSS全体が壊れる。記号を書かないこと。 */
-  .mo{fill:none;stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-  .mo-b{fill:var(--mo-body,#FBF7EF);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-  .mo-a{fill:var(--mo-acc,#FFC61A);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-  .mo-i{fill:var(--mo-ink,#17130E);stroke:none}
+/* 色は CSS 変数経由。use 要素の複製を外から一色に潰して「版ズレ」を作るため。
+カスタムプロパティは use のシャドウツリーに継承されるが、クラスセレクタは届かない。
+注意: インラインSVG内の style は raw text ではないので、この中に不等号を書くと
+HTMLパーサーがタグとして解釈し、CSS全体が壊れる。記号を書かないこと。 */
+.mo{fill:none;stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.mo-b{fill:var(--mo-body,#FBF7EF);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.mo-a{fill:var(--mo-acc,#FFC61A);stroke:var(--mo-ink,#17130E);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.mo-i{fill:var(--mo-ink,#17130E);stroke:none}
 </style></defs>
 
 <symbol id="m-cable" viewBox="0 0 64 64">
-  <path class="mo" d="M9 32h5M50 32h5"/>
-  <g class="mo-b"><ellipse cx="18" cy="32" rx="5.5" ry="14"/><ellipse cx="27" cy="32" rx="5.5" ry="14"/>
-  <ellipse cx="36" cy="32" rx="5.5" ry="14"/><ellipse cx="45" cy="32" rx="5.5" ry="14"/></g>
-  <rect class="mo-a" x="2" y="26" width="9" height="12" rx="3"/>
-  <rect class="mo-a" x="53" y="26" width="9" height="12" rx="3"/>
+<path class="mo" d="M9 32h5M50 32h5"/>
+<g class="mo-b"><ellipse cx="18" cy="32" rx="5.5" ry="14"/><ellipse cx="27" cy="32" rx="5.5" ry="14"/>
+<ellipse cx="36" cy="32" rx="5.5" ry="14"/><ellipse cx="45" cy="32" rx="5.5" ry="14"/></g>
+<rect class="mo-a" x="2" y="26" width="9" height="12" rx="3"/>
+<rect class="mo-a" x="53" y="26" width="9" height="12" rx="3"/>
 </symbol>
 <symbol id="m-keyboard" viewBox="0 0 64 64">
-  <rect class="mo-b" x="5" y="18" width="54" height="30" rx="5"/>
-  <g class="mo-i">
-    <rect x="11" y="24" width="7" height="5" rx="1.5"/><rect x="21" y="24" width="7" height="5" rx="1.5"/>
-    <rect x="31" y="24" width="7" height="5" rx="1.5"/><rect x="41" y="24" width="12" height="5" rx="1.5"/>
-    <rect x="11" y="33" width="10" height="5" rx="1.5"/><rect x="24" y="33" width="7" height="5" rx="1.5"/>
-    <rect x="34" y="33" width="7" height="5" rx="1.5"/><rect x="44" y="33" width="9" height="5" rx="1.5"/>
-  </g>
-  <rect class="mo-a" x="20" y="41" width="24" height="4" rx="2"/>
+<rect class="mo-b" x="5" y="18" width="54" height="30" rx="5"/>
+<g class="mo-i">
+<rect x="11" y="24" width="7" height="5" rx="1.5"/><rect x="21" y="24" width="7" height="5" rx="1.5"/>
+<rect x="31" y="24" width="7" height="5" rx="1.5"/><rect x="41" y="24" width="12" height="5" rx="1.5"/>
+<rect x="11" y="33" width="10" height="5" rx="1.5"/><rect x="24" y="33" width="7" height="5" rx="1.5"/>
+<rect x="34" y="33" width="7" height="5" rx="1.5"/><rect x="44" y="33" width="9" height="5" rx="1.5"/>
+</g>
+<rect class="mo-a" x="20" y="41" width="24" height="4" rx="2"/>
 </symbol>
 <symbol id="m-mixer" viewBox="0 0 64 64">
-  <rect class="mo-b" x="8" y="9" width="48" height="46" rx="6"/>
-  <circle class="mo-a" cx="21" cy="23" r="7"/><path class="mo" d="M21 19v4"/>
-  <circle class="mo-a" cx="43" cy="23" r="7"/><path class="mo" d="M43 19v4"/>
-  <rect class="mo" x="16" y="38" width="32" height="8" rx="4"/>
-  <circle class="mo-i" cx="26" cy="42" r="3"/>
+<rect class="mo-b" x="8" y="9" width="48" height="46" rx="6"/>
+<circle class="mo-a" cx="21" cy="23" r="7"/><path class="mo" d="M21 19v4"/>
+<circle class="mo-a" cx="43" cy="23" r="7"/><path class="mo" d="M43 19v4"/>
+<rect class="mo" x="16" y="38" width="32" height="8" rx="4"/>
+<circle class="mo-i" cx="26" cy="42" r="3"/>
 </symbol>
 <symbol id="m-stand" viewBox="0 0 64 64">
-  <rect class="mo-b" x="17" y="7" width="30" height="40" rx="5"/>
-  <rect class="mo-a" x="23" y="26" width="18" height="13" rx="2.5"/>
-  <path class="mo" d="M14 47h36l-6 9H20z"/>
-  <path class="mo" d="M25 14h14"/>
+<rect class="mo-b" x="17" y="7" width="30" height="40" rx="5"/>
+<rect class="mo-a" x="23" y="26" width="18" height="13" rx="2.5"/>
+<path class="mo" d="M14 47h36l-6 9H20z"/>
+<path class="mo" d="M25 14h14"/>
 </symbol>
 <symbol id="m-chair" viewBox="0 0 64 64">
-  <rect class="mo-b" x="20" y="6" width="24" height="24" rx="11"/>
-  <path class="mo" d="M32 30v4"/>
-  <rect class="mo-a" x="12" y="33" width="40" height="8" rx="3"/>
-  <path class="mo" d="M18 41l-3 16M46 41l3 16M19 50h26"/>
+<rect class="mo-b" x="20" y="6" width="24" height="24" rx="11"/>
+<path class="mo" d="M32 30v4"/>
+<rect class="mo-a" x="12" y="33" width="40" height="8" rx="3"/>
+<path class="mo" d="M18 41l-3 16M46 41l3 16M19 50h26"/>
 </symbol>
 <symbol id="m-vase" viewBox="0 0 64 64">
-  <path class="mo-b" d="M25 16c0 6-9 9-9 20 0 12 7 19 16 19s16-7 16-19c0-11-9-14-9-20z"/>
-  <path class="mo-a" d="M32 16V6"/>
-  <circle class="mo-a" cx="32" cy="7" r="5"/>
-  <path class="mo" d="M23 40c6 4 12 4 18 0"/>
+<path class="mo-b" d="M25 16c0 6-9 9-9 20 0 12 7 19 16 19s16-7 16-19c0-11-9-14-9-20z"/>
+<path class="mo-a" d="M32 16V6"/>
+<circle class="mo-a" cx="32" cy="7" r="5"/>
+<path class="mo" d="M23 40c6 4 12 4 18 0"/>
 </symbol>
 <symbol id="m-wineglass" viewBox="0 0 64 64">
-  <path class="mo-b" d="M12 9h18c0 12-3 16-9 16s-9-4-9-16z"/>
-  <path class="mo" d="M21 25v22M14 47h14"/>
-  <path class="mo-a" d="M35 9h18c0 12-3 16-9 16s-9-4-9-16z"/>
-  <path class="mo" d="M44 25v22M37 47h14"/>
+<path class="mo-b" d="M12 9h18c0 12-3 16-9 16s-9-4-9-16z"/>
+<path class="mo" d="M21 25v22M14 47h14"/>
+<path class="mo-a" d="M35 9h18c0 12-3 16-9 16s-9-4-9-16z"/>
+<path class="mo" d="M44 25v22M37 47h14"/>
 </symbol>
 <symbol id="m-crate" viewBox="0 0 64 64">
-  <path class="mo-b" d="M10 20h44l-5 30H15z"/>
-  <path class="mo" d="M14 30h36M16 40h32"/>
-  <rect class="mo-a" x="24" y="12" width="16" height="8" rx="3"/>
+<path class="mo-b" d="M10 20h44l-5 30H15z"/>
+<path class="mo" d="M14 30h36M16 40h32"/>
+<rect class="mo-a" x="24" y="12" width="16" height="8" rx="3"/>
 </symbol>
 <symbol id="m-mountain" viewBox="0 0 64 64">
-  <circle class="mo-a" cx="46" cy="18" r="7"/>
-  <path class="mo-b" d="M6 50L24 20l10 15 6-8 12 23z"/>
-  <path class="mo" d="M19 29c3 3 7 3 10 0"/>
+<circle class="mo-a" cx="46" cy="18" r="7"/>
+<path class="mo-b" d="M6 50L24 20l10 15 6-8 12 23z"/>
+<path class="mo" d="M19 29c3 3 7 3 10 0"/>
 </symbol>
 <symbol id="m-mug" viewBox="0 0 64 64">
-  <path class="mo-b" d="M13 22h30v20c0 6-4 10-10 10H23c-6 0-10-4-10-10z"/>
-  <path class="mo" d="M43 27h5c5 0 5 12 0 12h-5"/>
-  <circle class="mo-a" cx="23" cy="34" r="4"/><circle class="mo-a" cx="34" cy="40" r="4"/>
-  <path class="mo" d="M22 15c0-3 4-3 4-6M32 15c0-3 4-3 4-6"/>
+<path class="mo-b" d="M13 22h30v20c0 6-4 10-10 10H23c-6 0-10-4-10-10z"/>
+<path class="mo" d="M43 27h5c5 0 5 12 0 12h-5"/>
+<circle class="mo-a" cx="23" cy="34" r="4"/><circle class="mo-a" cx="34" cy="40" r="4"/>
+<path class="mo" d="M22 15c0-3 4-3 4-6M32 15c0-3 4-3 4-6"/>
 </symbol>
 <symbol id="m-tissue" viewBox="0 0 64 64">
-  <rect class="mo-b" x="8" y="26" width="48" height="26" rx="4"/>
-  <path class="mo-a" d="M26 26c0-8 4-14 6-14s6 6 6 14z"/>
-  <path class="mo" d="M8 36h48"/>
+<rect class="mo-b" x="8" y="26" width="48" height="26" rx="4"/>
+<path class="mo-a" d="M26 26c0-8 4-14 6-14s6 6 6 14z"/>
+<path class="mo" d="M8 36h48"/>
 </symbol>
 <symbol id="m-scale" viewBox="0 0 64 64">
-  <path class="mo-b" d="M12 50c0-14 9-24 20-24s20 10 20 24z"/>
-  <circle class="mo-b" cx="32" cy="42" r="12"/>
-  <path class="mo" d="M32 42l6-6"/>
-  <circle class="mo-i" cx="32" cy="42" r="2.5"/>
-  <rect class="mo-a" x="24" y="12" width="16" height="10" rx="3"/>
-  <path class="mo" d="M32 22v4"/>
+<path class="mo-b" d="M12 50c0-14 9-24 20-24s20 10 20 24z"/>
+<circle class="mo-b" cx="32" cy="42" r="12"/>
+<path class="mo" d="M32 42l6-6"/>
+<circle class="mo-i" cx="32" cy="42" r="2.5"/>
+<rect class="mo-a" x="24" y="12" width="16" height="10" rx="3"/>
+<path class="mo" d="M32 22v4"/>
 </symbol>
 <symbol id="m-bottle" viewBox="0 0 64 64">
-  <path class="mo" d="M32 16l-6-10M32 16l6-10M32 16V4"/>
-  <rect class="mo-b" x="19" y="22" width="26" height="34" rx="6"/>
-  <rect class="mo-a" x="26" y="12" width="12" height="10" rx="3"/>
-  <path class="mo" d="M25 38h14"/>
+<path class="mo" d="M32 16l-6-10M32 16l6-10M32 16V4"/>
+<rect class="mo-b" x="19" y="22" width="26" height="34" rx="6"/>
+<rect class="mo-a" x="26" y="12" width="12" height="10" rx="3"/>
+<path class="mo" d="M25 38h14"/>
 </symbol>
 <symbol id="m-notebook" viewBox="0 0 64 64">
-  <rect class="mo-b" x="12" y="8" width="40" height="48" rx="5"/>
-  <path class="mo" d="M22 8v48"/>
-  <path class="mo-a" d="M38 8h9v22l-4.5-5L38 30z"/>
-  <path class="mo" d="M28 40h16"/>
+<rect class="mo-b" x="12" y="8" width="40" height="48" rx="5"/>
+<path class="mo" d="M22 8v48"/>
+<path class="mo-a" d="M38 8h9v22l-4.5-5L38 30z"/>
+<path class="mo" d="M28 40h16"/>
 </symbol>
 <symbol id="m-pouch" viewBox="0 0 64 64">
-  <rect class="mo-b" x="7" y="20" width="50" height="28" rx="8"/>
-  <path class="mo-a" d="M7 27h50"/>
-  <circle class="mo-a" cx="46" cy="23.5" r="4"/>
-  <path class="mo" d="M18 38h12"/>
+<rect class="mo-b" x="7" y="20" width="50" height="28" rx="8"/>
+<path class="mo-a" d="M7 27h50"/>
+<circle class="mo-a" cx="46" cy="23.5" r="4"/>
+<path class="mo" d="M18 38h12"/>
 </symbol>
 <symbol id="m-record" viewBox="0 0 64 64">
-  <circle class="mo-b" cx="32" cy="32" r="24"/>
-  <circle class="mo" cx="32" cy="32" r="16"/>
-  <circle class="mo-a" cx="32" cy="32" r="8"/>
-  <circle class="mo-i" cx="32" cy="32" r="2.5"/>
+<circle class="mo-b" cx="32" cy="32" r="24"/>
+<circle class="mo" cx="32" cy="32" r="16"/>
+<circle class="mo-a" cx="32" cy="32" r="8"/>
+<circle class="mo-i" cx="32" cy="32" r="2.5"/>
 </symbol>
 <symbol id="m-socks" viewBox="0 0 64 64">
-  <path class="mo-b" d="M31 12h13v22c0 3 1 4 3 6l5 5c5 5 2 13-5 13H37c-4 0-6-3-6-7z"/>
-  <path class="mo-b" d="M14 8h14v25c0 3 1 4 3 6l6 5c5 5 2 14-5 14H21c-5 0-7-3-7-8z"/>
-  <path class="mo-a" d="M14 8h14v8H14z"/>
-  <path class="mo" d="M18 46h12"/>
+<path class="mo-b" d="M31 12h13v22c0 3 1 4 3 6l5 5c5 5 2 13-5 13H37c-4 0-6-3-6-7z"/>
+<path class="mo-b" d="M14 8h14v25c0 3 1 4 3 6l6 5c5 5 2 14-5 14H21c-5 0-7-3-7-8z"/>
+<path class="mo-a" d="M14 8h14v8H14z"/>
+<path class="mo" d="M18 46h12"/>
 </symbol>
 <symbol id="m-watch" viewBox="0 0 64 64">
-  <path class="mo-a" d="M24 6h16v13H24zM24 45h16v13H24z"/>
-  <circle class="mo-b" cx="32" cy="32" r="15"/>
-  <path class="mo" d="M32 24v8l6 4"/>
+<path class="mo-a" d="M24 6h16v13H24zM24 45h16v13H24z"/>
+<circle class="mo-b" cx="32" cy="32" r="15"/>
+<path class="mo" d="M32 24v8l6 4"/>
 </symbol>
 <symbol id="m-tote" viewBox="0 0 64 64">
-  <path class="mo" d="M22 24V16c0-6 4-9 10-9s10 3 10 9v8"/>
-  <path class="mo-b" d="M10 24h44l-4 32H14z"/>
-  <path class="mo-a" d="M10 24h44l-1.4 9H11.4z"/>
+<path class="mo" d="M22 24V16c0-6 4-9 10-9s10 3 10 9v8"/>
+<path class="mo-b" d="M10 24h44l-4 32H14z"/>
+<path class="mo-a" d="M10 24h44l-1.4 9H11.4z"/>
 </symbol>
 <symbol id="m-polo" viewBox="0 0 64 64">
-  <path class="mo-b" d="M24 9l8 6 8-6 15 8-5 11-5-2v27H19V26l-5 2-5-11z"/>
-  <path class="mo-a" d="M24 9l8 6 8-6-8 12z"/>
-  <path class="mo" d="M32 21v9"/>
+<path class="mo-b" d="M24 9l8 6 8-6 15 8-5 11-5-2v27H19V26l-5 2-5-11z"/>
+<path class="mo-a" d="M24 9l8 6 8-6-8 12z"/>
+<path class="mo" d="M32 21v9"/>
 </symbol>
 <symbol id="m-sneaker" viewBox="0 0 64 64">
-  <path class="mo-b" d="M8 42c0-4 1-14 4-16 4-3 6 3 9 3 4 0 6-5 9-5 5 0 4 6 10 8l16 5c4 1 6 3 6 7H10z"/>
-  <path class="mo-a" d="M8 44h48v6H8z"/>
-  <path class="mo" d="M23 30l5 5M31 27l5 5"/>
+<path class="mo-b" d="M8 42c0-4 1-14 4-16 4-3 6 3 9 3 4 0 6-5 9-5 5 0 4 6 10 8l16 5c4 1 6 3 6 7H10z"/>
+<path class="mo-a" d="M8 44h48v6H8z"/>
+<path class="mo" d="M23 30l5 5M31 27l5 5"/>
 </symbol>
 <symbol id="m-memo" viewBox="0 0 64 64">
-  <rect class="mo-b" x="8" y="16" width="34" height="34" rx="3"/>
-  <rect class="mo-a" x="16" y="10" width="34" height="34" rx="3"/>
-  <rect class="mo-b" x="24" y="20" width="30" height="30" rx="3"/>
-  <path class="mo" d="M31 30h16M31 38h10"/>
+<rect class="mo-b" x="8" y="16" width="34" height="34" rx="3"/>
+<rect class="mo-a" x="16" y="10" width="34" height="34" rx="3"/>
+<rect class="mo-b" x="24" y="20" width="30" height="30" rx="3"/>
+<path class="mo" d="M31 30h16M31 38h10"/>
 </symbol>
 <symbol id="m-tube" viewBox="0 0 64 64">
-  <rect class="mo-a" x="26" y="6" width="12" height="9" rx="2.5"/>
-  <path class="mo-b" d="M23 15h18v33c0 5-4 8-9 8s-9-3-9-8z"/>
-  <path class="mo" d="M23 24h18"/>
-  <path class="mo" d="M29 34h6"/>
+<rect class="mo-a" x="26" y="6" width="12" height="9" rx="2.5"/>
+<path class="mo-b" d="M23 15h18v33c0 5-4 8-9 8s-9-3-9-8z"/>
+<path class="mo" d="M23 24h18"/>
+<path class="mo" d="M29 34h6"/>
 </symbol>
 <symbol id="m-diffuser" viewBox="0 0 64 64">
-  <path class="mo" d="M26 20L18 6M32 20V4M38 20l8-14"/>
-  <path class="mo-b" d="M20 20h24v24c0 7-5 12-12 12s-12-5-12-12z"/>
-  <path class="mo-a" d="M20 32h24"/>
+<path class="mo" d="M26 20L18 6M32 20V4M38 20l8-14"/>
+<path class="mo-b" d="M20 20h24v24c0 7-5 12-12 12s-12-5-12-12z"/>
+<path class="mo-a" d="M20 32h24"/>
 </symbol>
 <symbol id="m-chair-y" viewBox="0 0 64 64">
-  <path class="mo" d="M13 15c6-9 32-9 38 0"/>
-  <path class="mo" d="M16 15v19M48 15v19"/>
-  <path class="mo" d="M32 34V25M32 25l-8-8M32 25l8-8"/>
-  <rect class="mo-a" x="12" y="33" width="40" height="8" rx="3"/>
-  <path class="mo" d="M18 41l-3 16M46 41l3 16M19 50h26"/>
+<path class="mo" d="M13 15c6-9 32-9 38 0"/>
+<path class="mo" d="M16 15v19M48 15v19"/>
+<path class="mo" d="M32 34V25M32 25l-8-8M32 25l8-8"/>
+<rect class="mo-a" x="12" y="33" width="40" height="8" rx="3"/>
+<path class="mo" d="M18 41l-3 16M46 41l3 16M19 50h26"/>
 </symbol>
 <symbol id="m-vase-wave" viewBox="0 0 64 64">
-  <path class="mo-b" d="M16 28c0-5 5-7 8-4s5 4 8 1 5-4 8-1 8 0 8 5c0 8-3 9-3 15 0 8 4 9 4 13 0 3-3 4-8 4H23c-5 0-8-1-8-4 0-4 4-5 4-13 0-6-3-7-3-16z"/>
-  <path class="mo-a" d="M32 22V8"/>
-  <circle class="mo-a" cx="32" cy="9" r="5"/>
+<path class="mo-b" d="M16 28c0-5 5-7 8-4s5 4 8 1 5-4 8-1 8 0 8 5c0 8-3 9-3 15 0 8 4 9 4 13 0 3-3 4-8 4H23c-5 0-8-1-8-4 0-4 4-5 4-13 0-6-3-7-3-16z"/>
+<path class="mo-a" d="M32 22V8"/>
+<circle class="mo-a" cx="32" cy="9" r="5"/>
 </symbol>
 <symbol id="m-sneaker-trail" viewBox="0 0 64 64">
-  <path class="mo-b" d="M8 40c0-5 2-13 5-14 4-2 5 3 8 3 4 0 6-4 10-4 5 0 4 5 10 7l15 5c4 1 6 3 6 6H10z"/>
-  <path class="mo-a" d="M5 42h54v9H5z"/>
-  <path class="mo" d="M5 47h54"/>
-  <path class="mo" d="M22 29l6 5M30 26l6 5M38 30l5 4"/>
+<path class="mo-b" d="M8 40c0-5 2-13 5-14 4-2 5 3 8 3 4 0 6-4 10-4 5 0 4 5 10 7l15 5c4 1 6 3 6 6H10z"/>
+<path class="mo-a" d="M5 42h54v9H5z"/>
+<path class="mo" d="M5 47h54"/>
+<path class="mo" d="M22 29l6 5M30 26l6 5M38 30l5 4"/>
 </symbol>
 <symbol id="m-polo-knit" viewBox="0 0 64 64">
-  <path class="mo-b" d="M24 9l8 6 8-6 15 8-5 11-5-2v27H19V26l-5 2-5-11z"/>
-  <path class="mo-a" d="M24 9l8 6 8-6-8 12z"/>
-  <path class="mo" d="M22 33h20M22 41h20M22 49h20"/>
+<path class="mo-b" d="M24 9l8 6 8-6 15 8-5 11-5-2v27H19V26l-5 2-5-11z"/>
+<path class="mo-a" d="M24 9l8 6 8-6-8 12z"/>
+<path class="mo" d="M22 33h20M22 41h20M22 49h20"/>
 </symbol>
 <symbol id="m-book" viewBox="0 0 64 64">
-  <path class="mo-b" d="M9 12h20c3 0 3 2 3 4v36c0-2 0-4-3-4H9z"/>
-  <path class="mo-b" d="M55 12H35c-3 0-3 2-3 4v36c0-2 0-4 3-4h20z"/>
-  <path class="mo-a" d="M38 12h10v16l-5-4-5 4z"/>
+<path class="mo-b" d="M9 12h20c3 0 3 2 3 4v36c0-2 0-4-3-4H9z"/>
+<path class="mo-b" d="M55 12H35c-3 0-3 2-3 4v36c0-2 0-4 3-4h20z"/>
+<path class="mo-a" d="M38 12h10v16l-5-4-5 4z"/>
 </symbol>
 </svg>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
-  <a href="#top" class="wordmark" aria-label="気になるモノ手帖 トップへ">
-    <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" decoding="async" />
-    <span class="wordmark__name">気になるモノ手帖</span>
-    <span class="wordmark__sub">MONO NOTE</span>
-  </a>
-  <nav class="site-nav" aria-label="メインナビ">
-    <a href="#about">ムード</a>
-    <a href="#select">ピック</a>
-    <a href="#read">読みもの</a>
-    <a href="#channels">チャンネル</a>
-  </nav>
-  <a class="pill pill--room" href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener">楽天ROOM →</a>
-  <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false"><span></span><span></span><span></span></button>
+<a href="#top" class="wordmark" aria-label="気になるモノ手帖 トップへ">
+<img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" decoding="async" />
+<span class="wordmark__name">気になるモノ手帖</span>
+<span class="wordmark__sub">MONO NOTE</span>
+</a>
+<nav class="site-nav" aria-label="メインナビ">
+<a href="#about">ムード</a>
+<a href="#select">ピック</a>
+<a href="#read">読みもの</a>
+<a href="#channels">チャンネル</a>
+</nav>
+<a class="pill pill--room" href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener">楽天ROOM →</a>
+<button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 <div class="mobile-menu" id="mobileMenu" hidden>
-  <a href="#about">ムード</a>
-  <a href="#select">ピック</a>
-  <a href="#read">読みもの</a>
-  <a href="#channels">チャンネル</a>
-  <a href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener">楽天ROOM →</a>
+<a href="#about">ムード</a>
+<a href="#select">ピック</a>
+<a href="#read">読みもの</a>
+<a href="#channels">チャンネル</a>
+<a href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener">楽天ROOM →</a>
 </div>
-
 
 <main>
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <img class="hero__bg" src="images/hero-pop-props.webp" alt="カラフルな雑貨、インテリア小物、ファブリック、日用品を並べたプロップスタイリング" fetchpriority="high" />
-  <div class="hero__wash" aria-hidden="true"></div>
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <p class="hero__kicker">ITEM CURATION / DAILY DESIGN</p>
-      <h1 class="hero__title">日常に馴染んで、<br />デザインで<span class="pop">アガる。</span></h1>
-      <p class="hero__lead">定番からエッジのあるものまで、時にラグジュアリーに。<br /><b>暮らしの景色を少し上げてくれるアイテム</b>を横断して集めます。</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#select">ピックを見る</a>
-        <a class="btn btn--ghost" href="#about">ムードで探す</a>
-      </div>
-      <div class="hero__tags" aria-label="扱うジャンル"><span>STANDARD</span><span>EDGE</span><span>LUXURY</span><span>ROOM</span><span>DAILY</span></div>
-    </div>
-  </div>
+<img class="hero__bg" src="images/hero-pop-props.webp" alt="カラフルな雑貨、インテリア小物、ファブリック、日用品を並べたプロップスタイリング" fetchpriority="high" />
+<div class="hero__wash" aria-hidden="true"></div>
+<div class="hero__inner">
+<div class="hero__copy">
+<p class="hero__kicker">ITEM CURATION / DAILY DESIGN</p>
+<h1 class="hero__title">日常に馴染んで、<br />デザインで<span class="pop">アガる。</span></h1>
+<p class="hero__lead">定番からエッジのあるものまで、時にラグジュアリーに。<br /><b>暮らしの景色を少し上げてくれるアイテム</b>を横断して集めます。</p>
+<div class="hero__cta">
+<a class="btn btn--primary" href="#select">ピックを見る</a>
+<a class="btn btn--ghost" href="#about">ムードで探す</a>
+</div>
+<div class="hero__tags" aria-label="扱うジャンル"><span>STANDARD</span><span>EDGE</span><span>LUXURY</span><span>ROOM</span><span>DAILY</span></div>
+</div>
+</div>
 </section>
 
 <!-- ============ MOOD / DISCOVER ============ -->
 <section class="about mood" id="about">
-  <div class="mood-showcase reveal" data-mood-slider>
-    <div class="mood-story">
-      <article class="mood-slide is-active" data-slide="0">
-        <div class="mood-slide__text">
-          <span class="eyebrow">MOOD BOARD</span>
-          <h2>気分に合う、ちょうどいい良品を。</h2>
-          <p>定番、遊び、ラグジュアリー、実用性。いまの気分と生活の景色に合うものを、ムードからも探せるようにしました。</p>
-        </div>
-        <img class="mood-slide__art" src="images/slide-mood-board.webp" alt="ランプ、バッグ、植物、カップなどを抽象的に並べたムードボードの線画" loading="lazy" />
-      </article>
-      <article class="mood-slide" data-slide="1" aria-hidden="true">
-        <div class="mood-slide__text">
-          <span class="eyebrow">EDITOR'S FILTER</span>
-          <h2>ちょうどよく馴染んで、ちゃんと気分が上がる。</h2>
-          <p>長く使える定番、少しだけ攻めた形、特別感のある質感。日常に置いたときの景色まで想像して、雑貨・インテリア・ガジェットを横断します。</p>
-        </div>
-        <img class="mood-slide__art" src="images/slide-editors-filter.webp" alt="複数のアイテムカードを選ぶ抽象的な編集フィルターの線画" loading="lazy" />
-      </article>
-      <article class="mood-slide" data-slide="2" aria-hidden="true">
-        <div class="mood-slide__text">
-          <span class="eyebrow">HOW TO PICK</span>
-          <h2>色、素材、置き場所から選ぶ。</h2>
-          <p>写真に映えるだけでなく、毎日触ったときに気分が続くか。ファッション、雑貨、インテリア、ガジェットを同じ目線で見ます。</p>
-        </div>
-        <img class="mood-slide__art" src="images/slide-how-to-pick.webp" alt="色、素材、置き場所を整理する抽象的な選び方の線画" loading="lazy" />
-      </article>
-      <div class="mood-controls" aria-label="説明スライド">
-        <button type="button" class="is-active" data-mood-dot="0" aria-label="MOOD BOARDを表示"></button>
-        <button type="button" data-mood-dot="1" aria-label="EDITOR'S FILTERを表示"></button>
-        <button type="button" data-mood-dot="2" aria-label="HOW TO PICKを表示"></button>
-      </div>
-    </div>
-  </div>
-  <div class="mood-tiles" aria-label="ムード別の探し方">
-    <a class="mood-tile reveal" href="#select" style="--c:var(--coral)">
-      <img src="images/mood-standard.webp" alt="定番を選び直すための明るいデザイン小物とデスクまわり" loading="lazy" />
-      <span># STANDARD</span><b>定番を選び直す</b>
-    </a>
-    <a class="mood-tile reveal" href="#select" style="--c:var(--teal)">
-      <img src="images/mood-room.webp" alt="部屋に馴染むランプ、花器、テキスタイルの明るいスタイリング" loading="lazy" />
-      <span># ROOM</span><b>部屋に馴染ませる</b>
-    </a>
-    <a class="mood-tile reveal" href="#select" style="--c:var(--purple)">
-      <img src="images/mood-edge.webp" alt="少しエッジのあるカラフルなデスクアクセサリーとガジェット" loading="lazy" />
-      <span># EDGE</span><b>少しだけ攻める</b>
-    </a>
-    <a class="mood-tile reveal" href="#read" style="--c:var(--amber)">
-      <img src="images/mood-luxury.webp" alt="質感で気分を上げる明るいファブリック、陶器、金属トレイ" loading="lazy" />
-      <span># LUXURY</span><b>質感で上げる</b>
-    </a>
-  </div>
+<div class="mood-showcase reveal" data-mood-slider>
+<div class="mood-story">
+<article class="mood-slide is-active" data-slide="0">
+<div class="mood-slide__text">
+<span class="eyebrow">MOOD BOARD</span>
+<h2>気分に合う、ちょうどいい良品を。</h2>
+<p>定番、遊び、ラグジュアリー、実用性。いまの気分と生活の景色に合うものを、ムードからも探せるようにしました。</p>
+</div>
+<img class="mood-slide__art" src="images/slide-mood-board.webp" alt="ランプ、バッグ、植物、カップなどを抽象的に並べたムードボードの線画" loading="lazy" />
+</article>
+<article class="mood-slide" data-slide="1" aria-hidden="true">
+<div class="mood-slide__text">
+<span class="eyebrow">EDITOR'S FILTER</span>
+<h2>ちょうどよく馴染んで、ちゃんと気分が上がる。</h2>
+<p>長く使える定番、少しだけ攻めた形、特別感のある質感。日常に置いたときの景色まで想像して、雑貨・インテリア・ガジェットを横断します。</p>
+</div>
+<img class="mood-slide__art" src="images/slide-editors-filter.webp" alt="複数のアイテムカードを選ぶ抽象的な編集フィルターの線画" loading="lazy" />
+</article>
+<article class="mood-slide" data-slide="2" aria-hidden="true">
+<div class="mood-slide__text">
+<span class="eyebrow">HOW TO PICK</span>
+<h2>色、素材、置き場所から選ぶ。</h2>
+<p>写真に映えるだけでなく、毎日触ったときに気分が続くか。ファッション、雑貨、インテリア、ガジェットを同じ目線で見ます。</p>
+</div>
+<img class="mood-slide__art" src="images/slide-how-to-pick.webp" alt="色、素材、置き場所を整理する抽象的な選び方の線画" loading="lazy" />
+</article>
+<div class="mood-controls" aria-label="説明スライド">
+<button type="button" class="is-active" data-mood-dot="0" aria-label="MOOD BOARDを表示"></button>
+<button type="button" data-mood-dot="1" aria-label="EDITOR'S FILTERを表示"></button>
+<button type="button" data-mood-dot="2" aria-label="HOW TO PICKを表示"></button>
+</div>
+</div>
+</div>
+<div class="mood-tiles" aria-label="ムード別の探し方">
+<a class="mood-tile reveal" href="#select" style="--c:var(--coral)">
+<img src="images/mood-standard.webp" alt="定番を選び直すための明るいデザイン小物とデスクまわり" loading="lazy" />
+<span># STANDARD</span><b>定番を選び直す</b>
+</a>
+<a class="mood-tile reveal" href="#select" style="--c:var(--teal)">
+<img src="images/mood-room.webp" alt="部屋に馴染むランプ、花器、テキスタイルの明るいスタイリング" loading="lazy" />
+<span># ROOM</span><b>部屋に馴染ませる</b>
+</a>
+<a class="mood-tile reveal" href="#select" style="--c:var(--purple)">
+<img src="images/mood-edge.webp" alt="少しエッジのあるカラフルなデスクアクセサリーとガジェット" loading="lazy" />
+<span># EDGE</span><b>少しだけ攻める</b>
+</a>
+<a class="mood-tile reveal" href="#read" style="--c:var(--amber)">
+<img src="images/mood-luxury.webp" alt="質感で気分を上げる明るいファブリック、陶器、金属トレイ" loading="lazy" />
+<span># LUXURY</span><b>質感で上げる</b>
+</a>
+</div>
 </section>
 
 <!-- ============ TOPIC RAIL ============ -->
 <section class="topic-rail" aria-label="キーワードで探す">
-  <div class="topic-rail__head">
-    <span>CURATION TAGS</span>
-    <b>タグで拾う</b>
-  </div>
-  <div class="topic-rail__track">
-    <a href="#select">#STANDARD</a><a href="#select">#EDGE</a><a href="#select">#LUXURY</a><a href="#select">#ROOM</a><a href="#select">#GADGET</a><a href="#read">#HOW TO PICK</a>
-  </div>
+<div class="topic-rail__head">
+<span>CURATION TAGS</span>
+<b>タグで拾う</b>
+</div>
+<div class="topic-rail__track">
+<a href="#select">#STANDARD</a><a href="#select">#EDGE</a><a href="#select">#LUXURY</a><a href="#select">#ROOM</a><a href="#select">#GADGET</a><a href="#read">#HOW TO PICK</a>
+</div>
 </section>
 
 <!-- ============ SELECT ============ -->
 <section class="select" id="select">
-  <div class="section-head">
-    <span class="eyebrow">SELECT</span>
-    <h2>最近、気になったもの。</h2>
-    <p class="section-sub">暮らしの景色を少し上げてくれるアイテムを、気ままに集めています。価格・在庫は変動するので、購入前にリンク先でご確認ください。</p>
-  </div>
+<div class="section-head">
+<span class="eyebrow">SELECT</span>
+<h2>最近、気になったもの。</h2>
+<p class="section-sub">暮らしの景色を少し上げてくれるアイテムを、気ままに集めています。価格・在庫は変動するので、購入前にリンク先でご確認ください。</p>
+</div>
 
-  <div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
-    <button class="chip is-active" data-cat="all" role="tab" aria-selected="true">すべて</button>
-    <button class="chip" data-cat="gadget" role="tab" aria-selected="false" style="--c:var(--purple-deep)">ガジェット</button>
-    <button class="chip" data-cat="interior" role="tab" aria-selected="false" style="--c:var(--teal-deep)">インテリア</button>
-    <button class="chip" data-cat="goods" role="tab" aria-selected="false" style="--c:var(--coral-deep)">雑貨</button>
-    <button class="chip" data-cat="fashion" role="tab" aria-selected="false" style="--c:var(--amber-deep)">ファッション</button>
-  </div>
+<div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
+<button class="chip is-active" data-cat="all" role="tab" aria-selected="true">すべて</button>
+<button class="chip" data-cat="gadget" role="tab" aria-selected="false" style="--c:var(--purple-deep)">ガジェット</button>
+<button class="chip" data-cat="interior" role="tab" aria-selected="false" style="--c:var(--teal-deep)">インテリア</button>
+<button class="chip" data-cat="goods" role="tab" aria-selected="false" style="--c:var(--coral-deep)">雑貨</button>
+<button class="chip" data-cat="fashion" role="tab" aria-selected="false" style="--c:var(--amber-deep)">ファッション</button>
+</div>
 
-  <div class="grid" id="pickGrid"><!-- cards injected by js --></div>
-  <div class="more-row"><button class="more-btn" id="togglePicks" type="button" aria-expanded="false">もっと見る</button></div>
+<div class="grid" id="pickGrid"><!-- cards injected by js --></div>
+<div class="more-row"><button class="more-btn" id="togglePicks" type="button" aria-expanded="false">もっと見る</button></div>
 </section>
 
 <!-- ============ READ ============ -->
 <section class="read" id="read">
-  <div class="section-head">
-    <span class="eyebrow">READ</span>
-    <h2>読みもの</h2>
-    <p class="section-sub">買う前に少し立ち止まって、見た目・使い心地・置き場所を整理するメモ。アフィリエイトリンクなしの独自コンテンツです。</p>
-  </div>
-  <div class="read-list">
-    <article class="read-card read-card--essay reveal">
-      <div class="read-card__topline">
-        <span class="tag" style="--c:var(--pink-deep)">選び方</span>
-        <span class="read-card__date">2026.08.05</span>
-      </div>
-      <h3><a href="/read/zakka-no-mikata">部屋と服のあいだで選ぶ、デザイン雑貨の見方</a></h3>
-      <p>雑貨はインテリアでもあり、持ち歩けばファッションにもなります。かわいいだけ、便利なだけで終わらせず、部屋・服・写真にどう映るかまで見て選びます。</p>
-      <ul class="read-card__points">
-        <li>部屋に置いたとき、背景まで込みで気分が上がるか</li>
-        <li>服やバッグと並べたとき、ちゃんと自分のノリになるか</li>
-        <li>流行っている理由と、自分が使う理由が両方あるか</li>
-      </ul>
-      <a class="read-card__more" href="/read/zakka-no-mikata">記事を読む →</a>
-    </article>
-    <article class="read-card read-card--essay reveal">
-      <div class="read-card__topline">
-        <span class="tag" style="--c:var(--teal-deep)">デスク</span>
-        <span class="read-card__date">2026.08.05</span>
-      </div>
-      <h3><a href="/read/trend-komono-rule">トレンド小物を子どもっぽく見せないルール</a></h3>
-      <p>ビビッドな色、変わった形、強い柄。楽しい小物ほど、合わせ方で印象が変わります。ポップだけど雑に見えない、日常に置けるエッジの作り方を整理します。</p>
-      <ul class="read-card__points">
-        <li>強い色は1点だけ主役にして、ほかは黒・白・生成りで受ける</li>
-        <li>ロゴ感より、形・素材・配色で遊ぶ</li>
-        <li>SNS映えだけでなく、毎日触るテンションまで見る</li>
-      </ul>
-      <a class="read-card__more" href="/read/trend-komono-rule">記事を読む →</a>
-    </article>
-  </div>
+<div class="section-head">
+<span class="eyebrow">READ</span>
+<h2>読みもの</h2>
+<p class="section-sub">買う前に少し立ち止まって、見た目・使い心地・置き場所を整理するメモ。アフィリエイトリンクなしの独自コンテンツです。</p>
+</div>
+<div class="read-list">
+<article class="read-card read-card--essay reveal">
+<div class="read-card__topline">
+<span class="tag" style="--c:var(--pink-deep)">選び方</span>
+<span class="read-card__date">2026.08.05</span>
+</div>
+<h3><a href="/read/zakka-no-mikata">部屋と服のあいだで選ぶ、デザイン雑貨の見方</a></h3>
+<p>雑貨はインテリアでもあり、持ち歩けばファッションにもなります。かわいいだけ、便利なだけで終わらせず、部屋・服・写真にどう映るかまで見て選びます。</p>
+<ul class="read-card__points">
+<li>部屋に置いたとき、背景まで込みで気分が上がるか</li>
+<li>服やバッグと並べたとき、ちゃんと自分のノリになるか</li>
+<li>流行っている理由と、自分が使う理由が両方あるか</li>
+</ul>
+<a class="read-card__more" href="/read/zakka-no-mikata">記事を読む →</a>
+</article>
+<article class="read-card read-card--essay reveal">
+<div class="read-card__topline">
+<span class="tag" style="--c:var(--teal-deep)">デスク</span>
+<span class="read-card__date">2026.08.05</span>
+</div>
+<h3><a href="/read/trend-komono-rule">トレンド小物を子どもっぽく見せないルール</a></h3>
+<p>ビビッドな色、変わった形、強い柄。楽しい小物ほど、合わせ方で印象が変わります。ポップだけど雑に見えない、日常に置けるエッジの作り方を整理します。</p>
+<ul class="read-card__points">
+<li>強い色は1点だけ主役にして、ほかは黒・白・生成りで受ける</li>
+<li>ロゴ感より、形・素材・配色で遊ぶ</li>
+<li>SNS映えだけでなく、毎日触るテンションまで見る</li>
+</ul>
+<a class="read-card__more" href="/read/trend-komono-rule">記事を読む →</a>
+</article>
+<article class="read-card read-card--essay reveal">
+<div class="read-card__topline">
+<span class="tag" style="--c:var(--amber-deep)">暮らし</span>
+<span class="read-card__date">2026.08.10</span>
+</div>
+<h3><a href="/read/ii-mono-no-kijun">実際に買ってよかったものに共通する、「良いモノ」の選び方</a></h3>
+<p>玄関のマット、毎日座る椅子、持ち歩く鞄。実際に買ってよかったものを振り返ると、値段でも知名度でもない選び方の基準が見えてきます。</p>
+<ul class="read-card__points">
+<li>その場所は、強い色を1点だけ乗せられるくらい小さいか</li>
+<li>毎日触れるものなら、値段より先に素材を見ているか</li>
+<li>色に迷ったら、白でも黒でもなく生成りを試してみる</li>
+</ul>
+<a class="read-card__more" href="/read/ii-mono-no-kijun">記事を読む →</a>
+</article>
+<article class="read-card read-card--essay reveal">
+<div class="read-card__topline">
+<span class="tag" style="--c:var(--coral-deep)">雑貨</span>
+<span class="read-card__date">2026.08.10</span>
+</div>
+<h3><a href="/read/zakka-no-asobigokoro">お手頃な雑貨だからこそ、遊び心を効かせる</a></h3>
+<p>トラ柄のマット、無骨な南京錠、コラボもののクッション。お手頃な雑貨だからこそ、思いきった遊び心を効かせられる理由を整理しました。</p>
+<ul class="read-card__points">
+<li>強い柄や色は、まず値段の低いものから試しているか</li>
+<li>実用品だからこそ、デザインで遊ぶ余地を残しているか</li>
+<li>ネタ性の強いアイテムは、ひとつの空間にひとつだけにしているか</li>
+</ul>
+<a class="read-card__more" href="/read/zakka-no-asobigokoro">記事を読む →</a>
+</article>
+<article class="read-card read-card--essay reveal">
+<div class="read-card__topline">
+<span class="tag" style="--c:var(--purple-deep)">インテリア</span>
+<span class="read-card__date">2026.08.10</span>
+</div>
+<h3><a href="/read/kagu-brand-no-erabikata">HAY・ニトリ・ART OF BLACK、家具ブランドは「どこに投資するか」で選ぶ</a></h3>
+<p>似ているようで違う3つの家具ブランドを、デザイン・価格・実用性の観点から整理し、どこにお金をかけるかを考えます。</p>
+<ul class="read-card__points">
+<li>長く使えるデザインの定番が欲しいなら、価格よりデザインを優先しているか</li>
+<li>毎日使うからこそ、実用性とコストパフォーマンスを優先しているか</li>
+<li>今っぽい雰囲気を、まずは手頃な価格で試そうとしているか</li>
+</ul>
+<a class="read-card__more" href="/read/kagu-brand-no-erabikata">記事を読む →</a>
+</article>
+</div>
 </section>
 
 <section aria-label="このサイトをシェア">
-  <div style="max-width:var(--maxw);margin:0 auto">
-    <div class="share" data-share>
-      <span class="share__label">SHARE</span>
-      <button class="share__btn" type="button" data-share-native hidden>シェアする</button>
-      <a class="share__btn" data-share-x target="_blank" rel="noopener">X</a>
-      <a class="share__btn" data-share-line target="_blank" rel="noopener">LINE</a>
-      <a class="share__btn" data-share-fb target="_blank" rel="noopener">Facebook</a>
-      <a class="share__btn" data-share-pin target="_blank" rel="noopener">Pinterest</a>
-      <button class="share__btn" type="button" data-share-copy>リンクをコピー</button>
-    </div>
-  </div>
+<div style="max-width:var(--maxw);margin:0 auto">
+<div class="share" data-share>
+<span class="share__label">SHARE</span>
+<button class="share__btn" type="button" data-share-native hidden>シェアする</button>
+<a class="share__btn" data-share-x target="_blank" rel="noopener">X</a>
+<a class="share__btn" data-share-line target="_blank" rel="noopener">LINE</a>
+<a class="share__btn" data-share-fb target="_blank" rel="noopener">Facebook</a>
+<a class="share__btn" data-share-pin target="_blank" rel="noopener">Pinterest</a>
+<button class="share__btn" type="button" data-share-copy>リンクをコピー</button>
+</div>
+</div>
 </section>
 
 <!-- ============ CHANNELS ============ -->
 <section class="channels" id="channels">
-  <div class="section-head section-head--light">
-    <span class="eyebrow">FOLLOW</span>
-    <h2>各チャンネルで、もっと。</h2>
-  </div>
-  <div class="channel-cards">
-    <a class="channel" href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener" style="--c:#BF0000">
-      <span class="channel__name">楽天ROOM</span>
-      <span class="channel__desc">気になるモノを日々コレクション</span>
-      <span class="channel__go">開く →</span>
-    </a>
-    <a class="channel" href="https://www.instagram.com/kininarumonote/" target="_blank" rel="noopener" style="--c:#C13584">
-      <span class="channel__name">Instagram</span>
-      <span class="channel__desc">写真で見る、気になるモノ</span>
-      <span class="channel__go">開く →</span>
-    </a>
-    <a class="channel" href="https://pin.it/3uk3gKZUp" target="_blank" rel="noopener" style="--c:#E60023">
-      <span class="channel__name">Pinterest</span>
-      <span class="channel__desc">クリーンな画像でボード別に保存</span>
-      <span class="channel__go">開く →</span>
-    </a>
-    <a class="channel" href="https://x.com/kininarumonote" target="_blank" rel="noopener" style="--c:#111111">
-      <span class="channel__name">X</span>
-      <span class="channel__desc">ひとことと画像で、ゆるく</span>
-      <span class="channel__go">開く →</span>
-    </a>
-  </div>
+<div class="section-head section-head--light">
+<span class="eyebrow">FOLLOW</span>
+<h2>各チャンネルで、もっと。</h2>
+</div>
+<div class="channel-cards">
+<a class="channel" href="https://room.rakuten.co.jp/totonou_note" target="_blank" rel="noopener" style="--c:#BF0000">
+<span class="channel__name">楽天ROOM</span>
+<span class="channel__desc">気になるモノを日々コレクション</span>
+<span class="channel__go">開く →</span>
+</a>
+<a class="channel" href="https://www.instagram.com/kininarumonote/" target="_blank" rel="noopener" style="--c:#C13584">
+<span class="channel__name">Instagram</span>
+<span class="channel__desc">写真で見る、気になるモノ</span>
+<span class="channel__go">開く →</span>
+</a>
+<a class="channel" href="https://pin.it/3uk3gKZUp" target="_blank" rel="noopener" style="--c:#E60023">
+<span class="channel__name">Pinterest</span>
+<span class="channel__desc">クリーンな画像でボード別に保存</span>
+<span class="channel__go">開く →</span>
+</a>
+<a class="channel" href="https://x.com/kininarumonote" target="_blank" rel="noopener" style="--c:#111111">
+<span class="channel__name">X</span>
+<span class="channel__desc">ひとことと画像で、ゆるく</span>
+<span class="channel__go">開く →</span>
+</a>
+</div>
 </section>
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer" id="footer">
-  <div class="footer__brand">
-    <span class="wordmark wordmark--footer">
-      <img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" loading="lazy" decoding="async" />
-      <span class="wordmark__name">気になるモノ手帖</span>
-      <span class="wordmark__sub">MONO NOTE</span>
-    </span>
-    <p>デザインでアガる雑貨・インテリア・ガジェット。</p>
-  </div>
-  <div class="footer__legal">
-    <p><strong>アフィリエイトについて</strong><br />当サイトは、アフィリエイトプログラム（楽天アフィリエイト・Amazonアソシエイト・A8.net等）を利用しています。掲載リンクから商品を購入されると、運営者に報酬が支払われる場合があります。価格・在庫は掲載時点のもので変動します。購入前にリンク先でご確認ください。</p>
-    <p class="footer__amazon">※Amazonのアソシエイトとして、気になるモノ手帖は適格販売により収入を得ています。</p>
-    <p class="footer__mini">運営者：気になるモノ手帖（お問い合わせは各SNSのDMまで）／掲載情報の正確性には努めますが内容を保証するものではありません。商品の購入・利用は各自のご判断でお願いします。</p>
-  </div>
-  <p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
+<div class="footer__brand">
+<span class="wordmark wordmark--footer">
+<img class="wordmark__mark" src="/images/logo-mark.webp" alt="" width="320" height="320" loading="lazy" decoding="async" />
+<span class="wordmark__name">気になるモノ手帖</span>
+<span class="wordmark__sub">MONO NOTE</span>
+</span>
+<p>デザインでアガる雑貨・インテリア・ガジェット。</p>
+</div>
+<div class="footer__legal">
+<p><strong>アフィリエイトについて</strong><br />当サイトは、アフィリエイトプログラム（楽天アフィリエイト・Amazonアソシエイト・A8.net等）を利用しています。掲載リンクから商品を購入されると、運営者に報酬が支払われる場合があります。価格・在庫は掲載時点のもので変動します。購入前にリンク先でご確認ください。</p>
+<p class="footer__amazon">※Amazonのアソシエイトとして、気になるモノ手帖は適格販売により収入を得ています。</p>
+<p class="footer__mini">運営者：気になるモノ手帖（お問い合わせは各SNSのDMまで）／掲載情報の正確性には努めますが内容を保証するものではありません。商品の購入・利用は各自のご判断でお願いします。</p>
+</div>
+<p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
 </footer>
 
 <button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
