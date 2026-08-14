@@ -177,7 +177,9 @@
   // 読みもの等の商品グリッドが無いページでも同じmain.jsを読むため、存在確認する
   if (grid) grid.appendChild(frag);
 
-  let expanded = false;
+  let visibleCount = INITIAL_VISIBLE;
+  const LOAD_STEP = 30;
+  let totalMatches = 0;
   const togglePicks = document.getElementById("togglePicks");
   const applyLimit = () => {
     const activeChip = document.querySelector(".chip.is-active");
@@ -190,24 +192,29 @@
         card.classList.add("is-hidden");
         return;
       }
-      const collapse = !expanded && visibleIndex >= INITIAL_VISIBLE;
+      const collapse = visibleIndex >= visibleCount;
       card.classList.toggle("is-hidden", collapse);
       visibleIndex += 1;
     });
+      totalMatches = visibleIndex;
 
     if (togglePicks) {
-      const canExpand = visibleIndex > INITIAL_VISIBLE;
-      togglePicks.hidden = !canExpand;
-      togglePicks.textContent = expanded ? "閉じる" : "もっと見る";
-      togglePicks.setAttribute("aria-expanded", String(expanded));
+      const hasMore = totalMatches > visibleCount;
+      const isExpanded = visibleCount > INITIAL_VISIBLE;
+      togglePicks.hidden = !(hasMore || isExpanded);
+      togglePicks.textContent = hasMore ? "もっと見る" : "閉じる";
+      togglePicks.setAttribute("aria-expanded", String(isExpanded));
     }
   };
 
   if (togglePicks) {
     togglePicks.addEventListener("click", () => {
-      expanded = !expanded;
+      if (totalMatches > visibleCount) {
+        visibleCount += LOAD_STEP;
+      } else {
+        visibleCount = INITIAL_VISIBLE;
       applyLimit();
-      if (!expanded) {
+      if (visibleCount === INITIAL_VISIBLE) {
         document.getElementById("select")?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
@@ -224,7 +231,7 @@
         chips.forEach((c) => { c.classList.remove("is-active"); c.setAttribute("aria-selected","false"); });
         chip.classList.add("is-active");
         chip.setAttribute("aria-selected","true");
-        expanded = false;
+        visibleCount = INITIAL_VISIBLE;
         applyLimit();
       };
       // 対応ブラウザでは絞り込みをクロスフェードさせる（未対応なら即時切替）。
