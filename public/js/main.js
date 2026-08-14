@@ -213,6 +213,7 @@
         visibleCount += LOAD_STEP;
       } else {
         visibleCount = INITIAL_VISIBLE;
+      }
       applyLimit();
       if (visibleCount === INITIAL_VISIBLE) {
         document.getElementById("select")?.scrollIntoView({ behavior: "smooth", block: "start" });
