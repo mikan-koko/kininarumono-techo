@@ -199,6 +199,8 @@
     const el = document.createElement("article");
     el.className = "card reveal" + (p.feature ? " card--feature" : "");
     el.dataset.cat = p.cat;
+    el.dataset.brand = p.brand;
+    el.dataset.name = p.name;
     el.style.setProperty("--c", meta.cvar);
     el.style.setProperty("--c-deep", meta.deep);
     el.style.setProperty("--c-soft", meta.soft);
@@ -464,6 +466,63 @@
         setTimeout(() => { copy.textContent = before; copy.classList.remove("is-done"); }, 1800);
       });
     }
+  });
+
+
+  // ---- クリック計測（GA4） ----
+  // アフィリエイトリンクが押されているかを測れないと、どの商品が効いているか
+  // 判断できないため、外部リンクのクリックをイベントとして送る。
+  // 注意: パラメータはGA4の「カスタム定義」に登録しないとレポートに列として出ない。
+  const track = (name, params) => {
+    if (typeof window.gtag !== "function") return;
+    const clean = {};
+    Object.entries(params).forEach(([k, v]) => {
+      if (v == null || v === "") return;
+      clean[k] = String(v).slice(0, 100);   // GA4のパラメータ値は100文字まで
+    });
+    window.gtag("event", name, clean);
+  };
+  const pageKind = location.pathname.startsWith("/read/") ? "article" : "top";
+
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a || !a.href) return;
+
+    // 商品リンク（アフィリエイト）
+    const card = a.closest(".card");
+    if (card && a.classList.contains("card__btn")) {
+      track("affiliate_click", {
+        item_brand: card.dataset.brand,
+        item_name: card.dataset.name,
+        item_category: card.dataset.cat,
+        page_kind: pageKind
+      });
+      return;
+    }
+    // SNSチャンネル
+    if (a.classList.contains("channel") || a.classList.contains("pill--room")) {
+      track("sns_click", {
+        sns_name: (a.querySelector(".channel__name")?.textContent || a.textContent || "").trim(),
+        page_kind: pageKind
+      });
+      return;
+    }
+    // シェアボタン
+    if (a.classList.contains("share__btn")) {
+      track("share_click", { share_to: a.textContent.trim(), page_kind: pageKind });
+      return;
+    }
+    // 記事への遷移
+    if (a.classList.contains("read-card__more") || a.closest(".read-card h3")) {
+      track("article_open", { article_path: new URL(a.href, location.href).pathname, page_kind: pageKind });
+    }
+  }, { passive: true });
+
+  // シェアはボタン要素のものもあるので個別に拾う
+  document.querySelectorAll("[data-share-native],[data-share-copy]").forEach((b) => {
+    b.addEventListener("click", () => {
+      track("share_click", { share_to: b.hasAttribute("data-share-native") ? "native" : "copy", page_kind: pageKind });
+    }, { passive: true });
   });
 
   // ---- year ----
