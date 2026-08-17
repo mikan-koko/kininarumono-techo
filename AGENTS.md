@@ -262,3 +262,45 @@ node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf
 2. 問題なければこの一連のデザイン変更をコミットする。
 3. その後、最優先タスクはREAD記事の拡充。アフィリエイト審査向けに、リンクなしの独自記事を増やす。
 4. 独自ドメインは、会社サブドメインより `kininarumono-techo.com` や `monotecho.jp` のような独立ドメインが推奨。ただし仮公開や会社企画として見せるなら `kininarumono.kokokikaku.com` も可。
+---
+
+## 11. 2026-08-17 GA4計測の設定状況
+
+> 注：§8「現状と残タスク」は2026-08-06時点の記述で古い。商品は72件、読みもの記事は5本公開済み。
+
+### 計測ID
+`G-S4LRS2KCRZ`（プロパティ「気になるモノ手帖」／`a389817628p549228643`）。
+`index.html` と `public/read/*.html` の全ページに gtag スニペットあり。
+
+### 送信しているカスタムイベント（`public/js/main.js` の `track()`）
+| イベント | パラメータ |
+|---|---|
+| `affiliate_click` | `item_brand` / `item_name` / `item_category` / `page_kind` |
+| `sns_click` | `sns_name` |
+| `share_click` | `share_to` |
+| `article_open` | `article_path` |
+
+`page_kind` は `/read/` 配下なら `article`、それ以外は `top`。
+GA4のパラメータ値は100文字上限なので `track()` 内で `slice(0,100)` している。
+
+### 登録済みのカスタムディメンション（すべて範囲=イベント）
+商品ブランド/`item_brand`、商品名/`item_name`、商品カテゴリ/`item_category`、
+流入元ページ種別/`page_kind`、SNS名/`sns_name`、シェア先/`share_to`、記事パス/`article_path`
+
+### 未完了：キーイベント登録
+`affiliate_click` をキーイベントにする作業が**残っている**。
+
+このプロパティのUIには「新しいキーイベント」ボタンが無く、
+**管理 → データの表示 → イベント → 最近のイベント** の一覧で
+イベント名の左の**星をクリックする方式しかない**。
+この一覧は処理済みデータを使うため、**イベント初回発火から反映まで最大24時間**かかる。
+
+2026-08-17にセットアップ用のテストイベントを発火済み（`item_brand:"setup_test"` 等）。
+リアルタイムレポートでの受信は確認済み。翌日以降、上記の手順で星を付ければ完了する。
+
+### 注意
+- 動作確認でアフィリエイトリンクを実際にクリックしない。楽天の自己クリックになる。
+  イベントだけ発火させたいときは、本番ページのコンソールで
+  `gtag('event','affiliate_click',{...})` を直接呼ぶ。
+- ブラウザの開発者ツールで `google-analytics.com/g/collect` が **503** に見えることがあるが、
+  リアルタイムレポートには届いている。ステータスコードだけで失敗と判断しない。
