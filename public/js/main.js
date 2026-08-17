@@ -14,6 +14,27 @@
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
   // price/在庫は変動。将来Amazon切替後は該当リンクをAmazon(タグ curryoden22-22)へ差し替え可。
   const PICKS = [
+    // --- 2026.08.17 楽天ROOMから反映（10件） ---
+    { cat:"goods", date:"2026.08.17", motif:"m-mug", brand:"嶺陽茶行", name:"ジャスミン茶 テトラ型ティーバッグ 14袋入り", price:"¥3,397〜", url:"https://hb.afl.rakuten.co.jp/hgc/56a144f3.a9cc5647.56a144f4.27f5377e/_RTroom06836859_389423634_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftwdirect%2Fgeowyongtea-015%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/twdirect/cabinet/geowyongtea/geowyongtea-1/geowyongtea-015_01.jpg",
+      blurb:"台湾の老舗・嶺陽茶行のジャスミン茶。テトラ型のティーバッグで気軽に淹れられて、花柄の缶は置いておくだけで絵になります。" },
+    { cat:"goods", date:"2026.08.17", motif:"m-crate", brand:"竹中", name:"mayu ランチボックス M 680ml", price:"¥2,420", url:"https://hb.afl.rakuten.co.jp/hgc/568fd4dd.94633fef.568fd4df.63bd6584/_RTroom06836859_389410548_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhitoiro%2F387849%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/hitoiro/cabinet/maker_takenaka/387849.jpg",
+      blurb:"ころんと丸いフォルムのランチボックス。継ぎ目が少なくて洗いやすく、並べるとお弁当箱よりインテリア雑貨みたい。" },
+    { cat:"interior", date:"2026.08.17", motif:"m-chair", brand:"Kartell", name:"PRINCE AHA（プリンス アハ）スツール", price:"¥22,500", url:"https://hb.afl.rakuten.co.jp/hgc/5647efbc.ee8761c9.5647efc2.ad8c4a6e/_RTroom06836859_389324000_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmminterior%2F575585%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/mminterior/cabinet/03250003/06880268/imgrc0084752721.jpg",
+      blurb:"フィリップ・スタルクが手がけた砂時計のようなフォルム。屋内でも屋外でも使えるので、テラスにひとつ置きたくなります。" },
+    { cat:"goods", date:"2026.08.17", motif:"m-bottle", brand:"uka", name:"ヘアオイル Rainy Walk 50ml", price:"¥4,400", url:"https://hb.afl.rakuten.co.jp/hgc/56968846.a8d2fad4.56968847.bd53c286/_RTroom06836859_389236421_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fukaofficial%2F4582328104418%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/ukaofficial/cabinet/hair_oil_mist/4582328104418x.jpg",
+      blurb:"レモン・ユーカリ・ミントの香りに、アサイーとモリンガのオイルを配合。ボトルのイエローとパッケージのグリーンの色合わせも良い。" },
+    { cat:"interior", date:"2026.08.17", motif:"m-mug", brand:"yumiko iihoshi porcelain × 木村硝子店", name:"dishes プレート L 20cm（サンドベージュ）", price:"¥3,630", url:"https://hb.afl.rakuten.co.jp/hgc/566a652b.e5da1afb.566a652d.fb4e4fef/_RTroom06836859_389216262_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Freceno%2Fdispl-l%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/receno/cabinet/plate2/displ/img/0000054304020.jpg",
+      blurb:"艶を抑えたマットな質感で、和にも洋にも馴染む一枚。食卓の色を選ばないので、長く使えそうなプレートです。" },
+    { cat:"gadget", date:"2026.08.17", motif:"m-mixer", brand:"Francfranc", name:"フレ ハンディファン ウェーブ（2026年モデル）", price:"¥3,980", url:"https://hb.afl.rakuten.co.jp/hgc/56430753.d3416592.56430757.a1dc5f63/_RTroom06836859_388816757_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstylifemen%2Frm4239%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/stylifemen/cabinet/item/239/rm4239-01_1.jpg",
+      blurb:"手になじむ部分の波打つマーブル調の仕上げがメタリック。手に取った瞬間にテンションが上がるハンディファン。" },
+    { cat:"gadget", date:"2026.08.17", motif:"m-stand", brand:"Kodak", name:"FunSaver 800 レンズ付きフィルム 27枚撮り", price:"¥2,376", url:"https://hb.afl.rakuten.co.jp/hgc/56996fa2.9daf1187.56996fa3.ebae6f21/_RTroom06836859_389355237_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fec-current%2F0041778617762%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/ec-current/cabinet/9131/0041778617762.jpg",
+      blurb:"27枚を撮り切るまで写りが分からない不便さが、かえっていい。ISO800でフラッシュ内蔵だから夕方や室内でも気軽に。" },
+    { cat:"fashion", date:"2026.08.17", motif:"m-polo", brand:"LOEWE", name:"アナグラム刺繍 Tシャツ S616Y22X87", price:"¥88,000", url:"https://hb.afl.rakuten.co.jp/hgc/5656b57d.22b6e6b6.5656b586.40e2c27f/_RTroom06836859_389308241_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-marks-run%2F380522357%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/auc-marks-run/cabinet/20260818_cp_1/380522357_1.jpg",
+      blurb:"無地に効かせ刺繍だけを添えた潔さ。オーバーサイズのシルエットも、いまの気分に合います。" },
+    { cat:"fashion", date:"2026.08.17", motif:"m-polo-knit", brand:"JOURNAL STANDARD", name:"リネンナイロン ストレッチワイドパンツ", price:"¥13,200", url:"https://hb.afl.rakuten.co.jp/hgc/56166504.3fb5399f.56166505.5b4d5fd4/_RTroom06836859_389243097_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstylife%2Fpy4401%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/stylife/cabinet/item/401/py4401-01_1.jpg",
+      blurb:"撥水・接触冷感・洗える・UVカットと機能は充分。レッドの発色が効いた、これからの季節のワイドパンツ。" },
+    { cat:"fashion", date:"2026.08.17", motif:"m-socks", brand:"gelato pique", name:"レーヨンロゴT＆ボーダーショートパンツ セット", price:"¥11,550", url:"https://hb.afl.rakuten.co.jp/hgc/56951b20.39e2a5b7.56951b21.d7d9d019/_RTroom06836859_389211070_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshirohato%2Fb52pwct261365%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/shirohato/cabinet/001807/b52pwct261365.jpg",
+      blurb:"レーヨン素材のひんやりした肌当たりが心地よい接触冷感のセットアップ。落ち着いたミントグリーンで、部屋着なのに主役級。" },
     { cat:"interior", date:"2026.08.14", motif:"m-chair", brand:"KAY BOJESEN DENMARK", name:"Monkey Mini（モンキー ミニ ブラック）", code:"belle-life:10007016", price:"¥16,500", url:"https://a.r10.to/hPIgoH", img:"https://shop.r10s.jp/belle-life/cabinet/02325296/imgrc0083882083.jpg",
       blurb:"デンマークの木工職人技が息づく、愛らしい表情のモンキー。日本正規代理店品でオーク材の温もりが魅力。" },
     { cat:"gadget", date:"2026.08.14", motif:"m-keyboard", brand:"NuPhy", name:"Air75 V3 メカニカルキーボード（Blush）", code:"r-kojima:11665960", price:"¥31,770", url:"https://a.r10.to/hF52M6", img:"https://shop.r10s.jp/r-kojima/cabinet/n0000001494/4570001397691_1.jpg",
@@ -156,7 +177,7 @@
   // 商品を1〜数件追加すると、その日付の商品にだけ自動で付く。
   const latestDate = PICKS.reduce((m, p) => (p.date > m ? p.date : m), "");
   const latestCount = PICKS.filter((p) => p.date === latestDate).length;
-  const isNew = (p) => latestCount > 0 && latestCount <= 6 && p.date === latestDate;
+  const isNew = (p) => latestCount > 0 && latestCount < PICKS.length / 3 && p.date === latestDate;
   const INITIAL_VISIBLE = 6;
 
   // ---- render cards ----
