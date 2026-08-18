@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>OGP source 1200x630</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
+<!-- サイト本体のトークン（色・フォント）をそのまま読み込むので、
+     デザインを変えたときにOG画像だけ取り残されることがない -->
+<link rel="stylesheet" href="/css/style.css?v=59" />
+<style>
+  /* 1200x630 固定。#og をそのままスクリーンショットして書き出す */
+  html,body{margin:0;padding:0;background:#555}
+  #og{
+    position:relative;width:1200px;height:630px;overflow:hidden;
+    background:var(--ink);isolation:isolate;
+    font-family:var(--jp);color:var(--ink);
+    font-feature-settings:"palt" 1;
+  }
+  #og .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(1.08) contrast(1.03);z-index:0}
+  /* ヒーローと同じ紙色ウォッシュ。左を読ませ、右に写真を残す */
+  #og .wash{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(90deg,rgba(246,241,232,.975) 0%,rgba(246,241,232,.945) 40%,rgba(246,241,232,.28) 72%,rgba(18,18,18,.18) 100%),
+      linear-gradient(0deg,rgba(18,18,18,.26),transparent 40%);
+  }
+  /* ヒーロー左上の色面（ピンク→イエロー）。
+     見出しの真後ろで斜めのエッジが切れると散らかって見えるので、
+     ヒーローより上・左に寄せてキッカー〜1行目の背だけを受け持たせる */
+  #og .shape{
+    position:absolute;left:30px;top:70px;width:360px;height:210px;z-index:2;
+    background:linear-gradient(135deg,rgba(255,61,154,.24),rgba(255,198,26,.30));
+    clip-path:polygon(7% 0,100% 8%,88% 100%,0 86%);
+  }
+  /* ヒーロー下端のギザギザを紙色で受ける */
+  #og .zag{
+    position:absolute;left:0;right:0;bottom:-1px;height:30px;background:var(--paper-2);z-index:4;
+    clip-path:polygon(0 48%,8% 34%,18% 55%,30% 36%,42% 52%,56% 32%,70% 50%,84% 30%,100% 44%,100% 100%,0 100%);
+  }
+  #og .inner{position:relative;z-index:3;padding:46px 56px 60px;height:100%;box-sizing:border-box;display:flex;flex-direction:column}
+
+  #og .brand{display:flex;align-items:center;gap:12px;line-height:1}
+  #og .brand img{width:46px;height:46px;border-radius:23%;display:block}
+  #og .brand .nm{font-family:var(--jp);font-weight:900;font-size:27px;letter-spacing:.035em;text-shadow:.035em .035em 0 rgba(255,61,154,.18)}
+  #og .brand .sub{font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--purple-deep);align-self:flex-end;padding-bottom:3px}
+
+  #og .kicker{
+    display:inline-block;align-self:flex-start;font-family:var(--latin);font-weight:700;
+    letter-spacing:.18em;font-size:13px;background:var(--paper-2);border:1.5px solid var(--ink);
+    border-radius:999px;padding:8px 18px;margin:34px 0 20px;box-shadow:4px 5px 0 rgba(255,61,154,.42);
+  }
+  /* サイトのh1と同じ Zen Maru Gothic 900。--display(Dela Gothic One)ではない */
+  #og h1{
+    font-family:var(--jp);font-weight:900;margin:0;
+    font-size:68px;line-height:1.08;letter-spacing:0;
+  }
+  #og h1 .pop{
+    display:inline-block;color:#fff;padding:.02em .16em .06em;border-radius:14px;
+    background:var(--purple);border:2px solid var(--ink);transform:rotate(-1.4deg);
+    box-shadow:5px 6px 0 var(--coral);margin:0 .06em;
+  }
+  #og .lead{
+    font-family:var(--jp);font-weight:700;font-size:19px;color:var(--ink-2);
+    margin:24px 0 0;line-height:1.6;
+  }
+  #og .lead b{font-weight:700;color:var(--ink);background:linear-gradient(transparent 62%,rgba(255,198,26,.78) 62%)}
+
+  /* カテゴリ7色。サイトのチップと同じ意匠（濃色ベタ＋墨の輪郭＋ハード影） */
+  #og .cats{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto;padding-bottom:6px}
+  #og .cats span{
+    font-family:var(--jp);font-weight:700;font-size:15px;color:#fff;
+    padding:7px 15px;border-radius:999px;border:2px solid var(--ink);
+    box-shadow:3px 4px 0 var(--ink);
+  }
+</style>
+</head>
+<body>
+<div id="og">
+  <img class="bg" src="/images/hero-pop-props.webp" alt="" />
+  <div class="wash"></div>
+  <div class="shape"></div>
+
+  <div class="inner">
+    <div class="brand">
+      <img src="/images/logo-mark.webp" alt="" />
+      <span class="nm">気になるモノ手帖</span>
+      <span class="sub">MONO NOTE</span>
+    </div>
+
+    <p class="kicker">ITEM CURATION / DAILY DESIGN</p>
+    <h1>日常に馴染んで、<br />デザインで<span class="pop">アガる。</span></h1>
+    <p class="lead">定番からエッジのあるものまで、時にラグジュアリーに。<br /><b>暮らしの景色を少し上げてくれるアイテム</b>を横断して集めます。</p>
+
+    <div class="cats">
+      <span style="background:var(--purple-deep)">ガジェット</span>
+      <span style="background:var(--teal-deep)">インテリア</span>
+      <span style="background:var(--green-deep)">食器・キッチン</span>
+      <span style="background:var(--pink-deep)">コスメ・ケア</span>
+      <span style="background:var(--violet-deep)">日用品</span>
+      <span style="background:var(--coral-deep)">文具・雑貨</span>
+      <span style="background:var(--amber-deep)">ファッション</span>
+    </div>
+  </div>
+
+  <div class="zag"></div>
+</div>
+</body>
+</html>

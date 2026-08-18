@@ -33,7 +33,10 @@ UIを触る前に読むこと。トークンの実体は `public/css/style.css` 
 |---|---|---|---|
 | gadget ガジェット | `#0A57FF` | `#003EBA` | `#E4ECFF` |
 | interior インテリア | `#10B6A8` | `#067A72` | `#DFF5F3` |
-| goods 雑貨 | `#FF4B3E` | `#C92A1B` | `#FFE8E5` |
+| kitchen 食器・キッチン | `#12B76A` | `#14713A` | `#DFF3E6` |
+| beauty コスメ・ケア | `#FF3D9A` | `#C4166B` | `#FFE4F0` |
+| daily 日用品 | `#8B5CF6` | `#5B2AA8` | `#EDE6FF` |
+| goods 文具・雑貨 | `#FF4B3E` | `#C92A1B` | `#FFE8E5` |
 | fashion ファッション | `#FF9E1B` | `#8F5200` | `#FFF0DC` |
 
 アクセント: `--pink:#FF3D9A` / `--pink-deep:#C4166B` / `--yellow:#FFC61A`
@@ -93,7 +96,7 @@ UIを触る前に読むこと。トークンの実体は `public/css/style.css` 
 - `viewBox="0 0 64 64"` 固定
 - 本体 = 紙白（`.mo-b`） / 輪郭 = 墨 `stroke-width:3`（`.mo`） / 差し色 = イエロー（`.mo-a`） / 塗りつぶし = 墨（`.mo-i`）
 - `stroke-linecap` `stroke-linejoin` は `round`
-- **紫・ティール・コーラル・アンバーのどの面に載せても成立する配色にする。** カテゴリ色の上に置かれるため。
+- **紫・ティール・グリーン・ピンク・バイオレット・コーラル・アンバーのどの面に載せても成立する配色にする。** カテゴリ色の上に置かれるため。
 
 ### 質感
 
