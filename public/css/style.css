@@ -16,7 +16,9 @@
 --teal:#10B6A8; --teal-deep:#067A72; --teal-soft:#DFF5F3;
 --coral:#FF4B3E; --coral-deep:#C92A1B; --coral-soft:#FFE8E5;
 --amber:#FF9E1B; --amber-deep:#8F5200; --amber-soft:#FFF0DC;
---pink:#FF3D9A; --pink-deep:#C4166B;
+--pink:#FF3D9A; --pink-deep:#C4166B; --pink-soft:#FFE4F0;
+--green:#12B76A; --green-deep:#14713A; --green-soft:#DFF3E6;
+--violet:#8B5CF6; --violet-deep:#5B2AA8; --violet-soft:#EDE6FF;
 --yellow:#FFC61A;
 
 --r-card:26px;
@@ -74,7 +76,8 @@ background:rgba(255,253,247,.86);backdrop-filter:blur(14px) saturate(1.2);
 .site-header::after{
 content:"";position:absolute;left:0;right:0;bottom:0;height:4px;pointer-events:none;
 background:linear-gradient(90deg,
-var(--purple) 0 25%,var(--teal) 25% 50%,var(--coral) 50% 75%,var(--amber) 75% 100%);
+    var(--purple) 0 14.28%,var(--teal) 14.28% 28.57%,var(--green) 28.57% 42.85%,var(--pink) 42.85% 57.14%,
+    var(--violet) 57.14% 71.42%,var(--coral) 71.42% 85.71%,var(--amber) 85.71% 100%);
 }
 .wordmark{
 display:grid;grid-template-columns:auto auto auto;align-items:end;column-gap:10px;row-gap:0;

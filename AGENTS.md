@@ -135,10 +135,12 @@ firebase hosting:channel:delete design --force
 
 ## 6. データモデル
 
-商品は `public/js/main.js` の `PICKS` 配列。現在32件（ガジェット4 / インテリア8 / 雑貨12 / ファッション8）。うち写真ありは3件のみ。
+商品は `public/js/main.js` の `PICKS` 配列。**2026-08-18時点で81件**、全件に実写真あり。
+
+カテゴリは7つ（2026-08-18に4→7へ再編）。内訳はファッション19 / インテリア16 / ガジェット14 / 食器・キッチン10 / 文具・雑貨9 / コスメ・ケア7 / 日用品6。
 
 ```js
-{ cat:"gadget",              // gadget | interior | goods | fashion
+{ cat:"gadget",              // gadget|interior|kitchen|beauty|daily|goods|fashion
   motif:"m-cable",           // index.html のスプライト内 <symbol> のid
   brand:"Native Union",
   name:"POP CABLE USB-C 60W カールコード",
