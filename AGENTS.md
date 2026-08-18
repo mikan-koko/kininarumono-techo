@@ -95,6 +95,35 @@ Googleは lastmod を再クロールの優先度判断に使うため、放置�
 
 の数字を**css/jsを変更したら必ず両方上げる**。上げ忘れると、再訪問者に最大24時間「新しいHTML × 古いCSS」が配信されて表示が壊れる。
 
+### 3-4c. OG画像は「同名で上書き」しない
+
+`?v=` はcss/js用で、**OG画像には効かない**。X・Facebook/Threads・LINEはそれぞれ独自にOG画像を
+キャッシュし、クエリ付きURLを嫌う実装もあるため、**差し替えるときは必ずファイル名を変える**
+（`ogp-2026-08.jpg` のように年月を入れる）。同名で上書きすると各SNSに古い画像が数日〜数週間残る。
+
+ファイル名を変えたら、**トップ + `read/*.html` の6ページすべて**で次の3か所を直す。
+記事ページはJSON-LDにも `image` があるので忘れやすい。
+
+- `og:image`
+- `twitter:image`
+- 記事ページのJSON-LD `"image"`
+
+`og:image:alt` にキャッチコピーを書いているので、**コピーを変えたらaltも直す**。
+
+### 3-4d. OG画像の作り直し方
+
+```bash
+firebase emulators:start --only hosting   # 別ターミナルで起動しておく
+node tools/build-ogp.mjs
+```
+
+`tools/ogp-source.html` を1200x630でレンダリングして `public/images/ogp-YYYY-MM.jpg` を書き出す。
+ソースHTMLは **`public/css/style.css` をそのまま読む** ので、カテゴリ色やフォントを変えても
+OG画像だけ旧デザインで取り残されない。Pillowで直接描くと色・フォント・影を二重管理することになる。
+
+見出しは `--display`（Dela Gothic One）ではなく **`--jp`（Zen Maru Gothic 900）**。
+サイトの `h1,h2` がそちらなので、間違えると別のサイトに見える。
+
 ### 3-5. `prefers-reduced-motion` を尊重する
 
 演出を追加したら必ず `@media (prefers-reduced-motion: reduce)` にも対応を書く。
@@ -193,6 +222,12 @@ node -e "const fs=require('fs');const h=fs.readFileSync('public/index.html','utf
 **`body{overflow-x:hidden}` は「はみ出し」を隠す**
 `documentElement.scrollWidth === innerWidth` を見ても、要素が画面外にはみ出して切れている状態は検出できない。
 各要素の `getBoundingClientRect().right > innerWidth` を個別に見ること。
+
+**OG画像はデザイン刷新から取り残される**
+`ogp.png` は2026-08-05に作ったきり一度も更新されず、リニューアル後も**旧デザインのまま
+SNSに表示され続けていた**（キャッチコピーが「デザインで、毎日をアガる。」、カテゴリバッジが
+旧4分類、ロゴが3つの丸のまま）。HTMLやCSSと違って**見た目の確認動線に乗らない**ので気づけない。
+ヒーローのコピー・ロゴ・カテゴリ・ブランド色のどれかを変えたら、3-4dで作り直すこと。
 
 **コスメ系は「商品を選ぶ前に画像ギャラリーを見る」**
 楽天のコスメ系ショップは、ギャラリー画像そのものに販促テキストを焼き込んでいる店が非常に多い。
