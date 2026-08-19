@@ -15,7 +15,7 @@
   };
 
   // ---- picks (real affiliate links already live on ROOM/Pinterest) ----
-  // price/在庫は変動。将来Amazon切替後は該当リンクをAmazon(タグ curryoden22-22)へ差し替え可。
+  // price/在庫は変動するためカードには描画していない（表示すると価格改定で嘘になる）。
   const PICKS = [
     // --- 2026.08.18 楽天ROOMから反映（9件） ---
     { cat:"interior", date:"2026.08.18", motif:"m-vase", brand:"abode", name:"STRAW ペンダントランプ", price:"¥11,000", url:"https://hb.afl.rakuten.co.jp/hgc/56a65193.c64cb797.56a65194.22a424eb/_RTroom06836859_389519034_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fthree-s-s-s%2Fabd-m10%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/three-s-s-s/cabinet/abode/abode01/abode008/pendant_white_on.jpg",
