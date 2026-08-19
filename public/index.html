@@ -26,7 +26,7 @@
 <!-- 和文約物（「」・、。）の詰めを最適化 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css" />
 <!-- ?v= はキャッシュ破棄用。css/js を変更したら必ず数字を上げること（firebase.json で max-age=86400） -->
-<link rel="stylesheet" href="css/style.css?v=61" />
+<link rel="stylesheet" href="css/style.css?v=62" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kininarumono.jp/#organization","name":"気になるモノ手帖","url":"https://kininarumono.jp/","logo":{"@type":"ImageObject","url":"https://kininarumono.jp/images/favicon-512x512.png","width":512,"height":512},"sameAs":["https://room.rakuten.co.jp/totonou_note","https://www.instagram.com/kininarumonote/","https://pin.it/3uk3gKZUp","https://x.com/kininarumonote"]},{"@type":"WebSite","@id":"https://kininarumono.jp/#website","name":"気になるモノ手帖","alternateName":"MONO NOTE","url":"https://kininarumono.jp/","description":"定番からエッジのあるものまで。日常に馴染むデザインで、生活を少しアゲるアイテムキュレーション。","inLanguage":"ja-JP","publisher":{"@id":"https://kininarumono.jp/#organization"}}]}</script></head>
 <body>
 
@@ -338,6 +338,13 @@
     <p class="section-sub">暮らしの景色を少し上げてくれるアイテムを、気ままに集めています。価格・在庫は変動するので、購入前にリンク先でご確認ください。</p>
   </div>
 
+  <!-- ステマ規制（景表法）対応。フッターの開示文だけだと商品カードから約4,000px下に
+       なり、ピックを見て離脱する人には届かない。商品を見る前に必ず目に入る位置に置く。 -->
+  <p class="disclosure">
+    <span class="disclosure__tag">PR</span>
+    <span>当サイトはアフィリエイト広告を利用しています。以下の商品リンクから購入されると、運営者に報酬が支払われます。</span>
+  </p>
+
   <div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
     <button class="chip is-active" data-cat="all" role="tab" aria-selected="true">すべて</button>
     <button class="chip" data-cat="gadget" role="tab" aria-selected="false" style="--c:var(--purple-deep)">ガジェット</button>
@@ -508,8 +515,7 @@
     <img src="https://www18.a8.net/0.gif?a8mat=4BA2HE+6QBIAY+20EY+BX3J5" width="1" height="1" alt="" style="position:absolute;" />
   </div>
   <div class="footer__legal">
-    <p><strong>アフィリエイトについて</strong><br />当サイトは、アフィリエイトプログラム（楽天アフィリエイト・Amazonアソシエイト・A8.net等）を利用しています。掲載リンクから商品を購入されると、運営者に報酬が支払われる場合があります。価格・在庫は掲載時点のもので変動します。購入前にリンク先でご確認ください。</p>
-    <p class="footer__amazon">※Amazonのアソシエイトとして、気になるモノ手帖は適格販売により収入を得ています。</p>
+    <p><strong>アフィリエイトについて</strong><br />当サイトは、アフィリエイトプログラム（楽天アフィリエイト・A8.net）を利用しています。掲載リンクから商品を購入されると、運営者に報酬が支払われる場合があります。価格・在庫は掲載時点のもので変動します。購入前にリンク先でご確認ください。</p>
     <p class="footer__mini">運営者：気になるモノ手帖（お問い合わせは各SNSのDMまで）／掲載情報の正確性には努めますが内容を保証するものではありません。商品の購入・利用は各自のご判断でお願いします。</p>
   </div>
   <p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
@@ -517,6 +523,6 @@
 
 <button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
 
-<script src="js/main.js?v=61" defer></script>
+<script src="js/main.js?v=62" defer></script>
 </body>
 </html>

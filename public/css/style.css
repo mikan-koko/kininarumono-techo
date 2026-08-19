@@ -201,6 +201,18 @@ display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:4px
 .mood-tile:hover{transform:translateY(-4px) rotate(0);box-shadow:0 18px 44px rgba(18,18,18,.18)}
 .mood-tile:hover img{transform:scale(1.045)}
 /* ---------- SELECT ---------- */
+/* アフィリエイト広告の開示。フッターにも同じ趣旨の文があるが、あちらは
+   商品カードから遠すぎて機能しないため、ピック一覧の直前にも置いている。
+   色は --muted ではなく --ink-2。開示文が読み飛ばされる薄さにしない。 */
+.disclosure{
+max-width:var(--maxw);margin:0 auto 20px;display:flex;align-items:flex-start;gap:10px;
+font-family:var(--jp-text);font-size:13.5px;line-height:1.65;color:var(--ink-2);
+}
+.disclosure__tag{
+flex:none;font-family:var(--latin);font-weight:700;font-size:10.5px;letter-spacing:.12em;
+color:#fff;background:var(--ink);border-radius:999px;padding:4px 11px;margin-top:2px;
+}
+
 .filters{max-width:var(--maxw);margin:0 auto 28px;display:flex;flex-wrap:wrap;gap:10px}
 .chip{
 font-family:var(--jp);font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px;
@@ -443,7 +455,6 @@ box-shadow:6px 7px 0 var(--c);transition:transform .2s var(--ease),box-shadow .2
 .footer__brand p{color:var(--muted);margin:8px 0 26px}
 .footer__legal p{font-size:12.5px;color:var(--muted);line-height:1.9;margin:0 0 10px;max-width:60em}
 .footer__legal strong{color:var(--ink)}
-.footer__amazon{color:var(--ink-2)!important}
 .footer__mini{font-size:12px!important}
 .footer__copy{margin-top:24px;font-family:var(--latin);font-weight:600;font-size:13px;color:var(--muted)}
 .footer__ad{max-width:var(--maxw);margin:28px auto 0;text-align:center}
