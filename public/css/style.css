@@ -447,6 +447,14 @@ box-shadow:6px 7px 0 var(--c);transition:transform .2s var(--ease),box-shadow .2
 .footer__mini{font-size:12px!important}
 .footer__copy{margin-top:24px;font-family:var(--latin);font-weight:600;font-size:13px;color:var(--muted)}
 .footer__ad{max-width:var(--maxw);margin:28px auto 0;text-align:center}
+
+/* 読みもの直後の広告枠。フッターのA8バナーと同じ意匠にして、
+   サイトのコンテンツと広告の区別が付くようにPRラベルを必ず添える。 */
+.pr-slot{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px) 8px;text-align:center}
+.pr-slot__label{font-family:var(--latin);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin:0 0 10px;text-transform:uppercase}
+.pr-slot img{max-width:100%;height:auto;display:inline-block;border-radius:8px;border:1.5px solid var(--line)}
+/* 計測用の1x1はレイアウトに出さない（枠線が付くと点が見える） */
+.pr-slot img[width="1"]{border:0;border-radius:0}
 .footer__ad-label{display:block;font-family:var(--latin);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
 .footer__ad img{max-width:100%;height:auto;display:inline-block;border-radius:8px;border:1.5px solid var(--line)}
 
