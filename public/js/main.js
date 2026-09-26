@@ -333,8 +333,6 @@
       blurb:"手になじむ部分の波打つマーブル調の仕上げがメタリック。手に取った瞬間にテンションが上がるハンディファン。" },
     { cat:"gadget", date:"2026.08.17", motif:"m-stand", brand:"Kodak", name:"FunSaver 800 レンズ付きフィルム 27枚撮り", code:"ec-current:12829736", price:"¥2,376", url:"https://hb.afl.rakuten.co.jp/hgc/56996fa2.9daf1187.56996fa3.ebae6f21/_RTroom06836859_389355237_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fec-current%2F0041778617762%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/ec-current/cabinet/9131/0041778617762.jpg",
       blurb:"27枚を撮り切るまで写りが分からない不便さが、かえっていい。ISO800でフラッシュ内蔵だから夕方や室内でも気軽に。" },
-    { cat:"fashion", date:"2026.08.17", motif:"m-polo", brand:"LOEWE", name:"アナグラム刺繍 Tシャツ S616Y22X87", code:"auc-marks-run:10572777", price:"¥88,000", url:"https://hb.afl.rakuten.co.jp/hgc/5656b57d.22b6e6b6.5656b586.40e2c27f/_RTroom06836859_389308241_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-marks-run%2F380522357%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/auc-marks-run/cabinet/20260818_cp_1/380522357_1.jpg",
-      blurb:"無地に効かせ刺繍だけを添えた潔さ。オーバーサイズのシルエットも、いまの気分に合います。" },
     { cat:"fashion", date:"2026.08.17", motif:"m-polo-knit", brand:"JOURNAL STANDARD", name:"リネンナイロン ストレッチワイドパンツ", code:"stylife:15230091", price:"¥13,200", url:"https://hb.afl.rakuten.co.jp/hgc/56166504.3fb5399f.56166505.5b4d5fd4/_RTroom06836859_389243097_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstylife%2Fpy4401%2F%3Fscid%3Droom_pc_id_reg", img:"https://tshop.r10s.jp/stylife/cabinet/item/401/py4401-01_1.jpg",
       blurb:"撥水・接触冷感・洗える・UVカットと機能は充分。レッドの発色が効いた、これからの季節のワイドパンツ。" },
     { cat:"fashion", date:"2026.08.17", motif:"m-socks", brand:"gelato pique", name:"レーヨンロゴT＆ボーダーショートパンツ セット", code:"shirohato:10225111", price:"¥11,550", url:"https://hb.afl.rakuten.co.jp/hgc/56951b20.39e2a5b7.56951b21.d7d9d019/_RTroom06836859_389211070_pc?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshirohato%2Fb52pwct261365%2F%3Fscid%3Droom_pc_id_reg", img:"https://shop.r10s.jp/shirohato/cabinet/001807/b52pwct261365.jpg",
@@ -377,7 +375,7 @@
     { cat:"beauty", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"カームナイトリペア ボディソープ", code:"kobe-beauty-labo:10002671", price:"¥946", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol018%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002671%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://shop.r10s.jp/kobe-beauty-labo/cabinet/imgrc0108984420.jpg",
       blurb:"夜の香りに包まれるバスタイム。とろみのあるテクスチャーで優しく洗い上げる。" },
     { cat:"beauty", date:"2026.08.08", motif:"m-chair", brand:"YOLU", name:"ボディスクラブ", code:"kobe-beauty-labo:10002838", price:"¥1,738", url:"https://hb.afl.rakuten.co.jp/hgc/g00r23nn.z7k3113e.g00r23nn.z7k326ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkobe-beauty-labo%2Fyol035%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkobe-beauty-labo%2Fi%2F10002831%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://shop.r10s.jp/kobe-beauty-labo/cabinet/1st_thum/yol035.jpg",
-      blurb:"ジェラートみたいな質感でするする伸びるマイルドピーリング。優しい香りでご褒美のお手入れ時間に。" },
+      blurb:"ジェラートみたいな質感でするする伸びるマイルドピーリング。優しい香りでご褒美のお手入れ時間に。" },
     { cat:"kitchen", date:"2026.08.08", motif:"m-chair", brand:"Snow Peak", name:"チタンダブルマグ 300", code:"canpanera:10084594", price:"¥5,280", url:"https://hb.afl.rakuten.co.jp/hgc/g00r4jvn.z7k31acb.g00r4jvn.z7k32368/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcanpanera%2Fs06-1200%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcanpanera%2Fi%2F10084594%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://shop.r10s.jp/canpanera/cabinet/item207/item_s06-1200_0.jpg",
       blurb:"二重構造で保温・結露しにくく、チタンの軽さ。キャンプにも家にもなじむ無骨なマグ。" },
     { cat:"gadget", date:"2026.08.08", motif:"m-chair", brand:"Bang & Olufsen", name:"Beosound A1", code:"bang-olufsen:10000103", price:"¥58,000", url:"https://hb.afl.rakuten.co.jp/hgc/g00ts3vn.z7k31eca.g00ts3vn.z7k32b18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbang-olufsen%2F17360%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbang-olufsen%2Fi%2F10000103%2F&rafcid=wsc_i_is_1e77fdda-9913-4278-80a5-14c97599cd28", img:"https://shop.r10s.jp/bang-olufsen/cabinet/thum/17360/17360_01.jpg",
@@ -423,8 +421,6 @@
       blurb:"福岡・大川の職人がつくるオーク無垢の一脚。北欧テイストのグレー座面が心地いい。ふるさと納税の返礼品です。" },
 
     // --- goods ---
-    { cat:"kitchen", date:"2026.08.05", motif:"m-mug", brand:"Marimekko", name:"マグ 250ml", code:"alevel:10041773", price:"¥2,300〜", url:"https://a.r10.to/hgv8bw", img:"images/marimekko.jpg",
-      blurb:"ぽってりした250mlは、両手で包むのにちょうどよさそうなサイズ。柄を選べるので、朝の気分に合う一杯を。" },
     { cat:"daily", date:"2026.08.05", motif:"m-tissue", brand:"PUEBCO", name:"アルミ ティッシュケース（Matte）", code:"zen-you:10005545", price:"¥3,300", url:"https://a.r10.to/h8jSTI", img:"https://shop.r10s.jp/zen-you/cabinet/04497754/12174158/imgrc0127611390.jpg",
       blurb:"生活感の出がちなティッシュを、無骨なアルミでそっけなく格上げ。" },
     { cat:"kitchen", date:"2026.08.05", motif:"m-scale", brand:"DULTON", name:"ダイエットスケール 100-126（赤）", code:"atease-br:10001619", price:"¥4,180", url:"https://a.r10.to/hYvA15", img:"https://shop.r10s.jp/atease-br/cabinet/00639267/05227710/100-126-00n.jpg",
