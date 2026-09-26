@@ -224,6 +224,7 @@ export const AD_BY_PAGE = {
   'gift-3000en-ika':           'pinkoi+generate|pinkoi',
   'hitorigurashi-kaden-akari': 'kakko+evering|kakko',
   'hokuo-design-teiban':       'kakko+andplants|kakko',
+  'fuyujitaku-no-dougu':       'truetowel+andplants|truetowel',
 };
 
 /**
