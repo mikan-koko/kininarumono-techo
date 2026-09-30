@@ -14,12 +14,12 @@
 |---|---|
 | 公開URL | https://kininarumono.jp （`kininarumono-techo.web.app` も同じサイトを指す） |
 | リポジトリ | https://github.com/studio8080/kininarumono-techo （public） |
-| ローカル | `H:\共有ドライブ\ここ企画\案件\気になるモノ手帖\kininarumono-site` |
+| ローカル | `C:\Users\chaha\repos\kininarumono\kininarumono-site`（2026-09-30に共有ドライブ `H:\共有ドライブ\ここ企画\案件\気になるモノ手帖\` から移設。旧パスでは作業しない） |
 | ホスティング | Firebase Hosting（プロジェクトID `kininarumono-techo`、無料Sparkプラン） |
 | GitHubアカウント | `studio8080`（2026-08-27に `mikan-koko` から譲渡） |
 | Googleアカウント | `studio@kokokikaku.com`（2026-08-27に `mikan@kokokikaku.com` から移譲。GCPプロジェクトIDは変えていない） |
 
-同じ親フォルダに `_zip展開直後の旧コピー_20260805/` がある。**これは配布zipの未編集コピーで、現行とは無関係。** 中身は本リポジトリに完全に取り込まれているので消してよい（判断は運営者に確認すること）。
+旧親フォルダ（H: 側）に `_zip展開直後の旧コピー_20260805/` がある。**これは配布zipの未編集コピーで、現行とは無関係。** 中身は本リポジトリに完全に取り込まれているので消してよい（判断は運営者に確認すること）。移設時にこれは移していない。
 
 ---
 

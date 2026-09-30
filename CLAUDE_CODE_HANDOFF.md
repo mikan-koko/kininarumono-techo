@@ -8,7 +8,7 @@
 
 ## リポジトリ
 
-`H:\共有ドライブ\ここ企画\案件\気になるモノ手帖\kininarumono-site`
+`C:\Users\chaha\repos\kininarumono\kininarumono-site`（2026-09-30 移設。旧: `H:\共有ドライブ\ここ企画\案件\気になるモノ手帖\kininarumono-site`）
 
 静的サイト。ビルドなし。`public/index.html` / `public/css/style.css` / `public/js/main.js` を直接編集する。
 
