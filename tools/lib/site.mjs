@@ -12,6 +12,7 @@ export const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)
 export const ORIGIN = 'https://kininarumono.jp';
 export const OGP = `${ORIGIN}/images/ogp-2026-08.jpg`;
 export const GA_ID = 'G-S4LRS2KCRZ';
+export const CONTACT_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqM293xJzyK9ft7QF4lvvim8A679jueHyFA1YDXeUypalYwA/viewform';
 
 // main.js の CAT と対応させること
 export const CAT = {
@@ -156,6 +157,8 @@ export const footerCatlinks = `<nav class="catlinks catlinks--footer" aria-label
 <a href="/category/fashion">ファッション</a>
 <a href="/read">読みもの一覧</a>
 <a href="/about">運営・編集方針</a>
+<a href="/privacy">プライバシーポリシー</a>
+<a href="${CONTACT_URL}" target="_blank" rel="noopener">お問い合わせ</a>
 </nav>`;
 
 export function footer(vparam) {
@@ -171,7 +174,7 @@ export function footer(vparam) {
 ${footerCatlinks}
 <div class="footer__legal">
 <p><strong>アフィリエイトについて</strong><br />当サイトは、アフィリエイトプログラム（楽天アフィリエイト・A8.net）を利用しています。掲載リンクから商品を購入されると、運営者に報酬が支払われる場合があります。価格・在庫は掲載時点のもので変動します。購入前にリンク先でご確認ください。</p>
-<p class="footer__mini">運営者：気になるモノ手帖（お問い合わせは各SNSのDMまで）／掲載情報の正確性には努めますが内容を保証するものではありません。商品の購入・利用は各自のご判断でお願いします。</p>
+<p class="footer__mini">運営：気になるモノ手帖（<a href="${CONTACT_URL}" target="_blank" rel="noopener">お問い合わせフォーム</a>）／掲載情報の正確性には努めますが内容を保証するものではありません。商品の購入・利用は各自のご判断でお願いします。</p>
 </div>
 <p class="footer__copy">© <span id="year"></span> 気になるモノ手帖</p>
 </footer>

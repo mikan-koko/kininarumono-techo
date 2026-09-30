@@ -32,8 +32,9 @@ jobs:
           node tools/build-roundup.mjs
           node tools/build-read-hub.mjs
           node tools/build-about.mjs
+          node tools/build-privacy.mjs
           node tools/build-discovery.mjs
-          if ! git diff --quiet -- public/category public/read public/about.html public/llms.txt public/feed.xml public/sitemap.xml; then
+          if ! git diff --quiet -- public/category public/read public/about.html public/privacy.html public/llms.txt public/feed.xml public/sitemap.xml; then
             echo "::error::生成ページが古いです。ローカルで node tools/build-category.mjs と node tools/build-roundup.mjs と node tools/build-read-hub.mjs と node tools/build-about.mjs と node tools/build-discovery.mjs を実行してコミットしてください。"
             git --no-pager diff --stat -- public/category public/read public/about.html public/llms.txt public/feed.xml public/sitemap.xml
             exit 1

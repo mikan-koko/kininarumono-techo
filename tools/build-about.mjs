@@ -2,7 +2,7 @@
 // build-about.mjs — /about（運営・編集方針）を public/about.html に生成する。
 
 import path from 'node:path';
-import { repoRoot, ORIGIN, cacheVersion, head, header, footer, writeIfChanged } from './lib/site.mjs';
+import { repoRoot, ORIGIN, CONTACT_URL, cacheVersion, head, header, footer, writeIfChanged } from './lib/site.mjs';
 
 const url = `${ORIGIN}/about`;
 const title = '運営・編集方針｜気になるモノ手帖';
@@ -49,6 +49,12 @@ ${header}
 </div>
 <div class="policy-grid">
 <article class="policy-panel">
+<span class="policy-kicker">OPERATOR</span>
+<h2>運営・編集</h2>
+<p>気になるモノ手帖は、みかんココが個人で運営・編集する、ファッション・雑貨・インテリア・ガジェットのキュレーションサイトです。暮らしの中で使う場面を考え、商品紹介と選び方の読みものを制作しています。</p>
+<p>お問い合わせは、ここ企画の共通製品フォームで「気になるモノ手帖」を選択してご連絡ください。情報の取扱いは<a href="/privacy">プライバシーポリシー</a>でご案内しています。</p>
+</article>
+<article class="policy-panel">
 <span class="policy-kicker">EDITORIAL</span>
 <h2>どう選んでいるか</h2>
 <p>商品は、見た目の強さだけでなく、置き場所、使う頻度、手入れのしやすさ、価格帯との釣り合いを見て掲載しています。ブランド名や流行だけで並べるのではなく、暮らしの中でどう使うかを本文で説明することを大切にしています。</p>
@@ -74,7 +80,7 @@ ${header}
 <h2>掲載・貸出について</h2>
 <p>服・雑貨・部屋・ガジェットを同じ目線で選んでいます。基準は「置いたあと、触ったあと、気分が続くか」。インテリア小物、収納の実用品、文具、スニーカー、キッチン道具を中心に扱っています。</p>
 <p>商品の貸出・掲載のご相談を受け付けています。撮影は生活のなかの定点で、派手な演出はしません。掲載する理由を本文で説明できることを条件にしているため、商品によってはお断りする場合があります。</p>
-<p>ご相談は各SNSのDMからお願いします。どんな記事の並びに入るかは、次の3本が参考になります。</p>
+<p>ご相談は<a href="${CONTACT_URL}" target="_blank" rel="noopener">お問い合わせフォーム</a>からお願いします。どんな記事の並びに入るかは、次の3本が参考になります。</p>
 <ul>
 <li><a href="/read/hokuo-design-teiban">北欧デザインの定番、どれから買うか 9選</a></li>
 <li><a href="/read/hitorigurashi-kaden-akari">一人暮らしの部屋に置ける、小さな家電と灯り 7選</a></li>
@@ -84,7 +90,7 @@ ${header}
 <article class="policy-panel">
 <span class="policy-kicker">CONTACT</span>
 <h2>連絡先</h2>
-<p>掲載内容の確認、削除依頼、その他のお問い合わせは、各SNSのDMからご連絡ください。内容の正確性には努めていますが、価格・仕様・在庫・販売条件は変わることがあります。</p>
+<p>掲載内容の確認、削除依頼、その他のお問い合わせは、<a href="${CONTACT_URL}" target="_blank" rel="noopener">お問い合わせフォーム</a>からご連絡ください。内容の正確性には努めていますが、価格・仕様・在庫・販売条件は変わることがあります。</p>
 <p><a class="article__crumb" href="/read">読みもの一覧へ</a></p>
 </article>
 </div>
