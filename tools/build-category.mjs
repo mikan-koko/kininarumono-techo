@@ -331,7 +331,7 @@ ${footerCatlinks}
 
 <script src="/js/main.js?v=${vparam}" defer></script>
 <!-- koko-ask-chatgpt -->
-<script src="/ask-chatgpt.js?v=1" data-product="kininarumono" defer></script>
+<script src="/ask-chatgpt.js?v=2" data-product="kininarumono" defer></script>
 </body>
 </html>
 `;
