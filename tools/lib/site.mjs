@@ -181,6 +181,8 @@ ${footerCatlinks}
 
 <button class="back-top" id="backTop" type="button" aria-label="ページトップへ戻る">↑</button>
 
+<!-- koko-ask-chatgpt -->
+<script src="/ask-chatgpt.js?v=1" data-product="kininarumono" defer></script>
 <script src="/js/main.js?v=${vparam}" defer></script>`;
 }
 
