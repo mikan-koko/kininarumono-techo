@@ -36,6 +36,7 @@ const AD_BY_ARTICLE = {
   'trend-komono-rule':          'officecom+evering|evering',              // トレンド小物（ガジェット寄り）
   'akibeya-no-totonoekata':     'kakko+andplants|andplants',   // 秋の部屋を小物で整える
   'heya-no-konomi-2jiku':       'kakko+andplants|kakko',   // 部屋の好みを2軸で言葉にする
+  'knit-no-erabikata':          'pinkoi+lifepocket|lifepocket', // 秋冬ニットの素材と編み方
 };
 
 const START = '<!-- AD:A8 START -->';
