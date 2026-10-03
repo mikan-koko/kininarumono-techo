@@ -65,12 +65,16 @@ export function makeIsNew(allPicks) {
  * data-brand / data-name / data-cat は main.js の affiliate_click 計測が読むので必須。
  * reveal クラスは付けない（JSが落ちると opacity:0 のまま本文が消えるため）。
  */
+// PICKS の自前画像は "images/xxx.jpg" とトップ基準の相対パスで書いてある。
+// /category/ や /read/ の下でそのまま使うと /category/images/... を指して404になるので、ルート基準に直す。
+const rootImg = (src) => (/^(https?:)?\/\//.test(src) || src.startsWith('/') ? src : '/' + src);
+
 export function cardHtml(p, isNew = false) {
   const meta = CAT[p.cat];
   if (!meta) throw new Error(`未知のカテゴリ: ${p.cat}`);
   const style = `--c:var(--${meta.cvar});--c-deep:var(--${meta.cvar}-deep);--c-soft:var(--${meta.cvar}-soft)`;
   return `<article class="card" data-cat="${esc(p.cat)}" data-brand="${esc(p.brand)}" data-name="${esc(p.name)}" style="${style}">
-<div class="card__media"><img src="${esc(p.img)}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy" /></div>
+<div class="card__media"><img src="${esc(rootImg(p.img))}" alt="${esc(p.brand)} ${esc(p.name)}" loading="lazy" /></div>
 <div class="card__body">
 <div class="card__meta"><span class="card__cat">${esc(meta.label)}</span>${isNew ? '<span class="card__new">NEW</span>' : ''}<span class="card__date">${esc(p.date)}</span></div>
 <span class="card__brand">${esc(p.brand)}</span>
