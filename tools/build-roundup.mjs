@@ -314,17 +314,11 @@ ${s.items.map(([b, n, note]) => {
         '@id': `${url}#itemlist`,
         name: r.title,
         numberOfItems: all.length,
+        // 商品一覧は通常のItemList。単一商品向けProductスニペットとして扱わない。
         itemListElement: all.map((p, i) => ({
           '@type': 'ListItem',
           position: i + 1,
-          item: {
-            '@type': 'Product',
-            name: `${p.brand} ${p.name}`,
-            brand: { '@type': 'Brand', name: p.brand },
-            image: p.img,
-            description: p.blurb || undefined,
-            category: CAT[p.cat].label
-          }
+          name: `${p.brand} ${p.name}`
         }))
       }
     ]
