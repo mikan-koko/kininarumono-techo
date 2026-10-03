@@ -390,8 +390,6 @@
       blurb:"フルーツ柄が涼しげなLiptonコラボのクリアミニ傘。折りたたみでバッグにもすっと収まる。" },
     { cat:"daily", date:"2026.08.12", motif:"m-bottle", brand:"ZONE DENMARK", name:"ソープディスペンサー SOLO（ソフトグレー）", code:"shikama-intl:10001998", price:"¥7,040", url:"https://a.r10.to/hPJ4O8", img:"https://shop.r10s.jp/shikama-intl/cabinet/zone/34775/34775.jpg",
       blurb:"デンマーク発デザインブランドのソープディスペンサー。マットなソフトグレーが洗面台に馴染む。" },
-    { cat:"fashion", date:"2026.08.11", motif:"m-polo", brand:"UNITED ARROWS green label relaxing", name:"＜To b. by agnes b.コラボ＞エンブロイダリー オーバーサイズシャツ", code:"stylife:15706877", price:"¥3,980", url:"https://a.r10.to/hg0t3a", img:"https://tshop.r10s.jp/stylife/cabinet/item/226/sb8226-01_1.jpg",
-      blurb:"オーバーサイズでゆるっと羽織れる、agnes b.とのコラボエンブロイダリーシャツ。胸ポケットの刺繍がアクセント。" },
     { cat:"gadget", date:"2026.08.11", motif:"m-keyboard", brand:"ロジクール(Logicool)", name:"Alto Keys K98M ワイヤレスメカニカルキーボード", code:"logicool:10000799", price:"¥16,900", url:"https://a.r10.to/hkzoDq", img:"https://shop.r10s.jp/logicool/cabinet/prd/kb/k98mgr/k98mgr_n.jpg",
       blurb:"半透明のガスケットボディ越しに内部構造が透けて見える、眺めて楽しいメカニカルキーボード。" },
     { cat:"gadget", date:"2026.08.10", motif:"m-stand", brand:"Nothing", name:"Headphone(a)（ピンク）", code:"nothingagent:10000111", price:"¥27,800", url:"https://a.r10.to/hP7Rgi", img:"https://shop.r10s.jp/nothingagent/cabinet/13067532/headphonea_main.jpg",
