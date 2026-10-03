@@ -11,6 +11,7 @@ const vparam = cacheVersion();
 const ld = {
   '@context': 'https://schema.org',
   '@graph': [
+    { '@type': 'Organization', '@id': ORIGIN + '/#organization', name: '気になるモノ手帖', url: ORIGIN + '/', parentOrganization: { '@type': 'Organization', '@id': 'https://kokokikaku.com/#organization', name: 'ここ企画', url: 'https://kokokikaku.com/' } },
     {
       '@type': 'AboutPage',
       '@id': `${url}#page`,
@@ -51,6 +52,7 @@ ${header}
 <article class="policy-panel">
 <span class="policy-kicker">OPERATOR</span>
 <h2>運営・編集</h2>
+<p>企画・運営は<a href="https://kokokikaku.com/">ここ企画</a>。<a href="https://kokokikaku.com/projects">ここ企画のプロジェクト・公式SNS一覧</a>から、関連サービスと発信先をご覧いただけます。</p>
 <p>気になるモノ手帖は、みかんココが個人で運営・編集する、ファッション・雑貨・インテリア・ガジェットのキュレーションサイトです。暮らしの中で使う場面を考え、商品紹介と選び方の読みものを制作しています。</p>
 <p>お問い合わせは、ここ企画の共通製品フォームで「気になるモノ手帖」を選択してご連絡ください。情報の取扱いは<a href="/privacy">プライバシーポリシー</a>でご案内しています。</p>
 </article>
