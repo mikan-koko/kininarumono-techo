@@ -185,17 +185,11 @@ function page(cat, picks, allPicks, vparam) {
         name: `${meta.label}のピック`,
         numberOfItems: picks.length,
         itemListOrder: 'https://schema.org/ItemListOrderDescending',
+        // 商品一覧は通常のItemList。単一商品向けProductスニペットとして扱わない。
         itemListElement: picks.map((p, i) => ({
           '@type': 'ListItem',
           position: i + 1,
-          item: {
-            '@type': 'Product',
-            name: `${p.brand} ${p.name}`,
-            brand: { '@type': 'Brand', name: p.brand },
-            image: p.img,
-            description: p.blurb || undefined,
-            category: meta.label
-          }
+          name: `${p.brand} ${p.name}`
         }))
       }
     ]
