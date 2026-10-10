@@ -8,12 +8,12 @@
 <language>ja</language>
 <lastBuildDate>Sat, 03 Oct 2026 09:00:00 +0900</lastBuildDate>
 <item>
-<title>秋冬のニットは、タグの「素材」と「編み方」の2行で選ぶ</title>
+<title>秋冬のニットは、素材表示・編み地・手入れから選ぶ</title>
 <link>https://kininarumono.jp/read/knit-no-erabikata</link>
 <guid isPermaLink="true">https://kininarumono.jp/read/knit-no-erabikata</guid>
 <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
 <category>ファッション</category>
-<description>着てみたらチクチクする、思ったより薄い、家で洗えない。ニットの失敗は見た目ではなく生地の中身で起きます。タグと商品ページの2行で、買う前に見分ける方法を整理しました。</description>
+<description>素材の割合と部位、編み地、洗濯表示からニットを比べます。表示で分かることと、肌ざわりや重ね着など確認が必要なことを整理しました。</description>
 </item>
 <item>
 <title>寒くなる前に揃えておきたい、冬支度の道具 8選</title>
@@ -37,7 +37,7 @@
 <guid isPermaLink="true">https://kininarumono.jp/read/akibeya-no-totonoekata</guid>
 <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
 <category>部屋づくり</category>
-<description>秋の模様替えは、ソファやラグを替えるところから始めなくて大丈夫。低い位置の光、触れる布、小さな木色、湿度の4つを、手を付けやすい順に並べました。</description>
+<description>照明・布・木の小物を一か所ずつ試す提案。壁付け家具の取付条件と、加湿器の必要性・手入れも分けて確認します。</description>
 </item>
 <item>
 <title>北欧デザインの定番、どれから買うか 9選</title>
@@ -45,7 +45,7 @@
 <guid isPermaLink="true">https://kininarumono.jp/read/hokuo-design-teiban</guid>
 <pubDate>Thu, 27 Aug 2026 09:00:00 +0900</pubDate>
 <category>まとめ</category>
-<description>イッタラやHAYの食器から、アアルトベース、Yチェアやセブンチェアまで。全部は無理でも、どれから手を付けると部屋が変わるのかには順番があります。</description>
+<description>北欧デザインの候補9点を、使う量・置く場所・椅子を使う姿勢から比較。手持ちの道具に足す順番を考えます。</description>
 </item>
 <item>
 <title>小さな部屋で検討したい、家電と灯り 7選</title>
@@ -64,12 +64,12 @@
 <description>文具、グラス、ソープなどの候補を、使う頻度・置き場所・相手の好みから考えます。容量や送料も含め、購入前に予算と照合してください。</description>
 </item>
 <item>
-<title>北欧の定番から一人ブランドまで、モノを選ぶときに見ている3つの視点</title>
+<title>定番から知らないブランドまで、モノを選ぶときの3つの視点</title>
 <link>https://kininarumono.jp/read/burando-lineup-no-kijun</link>
 <guid isPermaLink="true">https://kininarumono.jp/read/burando-lineup-no-kijun</guid>
 <pubDate>Sat, 22 Aug 2026 09:00:00 +0900</pubDate>
 <category>ブランド</category>
-<description>iittalaやFritz Hansenのような定番から、天童木工のような技術メーカー、DIGAWELのような一人ブランドまで。ブランドを選ぶときに大事にしている3つの視点を整理しました。</description>
+<description>ブランド名や規模だけで品質を決めず、商品の来歴、使い方、手持ちのものとの組合せから比べる。紹介するモノを選ぶ編集上の視点を整理します。</description>
 </item>
 <item>
 <title>自分では買わないものを狙う。プレゼント選びで見ている3つの基準</title>
@@ -77,7 +77,7 @@
 <guid isPermaLink="true">https://kininarumono.jp/read/gift-no-erabikata</guid>
 <pubDate>Sat, 22 Aug 2026 09:00:00 +0900</pubDate>
 <category>ギフト</category>
-<description>誕生日、クリスマス、母の日や父の日。趣味を外さずに喜ばれるプレゼントを選ぶために、予算の決め方や色より形で選ぶコツなど、実際に見ている3つの基準を整理しました。</description>
+<description>相手が使う場面、送料や包装を含む予算、分からない好みの確認からプレゼントを考えます。受け取ったあとの手間も含めた3つの基準です。</description>
 </item>
 <item>
 <title>色より素材のトーンから。一人暮らしの部屋づくりで最初に決める3つのこと</title>
@@ -85,7 +85,7 @@
 <guid isPermaLink="true">https://kininarumono.jp/read/hitorigurashi-no-heyazukuri</guid>
 <pubDate>Sat, 22 Aug 2026 09:00:00 +0900</pubDate>
 <category>部屋づくり</category>
-<description>家具を一気に揃える必要はありません。失敗しにくい部屋づくりの順番と、部屋がまとまって見えるポイントを整理しました。</description>
+<description>一人暮らしの部屋づくりを、素材のトーン、家具の寸法、小物を試す場所から考える。好みに合わせて比較する3つの手順を、編集上の提案として整理します。</description>
 </item>
 <item>
 <title>実際に買ってよかったものに共通する、「良いモノ」の選び方</title>
@@ -96,20 +96,20 @@
 <description>玄関をポップな印象に変えた赤富士柄マット、半年使ったオークの椅子、家族分の買い出しに便利なトート。実体験から選び方を振り返ります。</description>
 </item>
 <item>
-<title>お手頃な雑貨だからこそ、遊び心を効かせる</title>
+<title>小さな雑貨で、柄や形の遊び心を試す</title>
 <link>https://kininarumono.jp/read/zakka-no-asobigokoro</link>
 <guid isPermaLink="true">https://kininarumono.jp/read/zakka-no-asobigokoro</guid>
 <pubDate>Mon, 10 Aug 2026 09:00:00 +0900</pubDate>
 <category>雑貨</category>
-<description>トラ柄のマット、無骨な南京錠、コラボもののクッション。お手頃な雑貨だからこそ、思いきった遊び心を効かせられる理由を整理しました。</description>
+<description>雑貨の柄や形を試す前に、予算と置き場所、必要な機能を確認する。価格の安さや一点だけというルールで満足を約束しない選び方です。</description>
 </item>
 <item>
-<title>HAY・ニトリ・ART OF BLACK、家具ブランドは「どこに投資するか」で選ぶ</title>
+<title>家具を比べるときの3つの確認点。使い方・寸法・手入れから選ぶ</title>
 <link>https://kininarumono.jp/read/kagu-brand-no-erabikata</link>
 <guid isPermaLink="true">https://kininarumono.jp/read/kagu-brand-no-erabikata</guid>
 <pubDate>Mon, 10 Aug 2026 09:00:00 +0900</pubDate>
 <category>インテリア</category>
-<description>似ているようで違う3つの家具ブランドを、デザイン・価格・実用性の観点から整理し、どこにお金をかけるかを考えます。</description>
+<description>家具は使う場面、置ける寸法、手入れと修理の条件で比較する。ブランド全体の寿命や座り心地を決めつけず、予算をかけたい点を整理します。</description>
 </item>
 <item>
 <title>部屋と服のあいだで選ぶ、デザイン雑貨の見方</title>
@@ -120,12 +120,12 @@
 <description>雑貨はインテリアでもあり、持ち歩けばファッションにもなります。かわいいだけ、便利なだけで終わらせず、部屋・服・写真にどう映るかまで見て選びます。</description>
 </item>
 <item>
-<title>トレンド小物を子どもっぽく見せないルール</title>
+<title>強い色や柄の小物を、いつもの部屋や服に合わせる3つの試し方</title>
 <link>https://kininarumono.jp/read/trend-komono-rule</link>
 <guid isPermaLink="true">https://kininarumono.jp/read/trend-komono-rule</guid>
 <pubDate>Wed, 05 Aug 2026 09:00:00 +0900</pubDate>
 <category>デスク</category>
-<description>ビビッドな色、変わった形、強い柄。楽しい小物ほど、合わせ方で印象が変わります。ポップだけど雑に見えない、日常に置けるエッジの作り方を整理します。</description>
+<description>強い色や柄の小物を合わせるために、主役、形や素材、日常の置き場所を比べる。色数やロゴだけで年齢や長持ちする印象を決めつけない編集メモです。</description>
 </item>
 </channel>
 </rss>

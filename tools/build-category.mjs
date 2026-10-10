@@ -128,11 +128,11 @@ const RELATED = {
 
 const ARTICLE_TITLES = {
   'zakka-no-mikata': '部屋と服のあいだで選ぶ、デザイン雑貨の見方',
-  'trend-komono-rule': 'トレンド小物を子どもっぽく見せないルール',
+  'trend-komono-rule': '強い色や柄の小物を、いつもの部屋や服に合わせる3つの試し方',
   'ii-mono-no-kijun': '実際に買ってよかったものに共通する、「良いモノ」の選び方',
-  'zakka-no-asobigokoro': 'お手頃な雑貨だからこそ、遊び心を効かせる',
-  'kagu-brand-no-erabikata': '家具ブランドは「どこに投資するか」で選ぶ',
-  'burando-lineup-no-kijun': 'モノを選ぶときに見ている3つの視点',
+  'zakka-no-asobigokoro': '小さな雑貨で、柄や形の遊び心を試す',
+  'kagu-brand-no-erabikata': '家具は使い方・寸法・手入れから選ぶ',
+  'burando-lineup-no-kijun': '定番から知らないブランドまで、選ぶ3つの視点',
   'gift-no-erabikata': 'プレゼント選びで見ている3つの基準',
   'hitorigurashi-no-heyazukuri': '一人暮らしの部屋づくりで最初に決める3つのこと',
   'gift-3000en-ika': 'プチギフトに選ぶ、毎日使う雑貨 8選',
