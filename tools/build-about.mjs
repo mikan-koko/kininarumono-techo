@@ -86,7 +86,7 @@ ${header}
 <ul>
 <li><a href="/read/hokuo-design-teiban">北欧デザインの定番、どれから買うか 9選</a></li>
 <li><a href="/read/hitorigurashi-kaden-akari">一人暮らしの部屋に置ける、小さな家電と灯り 7選</a></li>
-<li><a href="/read/gift-3000en-ika">3,000円以下で贈って外さない雑貨 8選</a></li>
+<li><a href="/read/gift-3000en-ika">プチギフトに選ぶ、毎日使う雑貨 8選</a></li>
 </ul>
 </article>
 <article class="policy-panel">

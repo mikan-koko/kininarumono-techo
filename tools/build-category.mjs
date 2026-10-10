@@ -135,7 +135,7 @@ const ARTICLE_TITLES = {
   'burando-lineup-no-kijun': 'モノを選ぶときに見ている3つの視点',
   'gift-no-erabikata': 'プレゼント選びで見ている3つの基準',
   'hitorigurashi-no-heyazukuri': '一人暮らしの部屋づくりで最初に決める3つのこと',
-  'gift-3000en-ika': '3,000円以下で贈って外さない雑貨 8選',
+  'gift-3000en-ika': 'プチギフトに選ぶ、毎日使う雑貨 8選',
   'hitorigurashi-kaden-akari': '一人暮らしの部屋に置ける、小さな家電と灯り 7選',
   'hokuo-design-teiban': '北欧デザインの定番、どれから買うか 9選'
 };
