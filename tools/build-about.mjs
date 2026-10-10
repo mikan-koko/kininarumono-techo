@@ -85,8 +85,8 @@ ${header}
 <p>ご相談は<a href="${CONTACT_URL}" target="_blank" rel="noopener">お問い合わせフォーム</a>からお願いします。どんな記事の並びに入るかは、次の3本が参考になります。</p>
 <ul>
 <li><a href="/read/hokuo-design-teiban">北欧デザインの定番、どれから買うか 9選</a></li>
-<li><a href="/read/hitorigurashi-kaden-akari">一人暮らしの部屋に置ける、小さな家電と灯り 7選</a></li>
-<li><a href="/read/gift-3000en-ika">3,000円以下で贈って外さない雑貨 8選</a></li>
+<li><a href="/read/hitorigurashi-kaden-akari">小さな部屋で検討したい、家電と灯り 7選</a></li>
+<li><a href="/read/gift-3000en-ika">プチギフトに選ぶ、毎日使う雑貨 8選</a></li>
 </ul>
 </article>
 <article class="policy-panel">
