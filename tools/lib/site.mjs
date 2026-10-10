@@ -234,6 +234,7 @@ export const AD_BY_PAGE = {
   'hitorigurashi-kaden-akari': 'kakko+evering|kakko',
   'hokuo-design-teiban':       'kakko+andplants|kakko',
   'fuyujitaku-no-dougu':       'truetowel+andplants|truetowel',
+  'gohan-no-dougu':            'generate+andplants|generate',
 };
 
 /**
