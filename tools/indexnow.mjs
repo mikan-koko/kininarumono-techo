@@ -76,8 +76,14 @@ try {
     body: JSON.stringify({ host: HOST, key: KEY, keyLocation: `${ORIGIN}/${KEY}.txt`, urlList: urls })
   });
   // 200=受理 / 202=受理（鍵の確認は後で） / 403=鍵が見つからない / 422=URLがホストと不一致 / 429=送りすぎ
-  console.log(`[IndexNow] HTTP ${r.status}${r.status === 200 || r.status === 202 ? '（受理）' : '（未受理。サイトの公開には影響しない）'}`);
+  if (r.status === 200) {
+    console.log('[IndexNow] HTTP 200（通知受理。インデックス登録の保証ではない）');
+  } else if (r.status === 202) {
+    console.log('[IndexNow] HTTP 202（URL受信済み。所有確認キーの検証待ち）');
+  } else {
+    console.log('::warning::[IndexNow] HTTP ' + r.status + '（未受理。公開済みサイトには影響しない。設定を確認するまで再送しない）');
+  }
 } catch (e) {
-  console.log(`[IndexNow] 送信に失敗: ${e.message}（サイトの公開には影響しない）`);
+  console.log('::warning::[IndexNow] 送信に失敗（サイトの公開には影響しない）');
 }
 process.exit(0);
